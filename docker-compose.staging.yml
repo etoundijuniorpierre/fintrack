@@ -1,0 +1,280 @@
+version: "3.8"
+
+services:
+  nginx:
+    image: nginx:1.24-alpine
+    container_name: fintrack-nginx-staging
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      frontend:
+        condition: service_healthy
+    networks:
+      - fintrack-network
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+      target: production
+    container_name: fintrack-frontend-staging
+    expose:
+      - "80"
+    networks:
+      - fintrack-network
+    restart: always
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "-O", "/dev/null", "http://127.0.0.1/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  user-service:
+    build:
+      context: ./backend
+      dockerfile: user-service/Dockerfile
+    container_name: fintrack-user-service-staging
+    expose:
+      - "8081"
+    environment:
+      - SPRING_PROFILES_ACTIVE=staging
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5434/userservicedb
+      - SPRING_DATASOURCE_USERNAME=${DB_USER}
+      - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_EXPIRATION=${JWT_EXPIRATION:-43200000}
+      - JWT_REFRESH_EXPIRATION=${JWT_REFRESH_EXPIRATION:-604800000}
+      - JWT_SESSION_MAX_DURATION=${JWT_SESSION_MAX_DURATION:-43200000}
+      - INTERNAL_SERVICE_TOKEN=${INTERNAL_SERVICE_TOKEN:-fintrack-internal-dev-token}
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    networks:
+      - fintrack-network
+    restart: always
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:8081/actuator/health",
+        ]
+      interval: 15s
+      timeout: 10s
+      retries: 8
+      start_period: 90s
+
+  incident-service:
+    build:
+      context: ./backend
+      dockerfile: incident-service/Dockerfile
+    container_name: fintrack-incident-service-staging
+    expose:
+      - "8082"
+    environment:
+      - SPRING_PROFILES_ACTIVE=staging
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5434/incidentservicedb
+      - SPRING_DATASOURCE_USERNAME=${DB_USER}
+      - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}
+      - USER_SERVICE_URL=http://user-service:8081
+      - AUDIT_SERVICE_URL=http://audit-service:8087
+      - INTERNAL_SERVICE_TOKEN=${INTERNAL_SERVICE_TOKEN:-fintrack-internal-dev-token}
+    depends_on:
+      postgresql:
+        condition: service_healthy
+      user-service:
+        condition: service_healthy
+    networks:
+      - fintrack-network
+    restart: always
+
+  document-service:
+    build: ./backend/document-service
+    container_name: fintrack-document-service-staging
+    expose:
+      - "8083"
+    environment:
+      - SPRING_PROFILES_ACTIVE=staging
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5434/documentservicedb
+      - SPRING_DATASOURCE_USERNAME=${DB_USER}
+      - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}
+      - STORAGE_PATH=/data/fintrack/attachments
+      - DOCUMENT_STORAGE_TYPE=minio
+      - INTERNAL_SERVICE_TOKEN=${INTERNAL_SERVICE_TOKEN:-fintrack-internal-dev-token}
+      - MINIO_ENDPOINT=http://minio:9000
+      - MINIO_BUCKET=fintrack-documents
+      - MINIO_ACCESS_KEY=${MINIO_ROOT_USER:-fintrack}
+      - MINIO_SECRET_KEY=${MINIO_ROOT_PASSWORD:-fintrack-secret}
+    volumes:
+      - attachments:/data/fintrack/attachments
+    depends_on:
+      postgresql:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    networks:
+      - fintrack-network
+    restart: always
+
+  notification-service:
+    build: ./backend/notification-service
+    container_name: fintrack-notification-service-staging
+    expose:
+      - "8084"
+    environment:
+      - SPRING_PROFILES_ACTIVE=staging
+      - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27019/notificationservicedb
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_PORT=${SMTP_PORT}
+      - SMTP_USERNAME=${SMTP_USERNAME}
+      - SMTP_PASSWORD=${SMTP_PASSWORD}
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - fintrack-network
+    restart: always
+
+  reporting-service:
+    build:
+      context: ./backend
+      dockerfile: reporting-service/Dockerfile
+    container_name: fintrack-reporting-service-staging
+    expose:
+      - "8085"
+    environment:
+      - APP_TIME_ZONE=${APP_TIME_ZONE:-Africa/Lagos}
+      - TZ=${APP_TIME_ZONE:-Africa/Lagos}
+      - JAVA_TOOL_OPTIONS=-Duser.timezone=${APP_TIME_ZONE:-Africa/Lagos}
+      - REPORT_RETENTION_CLEANUP_CRON=${REPORT_RETENTION_CLEANUP_CRON}
+      - SPRING_PROFILES_ACTIVE=staging
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5434/reportingservicedb
+      - SPRING_DATASOURCE_USERNAME=${DB_USER}
+      - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}
+      - EXPORT_PATH=/data/fintrack/exports
+      - AUDIT_SERVICE_URL=http://audit-service:8087
+      - INTERNAL_SERVICE_TOKEN=${INTERNAL_SERVICE_TOKEN:-fintrack-internal-dev-token}
+    volumes:
+      - exports:/data/fintrack/exports
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    networks:
+      - fintrack-network
+    restart: always
+
+  audit-service:
+    build:
+      context: ./backend
+      dockerfile: audit-service/Dockerfile
+    container_name: fintrack-audit-service-staging
+    expose:
+      - "8087"
+    environment:
+      - SPRING_PROFILES_ACTIVE=staging
+      - SPRING_MONGODB_URI=mongodb://mongodb:27019/auditservicedb
+      - INTERNAL_SERVICE_TOKEN=${INTERNAL_SERVICE_TOKEN:-fintrack-internal-dev-token}
+    volumes:
+      - audit-fallback:/data/audit-fallback
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - fintrack-network
+    restart: always
+
+  postgresql:
+    image: postgres:17
+    container_name: fintrack-postgresql-staging
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_MULTIPLE_DATABASES=userservicedb,incidentservicedb,documentservicedb,reportingservicedb
+      - PGPORT=5434
+    volumes:
+      - postgres_data_staging:/var/lib/postgresql/data
+      - ./scripts/postgres-init/init-databases.sh:/docker-entrypoint-initdb.d/init-databases.sh:ro
+    networks:
+      - fintrack-network
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\" -p 5434"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  mongodb:
+    image: mongo:7
+    container_name: fintrack-mongodb-staging
+    environment:
+      - MONGO_INITDB_DATABASE=admin
+    volumes:
+      - mongodb_data_staging:/data/db
+    command: ["mongod", "--port", "27019"]
+    networks:
+      - fintrack-network
+    restart: always
+    healthcheck:
+      test: ["CMD", "mongosh", "--port", "27019", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ===== MINIO =====
+  minio:
+    image: minio/minio:RELEASE.2023-11-20T22-40-07Z
+    container_name: fintrack-minio-staging
+    command: server /data --console-address ":9001"
+    environment:
+      - MINIO_ROOT_USER=${MINIO_ROOT_USER:-fintrack}
+      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD:-fintrack-secret}
+    expose:
+      - "9000"
+      - "9001"
+    volumes:
+      - minio-data:/data
+    networks:
+      - fintrack-network
+    restart: always
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  minio-init:
+    image: minio/mc:latest
+    container_name: fintrack-minio-init-staging
+    depends_on:
+      minio:
+        condition: service_healthy
+    entrypoint: >
+      /bin/sh -c "
+      mc alias set fintrack http://minio:9000 ${MINIO_ROOT_USER:-fintrack} ${MINIO_ROOT_PASSWORD:-fintrack-secret};
+      mc mb -p fintrack/fintrack-documents;
+      exit 0;
+      "
+    networks:
+      - fintrack-network
+
+volumes:
+  postgres_data_staging:
+  mongodb_data_staging:
+  attachments:
+  exports:
+  audit-fallback:
+  minio-data:
+
+networks:
+  fintrack-network:
+    driver: bridge

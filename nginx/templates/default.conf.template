@@ -1,0 +1,118 @@
+# Redirige tout le trafic HTTP vers HTTPS (DNS applicatif ou IP directe).
+server {
+    listen 80 default_server;
+    server_name ${FINTRACK_DNS_NAME} _;
+    return 301 https://$host$request_uri;
+}
+
+# Sert l'application HTTPS par le DNS applicatif comme par l'IP du serveur.
+server {
+    listen 443 ssl http2 default_server;
+    server_name ${FINTRACK_DNS_NAME} _;
+
+    # Hide Nginx version for security
+    server_tokens off;
+
+    # Le certificat auto-signe porte le DNS applicatif : l'acces par IP
+    # fonctionne mais declenche l'avertissement navigateur habituel.
+    ssl_certificate /etc/nginx/ssl/fintrack.crt;
+    ssl_certificate_key /etc/nginx/ssl/fintrack.key;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    # Conserve une marge pour l'enveloppe multipart d'un fichier de 150 Mo.
+    client_max_body_size 151m;
+
+    # Redirect HTTP-on-HTTPS port to HTTPS automatically
+    error_page 497 https://$host$request_uri;
+
+    # Security headers
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+
+    location / {
+        proxy_pass http://frontend:80/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # API Gateway - User Service
+    location /api/v1/userService/ {
+        proxy_pass http://user-service:8081/api/v1/userService/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # API Gateway - Incident Service
+    location /api/v1/incidentService/ {
+        proxy_pass http://incident-service:8082/api/v1/incidentService/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # API Gateway - Document Service
+    location /api/v1/documentService/ {
+        proxy_pass http://document-service:8083/api/v1/documentService/;
+        proxy_request_buffering off;
+        proxy_read_timeout 300s;
+        proxy_send_timeout 300s;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # API Gateway - Notification Service
+    location /api/v1/notificationService/ {
+        proxy_pass http://notification-service:8084/api/v1/notificationService/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 3600s;
+    }
+
+    # API Gateway - Reporting Service
+    location /api/v1/reportingService/ {
+        proxy_pass http://reporting-service:8085/api/v1/reportingService/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # API Gateway - Audit Service
+    location /api/v1/auditService/ {
+        proxy_pass http://audit-service:8087/api/v1/auditService/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # API Gateway - Catch-all for other /api/v1/ requests (default to user-service)
+    location /api/v1/ {
+        proxy_pass http://user-service:8081/api/v1/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Health check
+    location /health {
+        access_log off;
+        return 200 "healthy\n";
+        add_header Content-Type text/plain;
+    }
+}
