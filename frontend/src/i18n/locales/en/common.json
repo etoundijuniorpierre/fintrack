@@ -1,0 +1,73 @@
+{
+  "common": {
+    "restore": "restore",
+    "app_name": "FinTrack",
+    "back": "Back",
+    "edit": "Edit",
+    "view": "View",
+    "delete": "Delete",
+    "yes": "Yes",
+    "no": "No",
+    "confirm": "Confirm",
+    "ok": "OK",
+    "reset": "Reset",
+    "filters": {
+      "button": "Filters",
+      "active": "Active:",
+      "select": "Select..."
+    },
+    "sort": {
+      "label": "Choose table order",
+      "alphabetical": "Alphabetical",
+      "seniority": "Age"
+    },
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "print": "Print",
+    "active": "Active",
+    "inactive": "Inactive",
+    "activate": "Activate",
+    "deactivate": "Deactivate",
+    "search": "Search",
+    "basicInfo": "Basic information",
+    "configuration": "Configuration",
+    "noDescription": "No description",
+    "noAddress": "No address",
+    "member": "Member",
+    "overview": "Overview",
+    "hours": "hours",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "loading_error": "Error loading data",
+    "unknown_error": "An error occurred",
+    "network_error": "Network error — please check your connection",
+    "retry": "Retry",
+    "boundary_title": "Something went wrong",
+    "boundary_message": "An unexpected error interrupted the display of this page.",
+    "reload": "Reload page",
+    "more_actions": "Actions",
+    "unknown": "Unknown",
+    "noData": "No data",
+    "viewDetails": "View details",
+    "actions": {
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    },
+    "switch": {
+      "on": "On",
+      "off": "Off"
+    },
+    "duration": {
+      "lessThanAMinute": "less than a minute",
+      "minutes_one": "{{count}} minute",
+      "minutes_other": "{{count}} minutes",
+      "hours_one": "{{count}} hour",
+      "hours_other": "{{count}} hours",
+      "days_one": "{{count}} day",
+      "days_other": "{{count}} days",
+      "daysAndHours": "{{days}} and {{hours}}"
+    }
+  }
+}

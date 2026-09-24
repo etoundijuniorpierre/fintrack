@@ -1,0 +1,9 @@
+/* Styles frontend : organise l'affichage de modale. */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}

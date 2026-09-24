@@ -1,0 +1,97 @@
+{
+  "notifications": {
+    "pageTitle": "Notifications",
+    "pageSubtitle": "Consultez et gérez les notifications du système",
+    "table": {
+      "type": "Type",
+      "recipient": "Destinataire",
+      "subject": "Sujet",
+      "incident": "Incident",
+      "status": "Statut",
+      "sentAt": "Date d'envoi",
+      "retryCount": "Tentatives",
+      "actions": "Actions"
+    },
+    "filters": {
+      "status": "Filtrer par statut",
+      "type": "Filtrer par type",
+      "all_statuses": "Tous les statuts",
+      "all_types": "Tous les types"
+    },
+    "status": {
+      "PENDING": "En attente",
+      "SENT": "Envoyé",
+      "FAILED": "Échoué",
+      "READ": "Lue"
+    },
+    "type": {
+      "EMAIL": "Email",
+      "INTERNAL": "Interne"
+    },
+    "actions": {
+      "markSent": "Marquer envoyé",
+      "markFailed": "Marquer échoué"
+    },
+    "detail": {
+      "title": "Détails de la notification",
+      "type": "Type",
+      "recipient": "Destinataire",
+      "subject": "Sujet",
+      "content": "Contenu",
+      "message": "Message",
+      "incident": "Incident associé",
+      "agency": "Agence concernée",
+      "viewIncident": "Voir l'incident lié",
+      "status": "Statut",
+      "date": "Date",
+      "sentAt": "Date d'envoi",
+      "retryCount": "Nombre de tentatives",
+      "retryAt": "Prochaine tentative",
+      "createdAt": "Créé le",
+      "updatedAt": "Modifié le",
+      "modifiedBy": "Modifié par",
+      "concernedUsers": "Utilisateurs concernés",
+      "userRoles": {
+        "recipient": "Destinataire",
+        "creator": "Créateur",
+        "assignee": "Assigné",
+        "sender": "Expéditeur",
+        "user": "Utilisateur"
+      }
+    },
+    "success": {
+      "markSent": "Notification marquée comme envoyée",
+      "markFailed": "Notification marquée comme échouée",
+      "deleted": "Notification supprimée"
+    },
+    "messages": {
+      "email_sent": "Notification renvoyée par email",
+      "email_error": "Erreur lors de l'envoi de la notification",
+      "markAllReadSuccess": "Notifications marquées comme lues",
+      "create_success": "Notification créée avec succès",
+      "delete_success": "Notification supprimée avec succès",
+      "bulk_delete_success": "Notifications supprimées avec succès"
+    },
+    "errors": {
+      "loadFailed": "Impossible de charger les notifications",
+      "markSentFailed": "Impossible de marquer la notification comme envoyée",
+      "markFailedError": "Impossible de marquer la notification comme échouée"
+    },
+    "close": "Fermer",
+    "noValue": "-",
+    "noIncident": "-",
+    "email": {
+      "cta": "Consulter l'incident"
+    },
+    "desktop": {
+      "title": "FinTrack - Nouvelle alerte",
+      "defaultBody": "Vous avez une nouvelle notification."
+    },
+    "selectAll": "Tout sélectionner",
+    "markAllRead": "Tout marquer comme lu",
+    "deleteSelected": "Supprimer la sélection",
+    "defaultSubject": "Notification",
+    "empty": "Aucune notification",
+    "viewAll": "Voir tout"
+  }
+}

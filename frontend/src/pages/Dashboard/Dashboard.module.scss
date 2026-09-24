@@ -1,0 +1,112 @@
+/* Styles frontend : organise l'affichage de tableau de bord. */
+
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.pageHeader {
+  margin-bottom: var(--spacing-section);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.kpiRow {
+  width: 100%;
+  margin-bottom: var(--spacing-xl);
+}
+
+.kpiSections {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  margin: 0 0 var(--spacing-md);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.scopeSelect {
+  min-width: 180px;
+}
+
+.displayModeSegment {
+  :global(.ant-segmented-item-label) {
+    min-height: 32px;
+    padding: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.mainCard {
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-md) !important;
+  border: 1px solid var(--grey-200) !important;
+  height: 100%;
+  background: var(--white);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.headerTitle {
+  margin-bottom: 0 !important;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-smd);
+  flex-wrap: wrap;
+}
+
+.mainContentRow {
+  width: 100%;
+}
+
+.topServiceItem {
+  display: flex !important;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--grey-200);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.topServicesList {
+  display: flex;
+  flex-direction: column;
+}
+
+.emptyState {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--grey-50);
+  border-radius: var(--radius-md);
+  border: 2px dashed var(--grey-200);
+  color: var(--grey-400);
+}
+
+.userStatsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.userStatRow {
+  display: flex;
+  justify-content: space-between;
+}

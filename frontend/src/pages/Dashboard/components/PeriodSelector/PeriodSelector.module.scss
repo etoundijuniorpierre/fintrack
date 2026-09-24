@@ -1,0 +1,41 @@
+// Styles du selecteur de periode bases sur les variables de theme FinTrack.
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-smd);
+  flex-wrap: wrap;
+}
+
+.select {
+  min-width: 200px;
+}
+
+.dateRange {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--spacing-smd);
+  flex-wrap: wrap;
+}
+
+.dateField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.dateLabel {
+  font-size: var(--font-sm);
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.datePicker {
+  min-width: 200px;
+}
+
+.errorMessage {
+  font-size: var(--font-sm);
+  align-self: flex-end;
+  padding-bottom: var(--spacing-xs);
+}

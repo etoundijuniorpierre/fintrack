@@ -1,0 +1,93 @@
+/* Styles frontend : organise l'affichage de bouton. */
+
+.base {
+  font-family: var(--font-main);
+  font-weight: var(--weight-medium);
+  border-radius: var(--radius-md);
+  transition: var(--transition-normal);
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-shadow-primary);
+  }
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.primary {
+  &,
+  &:global(.ant-btn) {
+    background: var(--gradient-primary) !important;
+    border: none !important;
+    color: var(--text-on-brand) !important;
+  }
+
+  &:hover:not(.disabled) {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(229, 57, 53, 0.35) !important;
+    filter: brightness(1.1) !important;
+  }
+
+  &:active:not(.disabled) {
+    transform: scale(0.96) !important;
+  }
+}
+
+.secondary {
+  &,
+  &:global(.ant-btn) {
+    background: var(--white) !important;
+    border: var(--border-light) !important;
+    color: var(--text-primary) !important;
+  }
+
+  &:hover:not(.disabled) {
+    background: var(--hover-bg-lighter) !important;
+    border-color: var(--text-secondary) !important;
+  }
+}
+
+.danger {
+  &,
+  &:global(.ant-btn) {
+    background: var(--primary-red) !important;
+    border: none !important;
+    color: var(--text-on-brand) !important;
+  }
+
+  &:hover:not(.disabled) {
+    background: var(--primary-red-hover) !important;
+  }
+}
+
+.ghost {
+  &,
+  &:global(.ant-btn) {
+    background: transparent !important;
+    border: 1px solid var(--primary-red) !important;
+    color: var(--primary-red) !important;
+  }
+
+  &:hover:not(.disabled) {
+    background: var(--hover-bg-light) !important;
+  }
+}
+
+.text {
+  &,
+  &:global(.ant-btn) {
+    background: transparent !important;
+    border: none !important;
+    color: var(--primary-red) !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  &:hover:not(.disabled) {
+    background: var(--hover-bg-light) !important;
+  }
+}

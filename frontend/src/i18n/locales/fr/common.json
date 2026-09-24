@@ -1,0 +1,73 @@
+{
+  "common": {
+    "restore": "restaurer",
+    "app_name": "FinTrack",
+    "back": "Retour",
+    "edit": "Modifier",
+    "view": "Voir",
+    "delete": "Supprimer",
+    "yes": "Oui",
+    "no": "Non",
+    "confirm": "Confirmer",
+    "ok": "OK",
+    "reset": "Réinitialiser",
+    "filters": {
+      "button": "Filtres",
+      "active": "Actifs :",
+      "select": "Sélectionner..."
+    },
+    "sort": {
+      "label": "Choisir l'ordre du tableau",
+      "alphabetical": "Alphabétique",
+      "seniority": "Ancienneté"
+    },
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "print": "Imprimer",
+    "active": "Actif",
+    "inactive": "Inactif",
+    "activate": "Activer",
+    "deactivate": "Désactiver",
+    "search": "Rechercher",
+    "basicInfo": "Informations générales",
+    "configuration": "Configuration",
+    "noDescription": "Aucune description",
+    "noAddress": "Aucune adresse",
+    "member": "Membre",
+    "overview": "Vue d'ensemble",
+    "hours": "heures",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "loading_error": "Erreur de chargement des données",
+    "unknown_error": "Une erreur est survenue",
+    "network_error": "Erreur réseau — vérifiez votre connexion",
+    "retry": "Réessayer",
+    "boundary_title": "Une erreur est survenue",
+    "boundary_message": "Une erreur inattendue a interrompu l'affichage de cette page.",
+    "reload": "Recharger la page",
+    "more_actions": "Actions",
+    "unknown": "Inconnu",
+    "noData": "Aucune donnée",
+    "viewDetails": "Voir les détails",
+    "actions": {
+      "confirm": "Confirmer",
+      "cancel": "Annuler"
+    },
+    "switch": {
+      "on": "Activé",
+      "off": "Coupé"
+    },
+    "duration": {
+      "lessThanAMinute": "moins d'une minute",
+      "minutes_one": "{{count}} minute",
+      "minutes_other": "{{count}} minutes",
+      "hours_one": "{{count}} heure",
+      "hours_other": "{{count}} heures",
+      "days_one": "{{count}} jour",
+      "days_other": "{{count}} jours",
+      "daysAndHours": "{{days}} et {{hours}}"
+    }
+  }
+}

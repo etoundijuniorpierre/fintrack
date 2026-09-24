@@ -1,0 +1,109 @@
+/* Organise la consultation locale des pieces jointes PDF, DOCX et XLSX. */
+
+.previewModal {
+  top: 16px;
+  max-width: calc(100vw - 32px);
+}
+
+.centeredState {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-xl);
+}
+
+.previewIframe {
+  width: 100%;
+  height: min(78vh, 900px);
+  border: 1px solid var(--grey-200);
+  border-radius: var(--radius-sm);
+  background: #fff;
+}
+
+.previewImage {
+  display: block;
+  max-width: 100%;
+  max-height: 78vh;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.documentViewport {
+  min-height: 320px;
+  max-height: 78vh;
+  overflow: auto;
+  border: 1px solid var(--grey-200);
+  background: var(--grey-bg);
+}
+
+.docxContainer {
+  min-width: fit-content;
+
+  :global(.docx-wrapper) {
+    padding: var(--spacing-md);
+    background: var(--grey-bg);
+  }
+}
+
+.excelSheet {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.excelTableViewport {
+  max-height: 72vh;
+  overflow: auto;
+  border: 1px solid var(--grey-200);
+}
+
+.excelTable {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+  background: var(--color-bg-container, #fff);
+
+  th,
+  td {
+    min-width: 120px;
+    max-width: 320px;
+    padding: 7px 10px;
+    border-right: 1px solid var(--grey-200);
+    border-bottom: 1px solid var(--grey-200);
+    color: var(--text-primary);
+    text-align: left;
+    vertical-align: top;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
+  tr:first-child td {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--grey-100);
+    font-weight: var(--weight-semibold);
+  }
+}
+
+.rowNumber {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  min-width: 48px !important;
+  width: 48px;
+  background: var(--grey-100);
+  color: var(--text-muted) !important;
+  text-align: right !important;
+}
+
+@media (max-width: 767px) {
+  .previewModal {
+    top: 8px;
+    max-width: calc(100vw - 16px);
+  }
+
+  .previewIframe,
+  .documentViewport {
+    height: 70vh;
+  }
+}

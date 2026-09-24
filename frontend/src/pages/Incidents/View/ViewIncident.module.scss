@@ -1,0 +1,82 @@
+/* Styles frontend : organise l'affichage de view incident. */
+
+@use "../../../styles/formMixins" as form;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-mlg);
+}
+
+.breadcrumb {
+  margin-bottom: var(--spacing-sm);
+
+  .breadcrumbItem {
+    cursor: pointer;
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.title {
+  margin: 0 !important;
+}
+
+.mainLayout {
+  margin-top: var(--spacing-sm);
+}
+
+.card {
+  @include form.display-card;
+  margin-bottom: var(--spacing-md);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Label de champ : discret, scannable */
+.fieldLabel {
+  @include form.field-label;
+  font-size: var(--font-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+/* Valeur du champ : lisible, medium weight */
+.fieldValue {
+  @include form.field-value;
+  font-size: var(--font-md);
+  color: var(--text-primary);
+  line-height: 1.5;
+  // Preserve les retours a la ligne des textes libres (description, resolution...).
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+// Motif de rejet mis en valeur.
+.rejectAlert {
+  margin-bottom: var(--spacing-md);
+
+  .preWrap {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}

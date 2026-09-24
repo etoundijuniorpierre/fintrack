@@ -1,0 +1,138 @@
+/* Styles frontend : organise l'affichage de attachments section. */
+
+@use "../../../../../styles/formMixins" as form;
+
+.attachmentsSection {
+  margin-top: 0;
+}
+
+.sectionDivider {
+  @include form.section-divider;
+}
+
+.attachmentItem {
+  border-radius: var(--radius-sm);
+  padding: 10px 14px !important;
+  margin-bottom: var(--spacing-sm);
+  background-color: var(--grey-bg);
+  border: 1px solid var(--grey-200);
+  transition: background-color var(--transition-fast);
+
+  &:hover {
+    background-color: var(--grey-100);
+  }
+}
+
+.attachmentMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+// Empile l'en-tete (meta + suppression) et l'apercu image eventuel.
+.attachmentContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+.attachmentHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+.attachmentIcon {
+  margin-top: var(--spacing-xs);
+  color: var(--text-muted);
+  font-size: var(--font-2xl);
+}
+
+// Zone cliquable de la piece jointe (icone + nom + infos) : tout le bloc
+// declenche le telechargement, plus de bouton dedie.
+.attachmentClickable {
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+
+  &:hover .attachmentName {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+}
+
+.attachmentName {
+  font-size: var(--font-md);
+  font-weight: var(--weight-medium);
+  word-break: break-all;
+  transition: color var(--transition-fast);
+}
+
+// Apercu d'une piece jointe image : dimensionne, clic = telechargement.
+.attachmentImage {
+  max-width: 100%;
+  max-height: 220px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--grey-200);
+  object-fit: contain;
+  cursor: pointer;
+  display: block;
+}
+
+.attachmentImageSkeleton {
+  :global(.ant-skeleton-image) {
+    width: 160px;
+    height: 120px;
+    border-radius: var(--radius-sm);
+  }
+}
+
+.attachmentInfo {
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+}
+
+.uploadArea {
+  border-top: 1px solid var(--grey-200);
+  padding-top: var(--spacing-md);
+  margin-top: var(--spacing-xs);
+}
+
+.uploadButton {
+  width: 100%;
+}
+
+.toolbarDownload {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+  /* Style 'Dark Mode' forcé car l'overlay d'Ant Design est toujours sombre */
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 16px;
+  padding: 8px 14px;
+  margin-left: 12px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    color: #fff;
+  }
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(0);
+  }
+}

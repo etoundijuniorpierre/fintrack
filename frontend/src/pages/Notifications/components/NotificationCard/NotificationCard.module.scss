@@ -1,0 +1,54 @@
+// NotificationCard mobile card layout for a single notification item
+
+.notificationCard {
+  margin-bottom: var(--spacing-md);
+  transition: box-shadow var(--transition-fast);
+  cursor: pointer;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.field {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  min-height: 24px;
+}
+
+.fieldLabel {
+  flex: 0 0 120px;
+  font-size: var(--font-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding-top: var(--spacing-xs);
+}
+
+.fieldValue {
+  flex: 1;
+  font-size: var(--font-base);
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  margin-top: var(--spacing-xs);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--grey-200);
+}

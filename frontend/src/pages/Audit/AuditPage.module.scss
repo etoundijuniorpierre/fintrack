@@ -1,0 +1,25 @@
+/* Styles frontend : organise l'affichage de audit page. */
+
+.container {
+  padding: 0;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.filters {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filterSelect {
+  min-width: 180px;
+}
+
+.filterInput {
+  min-width: 180px;
+}

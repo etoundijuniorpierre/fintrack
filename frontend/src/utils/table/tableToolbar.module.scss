@@ -1,0 +1,62 @@
+// Toolbar standard des SectionCard avec table
+// Utilise par buildTableToolbar et toutes les pages avec table.
+
+.toolbarWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+.activeFilters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-primary-soft);
+  border: 1px solid var(--color-primary-border);
+  border-radius: var(--radius-sm);
+}
+
+:global([data-theme="dark"]) .activeFilters :global(.ant-tag) {
+  background-color: var(--color-primary-light) !important;
+  border-color: var(--color-primary-border) !important;
+  color: var(--text-primary) !important;
+
+  :global(.ant-tag-close-icon) {
+    color: var(--text-secondary) !important;
+  }
+}
+
+.leadingSection {
+  flex: 1 1 220px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  min-width: 0;
+}
+
+.searchSection {
+  flex: 1 1 auto;
+  max-width: 350px;
+  min-width: 180px;
+}
+
+.actionSection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  flex: 2 1 auto;
+}

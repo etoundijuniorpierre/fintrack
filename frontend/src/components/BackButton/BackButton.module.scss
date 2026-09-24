@@ -1,0 +1,13 @@
+/* Styles frontend : organise l'affichage de back bouton. */
+
+.backButton {
+  font-size: var(--font-2xl);
+  border: 1px solid var(--grey-light);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+
+  &:hover {
+    border-color: var(--primary-red);
+    color: var(--primary-red);
+  }
+}

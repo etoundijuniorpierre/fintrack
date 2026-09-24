@@ -1,0 +1,64 @@
+<div style="font-family: Arial, sans-serif; background-color: #f6f8fb; padding: 24px;">
+  <div style="max-width: 760px; margin: auto; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden;">
+    <div style="padding: 24px 28px 18px 28px; border-bottom: 3px solid #caa22e;">
+      <div style="text-align: center;">
+        <img src="https://res.cloudinary.com/dfzilcxk8/image/upload/directus/ff1d6c83-7c60-4499-b7b8-d2bf47481dda.png"
+             alt="FINSTAR"
+             style="height: 64px; display: block; margin: 0 auto 10px auto;" />
+        <h2 style="margin: 0; color: #1f2937; font-size: 20px;">FINSTAR - Validation préalable FinTrack</h2>
+        <p style="margin: 6px 0 0 0; color: #64748b; font-size: 13px;">Validation de la Direction avant mise en œuvre</p>
+      </div>
+    </div>
+
+    <div style="padding: 26px 28px;">
+      <p style="margin: 0 0 14px 0; color: #111827;">Bonjour <strong>{{name}} {{firstName}}</strong>,</p>
+
+      <p style="margin: 0 0 18px 0; color: #374151; line-height: 1.6;">
+        {{message}}
+      </p>
+
+      <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px 18px; margin-bottom: 20px;">
+        <p style="margin: 0 0 8px 0; color: #111827;"><strong>Référence :</strong> {{incident_reference}}</p>
+        <p style="margin: 0 0 8px 0; color: #111827;"><strong>Titre :</strong> {{incident_title}}</p>
+        <p style="margin: 0 0 8px 0; color: #111827;"><strong>Criticité :</strong> {{incident_criticality}}</p>
+        <p style="margin: 0 0 8px 0; color: #111827;"><strong>Type :</strong> {{incident_type}}</p>
+        <p style="margin: 0 0 8px 0; color: #111827;"><strong>Agence :</strong> {{incident_agency}}</p>
+        <p style="margin: 0; color: #111827;"><strong>Soumis par :</strong> {{actioner_full_name}}</p>
+      </div>
+
+      <div style="border-left: 4px solid #64748b; background: #f8fafc; padding: 14px 16px; border-radius: 6px; margin-bottom: 18px;">
+        <p style="margin: 0 0 6px 0; color: #111827;"><strong>Description de l'incident</strong></p>
+        <p style="margin: 0; color: #374151; line-height: 1.6; white-space: pre-line;">{{incident_description}}</p>
+      </div>
+
+      <div style="border-left: 4px solid #caa22e; background: #fffbeb; padding: 14px 16px; border-radius: 6px; margin-bottom: 20px;">
+        <p style="margin: 0 0 6px 0; color: #111827;"><strong>Solution proposée à valider</strong></p>
+        <p style="margin: 0; color: #374151; line-height: 1.6; white-space: pre-line;">{{proposed_solution}}</p>
+      </div>
+
+      <div style="text-align: center; margin: 26px 0 8px 0;">
+        <a href="{{incident_url}}"
+           target="_blank"
+           style="display: inline-block; background: #caa22e; color: #ffffff; text-decoration: none; padding: 11px 18px; border-radius: 6px; font-weight: 700;">
+          {{cta_label}}
+        </a>
+      </div>
+
+      <p style="margin: 22px 0 0 0; color: #374151; line-height: 1.6;">
+        Veuillez valider ou refuser cette solution depuis FinTrack. En cas de refus, un motif sera demandé et le traitant devra soumettre une nouvelle proposition de solution.
+      </p>
+
+      <p style="margin: 22px 0 0 0; color: #111827;">
+        Cordialement,<br />
+        <strong>L'équipe FINSTAR</strong>
+      </p>
+    </div>
+
+    <div style="background: #f9fafb; padding: 14px 28px; border-top: 1px solid #e5e7eb; text-align: center;">
+      <p style="margin: 0; font-size: 12px; color: #6b7280;">
+        {{date}} - FinTrack, gestion et traçabilité des incidents -
+        <a href="https://finstar-cm.com" target="_blank" style="color: #caa22e; text-decoration: none;">FINSTAR-CM</a>
+      </p>
+    </div>
+  </div>
+</div>

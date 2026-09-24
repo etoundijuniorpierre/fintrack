@@ -1,0 +1,8 @@
+/* Styles frontend : organise l'affichage de page container. */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  width: 100%;
+}

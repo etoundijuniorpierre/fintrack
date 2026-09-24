@@ -1,0 +1,37 @@
+/* Styles frontend : organise l'affichage de badge. */
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.low {
+  background-color: var(--surface-success-bg);
+  color: var(--surface-success-text);
+  border: 1px solid var(--surface-success-border);
+}
+
+.medium {
+  background-color: var(--surface-warning-bg);
+  color: var(--surface-warning-text);
+  border: 1px solid var(--surface-warning-border);
+}
+
+.high {
+  background-color: var(--surface-danger-bg);
+  color: var(--surface-danger-text);
+  border: 1px solid var(--surface-danger-border);
+}
+
+.critical {
+  background: var(--gradient-critical);
+  color: var(--text-on-brand);
+  border: none;
+}

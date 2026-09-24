@@ -1,0 +1,86 @@
+/* Styles frontend : organise l'affichage de history timeline. */
+
+.historyTimeline {
+  margin-top: var(--spacing-sm);
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.sectionDivider {
+  margin: 0 0 var(--spacing-md) 0 !important;
+
+  :global(.ant-divider-inner-text) {
+    font-size: var(--font-base);
+    font-weight: var(--weight-semibold);
+    color: var(--color-primary);
+  }
+}
+
+.timeline {
+  padding-top: var(--spacing-sm);
+
+  :global(.ant-timeline-item-content) {
+    min-width: 0;
+  }
+}
+
+.entryContent {
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: var(--spacing-xs);
+}
+
+/* La phrase decrivant l'evenement : element principal de l'entree. */
+.sentence {
+  font-size: var(--font-md);
+  color: var(--text-primary);
+  line-height: 1.7;
+
+  .valueTag,
+  .valuePillNeutral {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    margin-inline: 2px;
+    vertical-align: baseline;
+  }
+}
+
+/* L'auteur de l'action, mis en avant en tete de phrase. */
+.actor {
+  color: var(--text-primary);
+}
+
+.entryMeta {
+  font-size: var(--font-sm);
+}
+
+.reason {
+  min-width: 0;
+  max-width: 100%;
+  margin-top: var(--spacing-xs);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-left: 3px solid var(--surface-neutral-border);
+  background: var(--surface-neutral-bg);
+  border-radius: var(--radius-sm);
+}
+
+.reasonLabel {
+  font-size: var(--font-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.reasonText {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: var(--font-md);
+  color: var(--text-primary);
+}

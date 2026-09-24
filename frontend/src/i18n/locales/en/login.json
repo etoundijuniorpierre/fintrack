@@ -1,0 +1,60 @@
+{
+  "login": {
+    "title": "Login",
+    "subtitle": "Access your incident management space",
+    "username_label": "Username",
+    "username_placeholder": "Your identifier",
+    "username_required": "Username is required",
+    "password_label": "Password",
+    "password_placeholder": "Your password",
+    "password_required": "Password is required",
+    "submit_button": "Log In",
+    "submitting": "Logging in...",
+    "contact_admin": "Contact an administrator",
+    "contact_admin_success": "Message sent successfully.",
+    "contact_admin_error": "Error sending message.",
+    "contact_admin_title": "Contact an administrator",
+    "contact_admin_send": "Send",
+    "contact_admin_cancel": "Cancel",
+    "email_label": "Your email address",
+    "email_required": "Invalid email",
+    "subject_label": "Subject",
+    "subject_required": "Subject required",
+    "message_label": "Message",
+    "message_required": "Message required",
+    "banner": {
+      "tagline": "Manage your incidents",
+      "tagline_highlight": " securely",
+      "description": "Centralized platform for real-time incident management, tracking, and auditing.",
+      "features_label": "Key features",
+      "features": {
+        "realtime": "Real-time incident tracking",
+        "reports": "Automated reports & exports",
+        "audit": "Full audit and traceability"
+      }
+    },
+    "footer": " FinTrack  Finstar · All rights reserved",
+    "errors": {
+      "failed_attempts": "{{count}}/{{max}} failed attempts"
+    }
+  },
+  "first_login": {
+    "title": "First Login - Password Change",
+    "welcome_message": "Welcome {{username}}! This is your first login.",
+    "instruction": "For security reasons, you must change your temporary password before continuing.",
+    "new_password_label": "New Password",
+    "new_password_placeholder": "Enter your new password",
+    "confirm_password_label": "Confirm New Password",
+    "confirm_password_placeholder": "Confirm your new password",
+    "password_required": "Password is required",
+    "confirm_password_required": "Password confirmation is required",
+    "password_min_length": "Password must be at least 8 characters",
+    "password_complexity": "Password must contain at least 8 characters",
+    "passwords_not_match": "Passwords do not match",
+    "change_password_button": "Change Password",
+    "changing": "Changing...",
+    "password_changed_success": "Password changed successfully",
+    "required_password_change": "Password change is required for first login",
+    "cancel_and_logout": "Cancel and logout"
+  }
+}

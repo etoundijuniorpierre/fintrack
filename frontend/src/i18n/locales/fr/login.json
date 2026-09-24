@@ -1,0 +1,60 @@
+{
+  "login": {
+    "title": "Connexion",
+    "subtitle": "Accédez à votre espace de gestion d'incidents",
+    "username_label": "Nom d'utilisateur",
+    "username_placeholder": "Votre identifiant",
+    "username_required": "Le nom d'utilisateur est requis",
+    "password_label": "Mot de passe",
+    "password_placeholder": "Votre mot de passe",
+    "password_required": "Le mot de passe est requis",
+    "submit_button": "Se connecter",
+    "submitting": "Connexion...",
+    "contact_admin": "Contacter un administrateur",
+    "contact_admin_success": "Message envoyé avec succès.",
+    "contact_admin_error": "Erreur lors de l'envoi du message.",
+    "contact_admin_title": "Contacter un administrateur",
+    "contact_admin_send": "Envoyer",
+    "contact_admin_cancel": "Annuler",
+    "email_label": "Votre adresse email",
+    "email_required": "Email invalide",
+    "subject_label": "Sujet",
+    "subject_required": "Sujet requis",
+    "message_label": "Message",
+    "message_required": "Message requis",
+    "banner": {
+      "tagline": "Gérez vos incidents",
+      "tagline_highlight": " en toute sécurité",
+      "description": "Plateforme centralisée de gestion, suivi et audit des incidents en temps réel.",
+      "features_label": "Fonctionnalités clés",
+      "features": {
+        "realtime": "Suivi des incidents en temps réel",
+        "reports": "Rapports automatisés & exports",
+        "audit": "Audit complet et traçabilité"
+      }
+    },
+    "footer": "© {{year}} FinTrack © Finstar · Tous droits réservés",
+    "errors": {
+      "failed_attempts": "{{count}}/{{max}} tentatives échouées"
+    }
+  },
+  "first_login": {
+    "title": "Première Connexion - Changement de Mot de Passe",
+    "welcome_message": "Bienvenue {{username}} ! Ceci est votre première connexion.",
+    "instruction": "Pour des raisons de sécurité, vous devez changer votre mot de passe temporaire avant de continuer.",
+    "new_password_label": "Nouveau Mot de Passe",
+    "new_password_placeholder": "Entrez votre nouveau mot de passe",
+    "confirm_password_label": "Confirmer le Nouveau Mot de Passe",
+    "confirm_password_placeholder": "Confirmez votre nouveau mot de passe",
+    "password_required": "Le mot de passe est requis",
+    "confirm_password_required": "La confirmation du mot de passe est requise",
+    "password_min_length": "Le mot de passe doit contenir au moins 8 caractères",
+    "password_complexity": "Le mot de passe doit contenir au moins 8 caractères",
+    "passwords_not_match": "Les mots de passe ne correspondent pas",
+    "change_password_button": "Changer le Mot de Passe",
+    "changing": "Changement...",
+    "password_changed_success": "Mot de passe changé avec succès",
+    "required_password_change": "Le changement de mot de passe est requis pour la première connexion",
+    "cancel_and_logout": "Annuler et se déconnecter"
+  }
+}

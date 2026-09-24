@@ -1,0 +1,36 @@
+// RolePermissionTab styles specifiques uniquement
+// Le style commun des tables est gere par DataGrid.module.scss
+// Les styles d'actions (actionsSpace, editIcon, deleteIcon) sont dans DataGrid.actions.module.scss
+
+// Permission Groups
+
+.permissionGroups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) 0;
+}
+
+.permissionGroup {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.permissionGroupLabel {
+  font-size: var(--font-xs);
+  color: var(--black-track);
+  min-width: 72px;
+  padding-top: var(--spacing-xs);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.permissionTag {
+  font-size: var(--font-xs);
+  line-height: 18px;
+  padding: 0 6px;
+  border-radius: var(--radius-xs);
+  cursor: default;
+}

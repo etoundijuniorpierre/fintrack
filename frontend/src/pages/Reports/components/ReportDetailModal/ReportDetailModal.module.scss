@@ -1,0 +1,50 @@
+/* Styles frontend : organise l'affichage de rapport detail modale. */
+
+.detailRow {
+  display: flex;
+  margin-bottom: var(--spacing-sm);
+  align-items: baseline;
+}
+
+.detailKey {
+  min-width: 150px;
+  color: var(--text-secondary);
+}
+
+.detailValue {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.detailsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.incidentTable {
+  :global(.ant-table-cell) {
+    vertical-align: top;
+  }
+}
+
+.incidentExpanded {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-smd) var(--spacing-mlg);
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+}
+
+.incidentExpandedWide {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+  .incidentExpanded {
+    grid-template-columns: 1fr;
+  }
+}

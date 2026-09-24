@@ -1,0 +1,11 @@
+# Ensure shell scripts always use LF line endings (critical for Docker/Linux)
+*.sh text eol=lf
+*.sql text eol=lf
+Dockerfile text eol=lf
+docker-compose*.yml text eol=lf
+*.conf text eol=lf
+
+# Garde-fou anti-pollution : la branche `prod` ne doit jamais contenir documentation/.
+# Au merge (dev -> prod), on conserve la version de la branche courante (prod = supprimee).
+# Necessite une activation unique par clone : `git config merge.ours.driver true` (voir README.md).
+documentation/** merge=ours

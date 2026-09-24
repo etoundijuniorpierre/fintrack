@@ -1,0 +1,84 @@
+/* Styles frontend : organise l'affichage de page en-tete. */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-xs) 0 var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.92);
+  gap: var(--spacing-md);
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* Bouton retour : icône seule, inline avec le titre */
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  border: 1px solid var(--grey-200);
+  color: var(--grey-400);
+  cursor: pointer;
+  font-size: var(--font-md);
+  font-family: inherit;
+  transition: all var(--transition-fast);
+
+  &:hover {
+    background: var(--color-primary-light);
+    border-color: var(--primary-red);
+    color: var(--primary-red);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary-red);
+    outline-offset: 2px;
+  }
+}
+
+.title {
+  font-size: var(--font-3xl);
+  font-weight: 600;
+  color: var(--grey-900);
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.titleTag {
+  display: flex;
+  align-items: center;
+  margin-left: var(--spacing-xs);
+}
+
+.subtitle {
+  font-size: var(--font-md);
+  color: var(--text-secondary);
+  margin: 0;
+  font-weight: 400;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}

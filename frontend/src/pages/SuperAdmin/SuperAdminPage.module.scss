@@ -1,0 +1,123 @@
+/* Styles frontend : organise l'affichage de super-administration page. */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.kpiRow {
+  width: 100%;
+}
+
+.alert {
+  margin-bottom: var(--spacing-sm);
+}
+
+.centeredGraph {
+  display: flex;
+  justify-content: center;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.auditFilters {
+  margin-bottom: var(--spacing-md);
+}
+
+.configHelp {
+  margin-top: var(--spacing-sm);
+  font-size: var(--font-sm);
+}
+
+.thresholdGroup {
+  padding: var(--spacing-sm) 0 var(--spacing-md);
+  border-top: 1px solid var(--grey-100);
+
+  &:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+}
+
+.thresholdGroupHeader {
+  color: var(--color-primary);
+
+  :global(.anticon) {
+    font-size: var(--font-lg);
+  }
+}
+
+.tabHeader {
+  padding: var(--spacing-sm) 0 var(--spacing-xs) 0;
+  border-bottom: 1px dashed var(--grey-200);
+  margin-bottom: var(--spacing-sm);
+  width: 100%;
+}
+
+.tabDescription {
+  margin-bottom: 0 !important;
+  font-size: var(--font-md);
+  max-width: 720px;
+}
+
+.stackTrace {
+  background: var(--grey-900);
+  color: var(--text-on-brand);
+  padding: var(--spacing-smd);
+  border-radius: var(--radius-xs);
+  font-family: "Menlo", "Monaco", "Courier New", monospace;
+  font-size: var(--font-xs);
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 480px;
+  overflow: auto;
+  margin: 0;
+}
+
+.superAdminTabs {
+  :global(.ant-tabs-nav) {
+    margin-bottom: var(--spacing-lg) !important;
+    background: transparent !important;
+    padding: 0 !important;
+
+    &::before {
+      border-bottom: 1px solid var(--grey-200) !important;
+    }
+  }
+
+  :global(.ant-tabs-tab) {
+    padding: 10px 4px !important;
+    margin: 0 var(--spacing-md) 0 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  :global(.ant-tabs-tab-btn) {
+    color: var(--text-secondary) !important;
+    font-size: var(--font-base) !important;
+    font-weight: var(--weight-medium) !important;
+  }
+
+  :global(.ant-tabs-tab-active .ant-tabs-tab-btn) {
+    color: var(--color-primary) !important;
+    font-weight: var(--weight-semibold) !important;
+  }
+
+  :global(.ant-tabs-ink-bar) {
+    background: var(--color-primary) !important;
+    height: 2px !important;
+    border-radius: 0 !important;
+  }
+
+  :global(.ant-tabs-content-holder),
+  :global(.ant-tabs-tabpane) {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+}

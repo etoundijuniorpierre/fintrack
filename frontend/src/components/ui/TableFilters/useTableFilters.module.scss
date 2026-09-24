@@ -1,0 +1,93 @@
+// Popover et puces du filtre de tableau centralise.
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 440px;
+  max-width: 85vw;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+// Bascules regroupees en deux colonnes (Non assignes, Masquer clotures…).
+.toggles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: var(--spacing-md);
+  row-gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.toggleField {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 13px;
+  color: var(--text-primary);
+  cursor: pointer;
+
+  span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 420px) {
+  .panel {
+    width: 100%;
+  }
+
+  .toggles {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fieldLabel {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.select {
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  border-top: var(--border-light);
+  padding-top: var(--spacing-xs);
+}
+
+.chipsLabel {
+  font-size: var(--font-xs);
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.chip {
+  margin-inline-end: 0;
+  background-color: var(--color-primary-light) !important;
+  border-color: var(--color-primary-border) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-full) !important;
+  font-size: var(--font-xs) !important;
+  font-weight: var(--weight-medium) !important;
+  padding-inline: var(--spacing-sm) !important;
+}
+
+:global([data-theme="dark"]) .chip {
+  background-color: var(--grey-200) !important;
+  border-color: var(--grey-400) !important;
+  color: var(--text-primary) !important;
+
+  :global(.ant-tag-close-icon) {
+    color: var(--text-secondary) !important;
+  }
+}

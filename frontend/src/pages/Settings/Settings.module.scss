@@ -1,0 +1,70 @@
+// Settings style tabs underline pur (inspire de l'image)
+
+.settingsTabs {
+  // Barre de navigation des tabs
+  :global(.ant-tabs-nav) {
+    margin-bottom: var(--spacing-mlg) !important;
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    border: none !important;
+
+    // Ligne de separation horizontale sous toute la barre
+    &::before {
+      border-bottom: 1px solid var(--grey-200) !important;
+    }
+  }
+
+  // Tab individuel
+  :global(.ant-tabs-tab) {
+    padding: var(--spacing-smd) var(--spacing-xs) !important;
+    margin: 0 var(--spacing-mlg) 0 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    transition: color var(--transition-fast) !important;
+
+    .ant-tabs-tab-btn {
+      font-size: var(--font-base) !important;
+      font-weight: 500 !important;
+      color: var(--grey-400) !important;
+      transition: color var(--transition-fast) !important;
+    }
+
+    &:hover .ant-tabs-tab-btn {
+      color: var(--grey-600) !important;
+    }
+  }
+
+  // Tab actif
+  :global(.ant-tabs-tab-active) {
+    background: transparent !important;
+    box-shadow: none !important;
+
+    .ant-tabs-tab-btn {
+      color: var(--color-primary) !important;
+      font-weight: 600 !important;
+    }
+  }
+
+  // Underline navy sous le tab actif
+  :global(.ant-tabs-ink-bar) {
+    background: var(--color-primary) !important;
+    height: 2px !important;
+    border-radius: 0 !important;
+  }
+
+  // Contenu pas de padding, les SectionCard gerent leur propre style
+  :global(.ant-tabs-content-holder) {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    min-height: unset !important;
+    border-radius: 0 !important;
+  }
+
+  :global(.ant-tabs-tabpane) {
+    padding: 0 !important;
+  }
+}

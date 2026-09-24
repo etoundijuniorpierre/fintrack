@@ -1,0 +1,41 @@
+{
+  "layout": {
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "superAdmin": "Super Admin",
+      "incidents": "Incidents",
+      "users": "Users",
+      "reports": "Reports",
+      "audit": "Audit Log",
+      "settings": "Settings",
+      "expand": "Expand menu",
+      "collapse": "Collapse menu"
+    },
+    "header": {
+      "profile": "My Profile",
+      "logout": "Logout",
+      "notifications": "Notifications",
+      "help": "Help",
+      "change_language": "Change language",
+      "default_role": "USER",
+      "user_menu": "User menu",
+      "presence": {
+        "title": "Connected users",
+        "connected": "Connected",
+        "disconnected": "Disconnected",
+        "empty": "No users",
+        "status": {
+          "online_since": "Online since {{time}}",
+          "online_default": "Online",
+          "offline_unknown": "Last presence unknown",
+          "offline_ago_minutes_one": "Disconnected for {{count}} minute",
+          "offline_ago_minutes_other": "Disconnected for {{count}} minutes",
+          "offline_ago_hours_one": "Disconnected for {{count}} hour",
+          "offline_ago_hours_other": "Disconnected for {{count}} hours",
+          "offline_date": "Disconnected since {{date}}"
+        },
+        "no_agency": "No agency"
+      }
+    }
+  }
+}

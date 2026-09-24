@@ -1,0 +1,164 @@
+/* Styles frontend : organise l'affichage de service details page. */
+
+@use "../../../../../styles/formMixins" as form;
+
+.content {
+  padding: 0;
+}
+
+/* Mode édition. */
+.editForm {
+  margin-top: var(--spacing-md);
+  @include form.app-form;
+}
+
+.editCard {
+  @include form.form-card;
+}
+
+.switchItem {
+  margin-bottom: 0 !important;
+}
+
+.switchWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xs);
+}
+
+.switchLabel {
+  font-weight: var(--weight-medium);
+  font-size: var(--font-base);
+}
+
+.formActionFooter {
+  @include form.form-action-footer;
+}
+
+/* Mode consultation. */
+.mainCard {
+  margin-bottom: var(--spacing-lg);
+  @include form.display-card;
+}
+
+.serviceHeader {
+  @include form.entity-header;
+}
+
+.serviceIcon {
+  @include form.entity-icon(var(--color-primary-light), var(--color-primary));
+}
+
+.serviceTitleInfo {
+  flex: 1;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+}
+
+.serviceTitle {
+  margin: 0 !important;
+  font-weight: var(--weight-extrabold) !important;
+  color: var(--text-primary) !important;
+}
+
+.serviceDescription {
+  margin: 0 !important;
+  font-size: var(--font-lg);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+}
+
+.memberList {
+  margin: calc(var(--spacing-md) * -1);
+}
+
+.memberItem {
+  padding: var(--spacing-md) var(--spacing-lg) !important;
+  transition: background-color var(--transition-fast);
+  border-bottom: 1px solid var(--grey-100) !important;
+
+  &:hover {
+    background: var(--grey-50);
+  }
+
+  &:last-child {
+    border-bottom: none !important;
+  }
+}
+
+.memberAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--grey-100);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-2xl);
+}
+
+.memberName {
+  font-weight: var(--weight-semibold) !important;
+  color: var(--text-primary) !important;
+}
+
+.memberEmail {
+  color: var(--text-muted) !important;
+  font-size: var(--font-md);
+}
+
+.sideCard {
+  @include form.display-card;
+}
+
+.sideTitle {
+  margin-bottom: var(--spacing-lg) !important;
+  font-weight: var(--weight-bold) !important;
+  color: var(--text-primary) !important;
+  font-size: var(--font-xl) !important;
+}
+
+.infoGrid {
+  @include form.info-grid;
+}
+
+.infoItem {
+  @include form.info-item;
+}
+
+.infoIcon {
+  @include form.info-item-icon;
+}
+
+.infoContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoLabel {
+  @include form.info-label;
+}
+
+.infoValue {
+  @include form.info-value;
+}
+
+.infoSubValue {
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+}

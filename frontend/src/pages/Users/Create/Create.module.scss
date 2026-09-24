@@ -1,0 +1,34 @@
+/* Styles frontend : organise l'affichage de create. */
+
+.breadcrumb {
+  margin-bottom: var(--spacing-sm);
+
+  .breadcrumbItem {
+    cursor: pointer;
+    transition: color var(--transition-normal);
+
+    &:hover {
+      color: var(--primary-red);
+    }
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.formCard {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: none;
+}
+
+:global(.ant-card-body) {
+  padding: var(--card-padding) !important;
+}
+
+.pageTitleText {
+  margin: 0 !important;
+}

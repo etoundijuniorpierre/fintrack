@@ -1,0 +1,155 @@
+/* Styles frontend : organise l'affichage de role details page. */
+
+@use "../../../../../styles/formMixins" as form;
+
+.content {
+  padding: 0;
+}
+
+.mainCard {
+  margin-bottom: var(--spacing-lg);
+  @include form.display-card;
+}
+
+.roleHeader {
+  @include form.entity-header;
+}
+
+/* Identité rôle : accent indigo distinct du rouge de marque. */
+.roleIcon {
+  @include form.entity-icon(var(--color-accent-light), var(--color-accent));
+}
+
+.roleTitleInfo {
+  flex: 1;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+}
+
+.roleTitle {
+  margin: 0 !important;
+  font-weight: var(--weight-extrabold) !important;
+  color: var(--text-primary) !important;
+}
+
+.roleDescription {
+  margin: 0 !important;
+  font-size: var(--font-lg);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.sideCard {
+  @include form.display-card;
+}
+
+.sideTitle {
+  margin-bottom: var(--spacing-lg) !important;
+  font-weight: var(--weight-bold) !important;
+  color: var(--text-primary) !important;
+  font-size: var(--font-xl) !important;
+}
+
+.infoGrid {
+  @include form.info-grid;
+}
+
+.infoItem {
+  @include form.info-item;
+}
+
+.infoIcon {
+  @include form.info-item-icon;
+}
+
+.infoContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoLabel {
+  @include form.info-label;
+}
+
+.infoValue {
+  @include form.info-value;
+}
+
+.permissionsSection {
+  margin-top: var(--spacing-xl);
+}
+
+.sectionHeader {
+  margin-bottom: var(--spacing-lg);
+}
+
+.sectionTitle {
+  margin: 0 !important;
+  font-weight: var(--weight-extrabold) !important;
+  color: var(--text-primary) !important;
+}
+
+.sectionSubtitle {
+  color: var(--text-muted);
+  font-size: var(--font-base);
+}
+
+.permissionCategoryCard {
+  border: none !important;
+  box-shadow: var(--shadow-sm) !important;
+  height: 100%;
+  transition: var(--transition-bounce);
+
+  &:hover {
+    box-shadow: var(--shadow-md) !important;
+    transform: translateY(-4px);
+  }
+
+  :global(.ant-card-head) {
+    border-bottom: 1px solid var(--grey-100) !important;
+    min-height: var(--card-head-height) !important;
+    padding: 0 var(--spacing-md) !important;
+
+    :global(.ant-card-head-title) {
+      font-size: var(--font-base) !important;
+      font-weight: var(--weight-bold) !important;
+    }
+  }
+}
+
+.badgeTag {
+  background: var(--grey-100) !important;
+  color: var(--text-secondary) !important;
+  border: none !important;
+  font-weight: var(--weight-bold) !important;
+  border-radius: var(--radius-xs) !important;
+  margin: 0 !important;
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.permissionTag {
+  margin: 0 !important;
+  background: var(--grey-50) !important;
+  border: 1px solid var(--grey-100) !important;
+  color: var(--text-secondary) !important;
+  font-size: var(--font-sm) !important;
+  padding: var(--spacing-xs) var(--spacing-sm) !important;
+  border-radius: var(--radius-sm) !important;
+  transition: var(--transition-fast) !important;
+
+  &:hover {
+    border-color: var(--color-accent) !important;
+    color: var(--color-accent) !important;
+    background: var(--color-accent-light) !important;
+  }
+}

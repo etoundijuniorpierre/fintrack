@@ -1,0 +1,36 @@
+/* Styles frontend : organise l'affichage de notification detail modale. */
+
+.messageContent {
+  white-space: pre-wrap;
+  word-break: break-word;
+  padding: var(--spacing-smd);
+  background-color: var(--ant-color-bg-layout);
+  border-radius: var(--radius-xs);
+  margin-top: var(--spacing-xs);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--ant-color-border-secondary);
+}
+
+.concernedUsers {
+  display: grid;
+  gap: var(--spacing-xs);
+}
+
+.concernedUser {
+  display: flex;
+  gap: var(--spacing-xs);
+  align-items: baseline;
+  word-break: break-word;
+}
+
+.concernedUserRole {
+  flex: 0 0 auto;
+  font-weight: var(--font-weight-semibold);
+  color: var(--ant-color-text-secondary);
+}

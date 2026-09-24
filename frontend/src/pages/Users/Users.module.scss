@@ -1,0 +1,16 @@
+/* Styles frontend : organise l'affichage de utilisateurs. */
+
+.page {
+  min-height: 100vh;
+}
+
+.mainArea {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: var(--spacing-lg);
+  background-color: var(--grey-bg);
+  min-height: calc(100vh - 64px);
+}

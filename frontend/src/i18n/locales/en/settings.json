@@ -1,0 +1,447 @@
+{
+  "settings": {
+    "pageTitle": "Settings",
+    "pageSubtitle": "Manage system configurations",
+    "tabs": {
+      "incidentTypes": "Incident Types",
+      "agencies": "Agencies",
+      "services": "Services",
+      "rolesPermissions": "Roles & Permissions",
+      "reportSchedules": "Automated Reports"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "buttons": {
+      "new": "New",
+      "edit": "Edit",
+      "delete": "Delete",
+      "save": "Save",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
+    "incidentTypes": {
+      "addButton": "New Type",
+      "table": {
+        "name": "Technical Name",
+        "displayName": "Display Label",
+        "slaHours": "Processing deadline (hours)",
+        "status": "Status",
+        "closerType": "Closure",
+        "defaultTargetService": "Default Target Service",
+        "defaultTargetUser": "Default Target User",
+        "actions": "Actions"
+      },
+      "modal": {
+        "createTitle": "New Incident Type",
+        "editTitle": "Edit Incident Type"
+      },
+      "page": {
+        "createTitle": "Create incident type",
+        "editTitle": "Edit incident type",
+        "createSubtitle": "Define routing defaults, processing deadline, and display label for a new incident category",
+        "editSubtitle": "Update the routing defaults and presentation of this incident category",
+        "detailsSubtitle": "Technical code: {{name}}"
+      },
+      "details": {
+        "directionValidators": "Executive validators",
+        "metadata": "Technical information",
+        "identifier": "Identifier",
+        "createdAt": "Created at",
+        "updatedAt": "Updated at",
+        "modifiedBy": "Modified by"
+      },
+      "sections": {
+        "basicAndSla": "General Information & SLA",
+        "assignment": "Default Assignment",
+        "validation": "Validation Rules & Workflow",
+        "actors": "Authorized Workflow Actors",
+        "statusAndNotifications": "Status & Notifications"
+      },
+      "form": {
+        "labels": {
+          "name": "Technical Name",
+          "displayName": "Display Label",
+          "description": "Description",
+          "slaHours": "Processing deadline (hours)",
+          "defaultCriticality": "Default criticality",
+          "defaultTargetService": "Default Target Service (transfer)",
+          "defaultTargetUser": "Default Target User (transfer)",
+          "isActive": "Active",
+          "requiresValidation": "Validation Required",
+          "requiresCauseAnalysis": "Cause Analysis Required",
+          "requiresDirectionValidation": "Prior Executive Validation",
+          "directionValidator": "Executive Validator",
+          "closerType": "Who can close the incident?",
+          "treaterType": "Treatment Actor",
+          "resolverType": "Resolution Actor",
+          "validatorScope": "Validator",
+          "emailNotificationsEnabled": "Email Notifications",
+          "reopenerType": "Reopening actor"
+        },
+        "descriptions": {
+          "requiresValidation": "If disabled, agents creating this incident will bypass the validation step.",
+          "requiresCauseAnalysis": "If enabled, resolution will strictly require a cause and its details.",
+          "requiresDirectionValidation": "Requires an executive validator to approve the proposed solution before handling can start.",
+          "directionValidator": "User possessing executive prior validation permission.",
+          "closerType": "Rule applied to all incidents under this type.",
+          "treaterType": "Defines who is allowed to handle (treat) the incident.",
+          "resolverType": "Defines who is allowed to validate the resolution or return the incident as unresolved.",
+          "validatorScope": "Who can validate incidents of this type (only applies if validation is required).",
+          "defaultCriticality": "Pre-filled when creating an incident of this type. The agent can always change it.",
+          "emailNotificationsEnabled": "Also sends email notifications for creation, handling, resolution, and closure. In-app notifications remain active.",
+          "isActive": "Makes this incident type active and available when creating new incidents.",
+          "reopenerType": "Defines who is allowed to reopen an already-resolved incident (one or more)."
+        },
+        "rules": {
+          "directionValidatorRequired": "Please select an executive validator for prior approval."
+        },
+        "options": {
+          "validator_source_service": "Hierarchical based on creator (default)",
+          "validator_agency": "Agency Manager",
+          "validator_target_service": "Service manager",
+          "validator_admin": "Administrator",
+          "closer_creator": "Creator",
+          "closer_assignee": "Assigned agent",
+          "closer_both": "Creator or assigned agent",
+          "closer_chef_service": "Handling service manager",
+          "treater_assignee": "Handler (Assignee)",
+          "treater_source_agency_manager": "Source agency manager",
+          "treater_creator": "Creator",
+          "treater_chef_service": "Handling service manager",
+          "resolver_source_agency_manager": "Source agency manager",
+          "resolver_creator": "Creator",
+          "resolver_assignee": "Handler (Assignee)",
+          "resolver_chef_service": "Handling service manager"
+        },
+        "placeholders": {
+          "name": "Ex: NETWORK_INCIDENT",
+          "displayName": "Ex: Network Incident",
+          "description": "Describe this incident type...",
+          "slaHours": "Ex: 24",
+          "defaultCriticality": "None (optional)",
+          "defaultTargetService": "Select target service",
+          "defaultTargetUser": "Select target user",
+          "directionValidator": "Select executive validator..."
+        },
+        "validation": {
+          "name_required": "Technical name is required",
+          "name_min": "Name must be at least 2 characters",
+          "name_max": "Name cannot exceed 100 characters",
+          "displayName_required": "Display label is required",
+          "displayName_min": "Label must be at least 2 characters",
+          "displayName_max": "Label cannot exceed 100 characters",
+          "description_max": "Description cannot exceed 500 characters",
+          "slaHours_required": "The processing deadline is required",
+          "slaHours_min": "The processing deadline must be greater than 0"
+        },
+        "warnings": {
+          "noServiceHead": "This service has no assigned head. You can proceed, but automatic routing will require administrator intervention."
+        },
+        "actorRoles": {
+          "SOURCE_AGENCY_MANAGER": "Source agency manager",
+          "CREATOR": "Creator",
+          "ASSIGNEE": "Handler (assignee)",
+          "CHEF_SERVICE": "Handling service manager"
+        }
+      },
+      "messages": {
+        "create_success": "Incident type created successfully",
+        "create_error": "Error creating incident type",
+        "update_success": "Incident type updated successfully",
+        "update_error": "Error updating incident type",
+        "delete_success": "Incident type deleted successfully",
+        "delete_error": "Error deleting incident type",
+        "delete_confirm": "Delete incident type",
+        "delete_ask": "Are you sure you want to delete this incident type?",
+        "not_found": "Incident type not found"
+      }
+    },
+    "agencies": {
+      "addButton": "New Agency",
+      "table": {
+        "code": "Code",
+        "name": "Name",
+        "address": "Address",
+        "status": "Status",
+        "headOfAgency": "Head of Agency",
+        "actions": "Actions"
+      },
+      "modal": {
+        "createTitle": "New Agency",
+        "editTitle": "Edit Agency"
+      },
+      "page": {
+        "createTitle": "Create agency",
+        "editTitle": "Edit agency",
+        "detailsSubtitle": "Agency code: {{code}}"
+      },
+      "form": {
+        "labels": {
+          "code": "Code",
+          "city": "City",
+          "name": "Name",
+          "address": "Address",
+          "isActive": "Active",
+          "headOfAgency": "Head of Agency"
+        },
+        "placeholders": {
+          "code": "Generated automatically",
+          "city": "E.g.: Yaoundé",
+          "name": "E.g.: Central Agency",
+          "address": "E.g.: Mokolo market, Douala",
+          "headOfAgency": "Select an agency head"
+        },
+        "hints": {
+          "code": "The code is generated automatically after the agency is created."
+        },
+        "validation": {
+          "code_required": "Code is required",
+          "code_min": "Code must be at least 2 characters",
+          "code_max": "Code cannot exceed 20 characters",
+          "city_required": "City is required",
+          "city_max": "City cannot exceed 100 characters",
+          "name_required": "Name is required",
+          "name_min": "Name must be at least 2 characters",
+          "name_max": "Name cannot exceed 100 characters",
+          "address_max": "Address cannot exceed 255 characters"
+        }
+      },
+      "messages": {
+        "create_success": "Agency created successfully",
+        "create_error": "Error creating agency",
+        "update_success": "Agency updated successfully",
+        "update_error": "Error updating agency",
+        "delete_success": "Agency deleted successfully",
+        "delete_error": "Error deleting agency",
+        "assign_head_success": "Agency head assigned successfully",
+        "delete_confirm": "Delete agency",
+        "delete_ask": "Are you sure you want to delete this agency?",
+        "not_found": "Agency not found"
+      },
+      "totalMembers": "Total members",
+      "headOfAgency": "Head of agency",
+      "noMembers": "No members in this agency",
+      "members": "Members list"
+    },
+    "services": {
+      "addButton": "New Service",
+      "table": {
+        "name": "Name",
+        "description": "Description",
+        "status": "Status",
+        "headOfService": "Head of Service",
+        "actions": "Actions"
+      },
+      "modal": {
+        "createTitle": "New Service",
+        "editTitle": "Edit Service"
+      },
+      "page": {
+        "createTitle": "Create service",
+        "editTitle": "Edit service",
+        "detailsSubtitle": "Service: {{name}}"
+      },
+      "form": {
+        "labels": {
+          "name": "Name",
+          "description": "Description",
+          "isActive": "Active",
+          "headOfService": "Head of Service"
+        },
+        "placeholders": {
+          "name": "E.g.: IT Department",
+          "description": "Describe this service...",
+          "headOfService": "Select a service head"
+        },
+        "validation": {
+          "name_required": "Name is required",
+          "name_min": "Name must be at least 2 characters",
+          "name_max": "Name cannot exceed 100 characters",
+          "description_max": "Description cannot exceed 500 characters"
+        }
+      },
+      "messages": {
+        "create_success": "Service created successfully",
+        "create_error": "Error creating service",
+        "update_success": "Service updated successfully",
+        "update_error": "Error updating service",
+        "delete_success": "Service deleted successfully",
+        "delete_error": "Error deleting service",
+        "assign_head_success": "Service head assigned successfully",
+        "delete_confirm": "Delete service",
+        "delete_ask": "Are you sure you want to delete this service?",
+        "not_found": "Service not found"
+      },
+      "totalMembers": "Total members",
+      "headOfService": "Head of service",
+      "noMembers": "No members in this service",
+      "members": "Members list"
+    },
+    "roles": {
+      "addButton": "New Role",
+      "table": {
+        "name": "Name",
+        "description": "Description",
+        "isSystem": "System",
+        "permissions": "Permissions",
+        "permissionsCount": "Permissions",
+        "actions": "Actions"
+      },
+      "modal": {
+        "createTitle": "New Role",
+        "editTitle": "Edit Role"
+      },
+      "page": {
+        "createTitle": "Create role",
+        "editTitle": "Edit role"
+      },
+      "form": {
+        "labels": {
+          "name": "Technical name",
+          "display_name": "Display label",
+          "description": "Description",
+          "permissions": "Permissions"
+        },
+        "placeholders": {
+          "name": "E.g.: ROLE_MANAGER",
+          "display_name": "E.g.: Agency Manager",
+          "description": "Describe this role...",
+          "permissions": "Select permissions"
+        },
+        "validation": {
+          "name_required": "Name is required",
+          "name_min": "Name must be at least 2 characters",
+          "name_max": "Name cannot exceed 100 characters",
+          "display_name_max": "Display label cannot exceed 100 characters",
+          "description_max": "Description cannot exceed 500 characters",
+          "permissions_required": "At least one permission is required"
+        }
+      },
+      "messages": {
+        "create_success": "Role created successfully",
+        "create_error": "Error creating role",
+        "update_success": "Role updated successfully",
+        "update_error": "Error updating role",
+        "delete_success": "Role deleted successfully",
+        "delete_error": "Error deleting role",
+        "delete_confirm": "Delete role",
+        "delete_ask": "Are you sure you want to delete this role?",
+        "not_found": "Role not found",
+        "system_role_edit_notice": "System role identity is protected. You can only update its assignable permissions.",
+        "system_role_tooltip": "System roles cannot be deleted"
+      },
+      "sections": {
+        "identity": "Identity"
+      },
+      "assigned_users": "Assigned users",
+      "permissions_info": "Permissions grouped by domain.",
+      "custom_role_label": "Custom role",
+      "system": {
+        "yes": "Yes",
+        "no": "No",
+        "role_label": "System role"
+      }
+    },
+    "reportSchedules": {
+      "addButton": "New Report",
+      "table": {
+        "name": "Name",
+        "type": "Type",
+        "format": "Format",
+        "recipients": "Recipients",
+        "sendTime": "Scheduled Send Time",
+        "scope": "Scope",
+        "status": "Status",
+        "lastGeneratedAt": "Last Generated",
+        "actions": "Actions"
+      },
+      "modal": {
+        "createTitle": "New Automated Report",
+        "editTitle": "Edit Automated Report"
+      },
+      "page": {
+        "createTitle": "Create automated report",
+        "editTitle": "Edit automated report",
+        "createSubtitle": "Schedule a recurring export and define its recipients",
+        "editSubtitle": "Update the report cadence, format, and recipients",
+        "detailsSubtitle": "{{type}} report schedule"
+      },
+      "form": {
+        "labels": {
+          "name": "Name",
+          "type": "Type",
+          "format": "Format",
+          "recipientEmails": "Recipients",
+          "sendTime": "Send Time",
+          "weekDay": "Day of the week",
+          "scope": "Scope"
+        },
+        "placeholders": {
+          "name": "E.g.: Weekly Incident Report",
+          "type": "Select a report type",
+          "format": "Select a format",
+          "recipientEmails": "E.g.: admin@example.com, manager@example.com",
+          "sendTime": "Select send time",
+          "weekDay": "Select day",
+          "scope": "Select scope"
+        },
+        "validation": {
+          "name_required": "Name is required",
+          "name_min": "Name must be at least 2 characters",
+          "name_max": "Name cannot exceed 100 characters",
+          "type_required": "Report type is required",
+          "format_required": "Format is required",
+          "recipientEmails_required": "At least one recipient is required",
+          "recipientEmails_invalid": "Please enter valid email addresses",
+          "sendTime_required": "Send time is required",
+          "weekDay_required": "Day of the week is required",
+          "scope_required": "Scope is required"
+        }
+      },
+      "messages": {
+        "create_success": "Automated report created successfully",
+        "create_error": "Error creating automated report",
+        "update_success": "Automated report updated successfully",
+        "update_error": "Error updating automated report",
+        "delete_success": "Automated report deleted successfully",
+        "delete_error": "Error deleting automated report",
+        "delete_confirm": "Delete automated report",
+        "delete_ask": "Are you sure you want to delete this automated report?",
+        "not_found": "Automated report not found",
+        "toggle_success": "Report status updated successfully",
+        "toggle_error": "Error updating report status"
+      },
+      "sections": {
+        "recipients": "Recipients",
+        "noRecipients": "No recipient configured"
+      },
+      "details": {
+        "metadata": "Schedule and technical information",
+        "createdBy": "Created by",
+        "identifier": "Identifier",
+        "createdAt": "Created at",
+        "updatedAt": "Updated at"
+      },
+      "reportType": {
+        "DAILY": "Daily",
+        "WEEKLY": "Weekly",
+        "MONTHLY": "Monthly",
+        "CUSTOM": "Custom"
+      },
+      "reportFormat": {
+        "PDF": "PDF",
+        "EXCEL": "Excel",
+        "JSON": "JSON"
+      }
+    },
+    "common": {
+      "yes": "Yes",
+      "no": "No",
+      "noData": "No data",
+      "loading": "Loading...",
+      "confirmDelete": "Are you sure you want to delete this item?"
+    }
+  }
+}

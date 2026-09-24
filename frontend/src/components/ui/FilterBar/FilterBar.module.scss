@@ -1,0 +1,17 @@
+/* Styles frontend : organise l'affichage de filter bar. */
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  overflow-x: auto;
+  padding: var(--spacing-sm) 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background-color: var(--primary-red);
+  margin-left: var(--spacing-xs);
+}

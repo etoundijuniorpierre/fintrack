@@ -1,0 +1,19 @@
+/* Styles frontend : organise l'affichage de icon only control. */
+
+.label {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-lg);
+}
+
+.button {
+  width: 32px;
+  min-width: 32px;
+  padding-inline: 0 !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+}

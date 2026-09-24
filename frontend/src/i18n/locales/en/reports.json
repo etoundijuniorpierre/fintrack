@@ -1,0 +1,221 @@
+{
+  "reports": {
+    "pageTitle": "Reports",
+    "pageSubtitle": "View existing reports and generate filtered exports",
+    "sections": {
+      "existing": "Existing reports",
+      "generate": "Generate a new report"
+    },
+    "table": {
+      "name": "Report name",
+      "type": "Type",
+      "contentType": "Content",
+      "generationType": "Generation",
+      "period": "Period",
+      "format": "Format",
+      "recipients": "Recipients",
+      "status": "Status",
+      "generatedAt": "Generated at",
+      "lastGeneratedAt": "Last generated",
+      "actions": "Actions"
+    },
+    "filters": {
+      "search": "Search reports",
+      "type": "Filter by type",
+      "format": "Filter by format",
+      "status": "Filter by status",
+      "scope": "Filter by scope"
+    },
+    "generationType": {
+      "MANUAL": "Manual",
+      "AUTOMATIC": "Automatic"
+    },
+    "contentType": {
+      "OPERATIONAL": "Operational report",
+      "INCIDENT_TYPE_ANALYSIS": "Incident type analysis",
+      "INCIDENT_STATUS_OVERVIEW": "Status overview"
+    },
+    "form": {
+      "contentType": "Report content",
+      "contentTypePlaceholder": "Select the content",
+      "name": "Report name",
+      "namePlaceholder": "Enter report name",
+      "type": "Report type",
+      "typePlaceholder": "Select the type",
+      "format": "Format",
+      "formatPlaceholder": "Select the format",
+      "period": "Period",
+      "scope": "Scope",
+      "scopePlaceholder": "Select the scope",
+      "agency": "Agency",
+      "agencyPlaceholder": "Select an agency",
+      "service": "Service",
+      "servicePlaceholder": "Select a service",
+      "metrics": "Metrics to include",
+      "subjectUser": "Target user",
+      "subjectUserPlaceholder": "Optionally filter by user",
+      "send_email": "Send by email",
+      "recipients": "Recipients",
+      "recipients_placeholder": "Add email addresses...",
+      "recipientEmails": "Email addresses",
+      "recipientEmailsPlaceholder": "Add email addresses..."
+    },
+    "validation": {
+      "contentTypeRequired": "Report content is required",
+      "nameRequired": "Name is required",
+      "nameMaxLength": "Name cannot exceed 100 characters",
+      "typeRequired": "Type is required",
+      "formatRequired": "Format is required",
+      "periodRequired": "Period is required",
+      "scopeRequired": "Scope is required"
+    },
+    "metrics": {
+      "synthesis": "Volume and Current Stock",
+      "synthesis_help": "Includes total volume handled, inflow/outflow, and the current stock (open and blocked incidents).",
+      "distributions": "Detailed Breakdown",
+      "distributions_help": "Visual breakdown of incidents by type, status, and criticality level.",
+      "performance": "Lead times and deadline compliance",
+      "performance_help": "Analyzes resolution times and deadline compliance, and provides rankings for services, origin agencies, and resolvers.",
+      "trends": "Monthly Trends",
+      "trends_help": "Shows the evolution of incident volume and average resolution times over the months.",
+      "openIncidents": "Open incidents",
+      "pendingIncidents": "Pending incidents",
+      "resolvedIncidents": "Resolved incidents",
+      "totalIncidents": "Total incidents",
+      "activeIncidents": "Active incidents",
+      "closedIncidents": "Closed incidents",
+      "rejectedIncidents": "Rejected incidents",
+      "cancelledIncidents": "Cancelled incidents",
+      "avgClosureHours": "Average closure time",
+      "medianClosureHours": "Median closure time",
+      "p90ClosureHours": "P90 closure time",
+      "closureSampleSize": "Closures measured",
+      "resolutionSampleSize": "Resolutions measured",
+      "avgNetClosureHours": "Average net closure time (waiting excluded)",
+      "medianNetClosureHours": "Median net closure time (waiting excluded)",
+      "avgResolutionHours": "Average resolution time",
+      "medianResolutionHours": "Median resolution time",
+      "p90ResolutionHours": "P90 resolution time",
+      "slaComplianceRate": "Deadline compliance",
+      "distributionByType": "Distribution by type",
+      "distributionByCriticality": "Distribution by criticality",
+      "assignedToMe": "Assigned to me",
+      "transferredByMe": "Transferred by me",
+      "closedByMe": "Closed by me",
+      "recentActivities": "Last activities",
+      "monthlyResolutions": "Monthly resolutions",
+      "monthlyAvgClosureHours": "Monthly average closure time",
+      "closureHoursByType": "Average closure time by type",
+      "closureHoursByCriticality": "Average closure time by criticality",
+      "topServices": "Service ranking",
+      "topAgencies": "Origin agency ranking",
+      "topResolvers": "Users who resolved closed incidents ranking"
+    },
+    "buttons": {
+      "add": "New report",
+      "generate": "Generate report",
+      "view": "View",
+      "download": "Download",
+      "send_email": "Send by email",
+      "save": "Save",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "retry": "Retry"
+    },
+    "modal": {
+      "createTitle": "New report",
+      "editTitle": "Edit report",
+      "generate_title": "Generate a new report"
+    },
+    "detail": {
+      "title": "Report details",
+      "fileSize": "File size",
+      "createdBy": "Initiator",
+      "scope": "Scope",
+      "incidentsCount": "Included incidents",
+      "generalInfo": "Report information",
+      "metrics": "Summary",
+      "incidents": "Report incidents"
+    },
+    "emailModal": {
+      "title": "Send report by email",
+      "confirm": "Send",
+      "recipients": "Recipients",
+      "recipientsPlaceholder": "Add one or more email addresses",
+      "recipientsRequired": "Add at least one email address",
+      "recipientsInvalid": "One or more email addresses are invalid",
+      "description": "The report {{name}} will be sent to the listed recipients."
+    },
+    "incidents": {
+      "columns": {
+        "incident": "Incident",
+        "creator": "Creator",
+        "assignment": "Assignment",
+        "status": "Status / criticality",
+        "dates": "Dates"
+      },
+      "fields": {
+        "type": "Type",
+        "agency": "Agency",
+        "cause": "Cause",
+        "description": "Description"
+      }
+    },
+    "empty": {
+      "title": "No report found",
+      "description": "Generate a report or adjust the filters."
+    },
+    "messages": {
+      "generateStarted": "Report generation started",
+      "deleteSuccess": "Report deleted successfully",
+      "deleteConfirm": "Delete report",
+      "deleteAsk": "Are you sure you want to delete this report? This action cannot be undone.",
+      "email_sent": "Report sent by email",
+      "email_error": "Error sending the report by email",
+      "retryStarted": "Report retry in progress…"
+    },
+    "errors": {
+      "loadFailed": "Failed to load reports",
+      "createFailed": "Failed to create report",
+      "updateFailed": "Failed to update report",
+      "deleteFailed": "Failed to delete report",
+      "downloadFailed": "Failed to download report",
+      "generateFailed": "Failed to start report generation",
+      "retryFailed": "Report retry failed."
+    },
+    "scope": {
+      "own": "My reports",
+      "agency": "My agency",
+      "service": "My service",
+      "byAgency": "Reports by agency",
+      "byService": "Reports by service",
+      "byUser": "Reports by user",
+      "all": "All reports"
+    },
+    "reportType": {
+      "DAILY": "Daily",
+      "WEEKLY": "Weekly",
+      "MONTHLY": "Monthly",
+      "CUSTOM": "Custom"
+    },
+    "reportFormat": {
+      "PDF": "PDF",
+      "EXCEL": "Excel",
+      "JSON": "JSON"
+    },
+    "status": {
+      "PENDING": "Pending",
+      "GENERATING": "Generating",
+      "AVAILABLE": "Available",
+      "FAILED": "Failed",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "email": {
+      "subject": "Report {{type}} generated",
+      "message": "Your report is ready to be viewed.",
+      "cta": "View report"
+    }
+  }
+}

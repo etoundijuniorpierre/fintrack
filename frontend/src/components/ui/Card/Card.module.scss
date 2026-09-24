@@ -1,0 +1,53 @@
+/* Styles frontend : organise l'affichage de carte. */
+
+.card {
+  border-radius: var(--radius-sm);
+  box-shadow: 0 14px 34px -30px rgba(15, 23, 42, 0.55);
+  border: 1px solid var(--grey-200);
+  background: var(--grey-50);
+  overflow: visible;
+  transition:
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+  position: relative;
+
+  :global([data-theme="dark"]) & {
+    box-shadow: 0 14px 34px -30px rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 255, 255, 0.1);
+    background: var(--grey-50);
+  }
+
+  :global(.ant-card-head) {
+    min-height: var(--card-head-height);
+    border-bottom: 1px solid var(--grey-200);
+    background: transparent;
+  }
+
+  :global(.ant-card-head-title) {
+    color: var(--text-primary);
+    font-weight: var(--weight-semibold);
+  }
+
+  :global(.ant-card-body) {
+    color: var(--text-primary);
+    overflow: hidden;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  }
+}
+
+.card:global(.ant-card-hoverable):hover {
+  border-color: var(--color-primary-border);
+  box-shadow: 0 18px 40px -28px rgba(15, 23, 42, 0.42);
+  transform: translateY(-1px);
+
+  :global([data-theme="dark"]) & {
+    box-shadow: 0 18px 40px -28px rgba(0, 0, 0, 0.8);
+  }
+}
+
+.footer {
+  border-top: 1px solid var(--grey-200);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: transparent;
+}

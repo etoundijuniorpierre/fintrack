@@ -1,0 +1,524 @@
+{
+  "help": {
+    "title": "Centre d'aide",
+    "subtitle": "Le mode d'emploi complet de FinTrack",
+    "intro": {
+      "title": "Bienvenue dans FinTrack",
+      "tagline": "Suivi et traçabilité des incidents au sein des agences FINSTAR.",
+      "description": "FinTrack vous permet de déclarer un incident, de l'affecter au bon service, de suivre son évolution en temps réel et de garantir une traçabilité complète à des fins d'audit. L'outil produit également des rapports opérationnels sur les incidents et les utilisateurs selon votre périmètre d'accès.",
+      "audience": "Cette aide s'adresse à tous les profils : agents, chefs de service, chefs d'agence et administrateurs. Chaque section ci-dessous décrit le périmètre des actions disponibles selon votre rôle."
+    },
+    "sections": {
+      "my_access": {
+        "title": "Mon accès",
+        "intro": "Voici le rôle et les permissions associés à votre compte, et ce qu'ils vous autorisent à faire dans FinTrack.",
+        "roles_title": "Mes rôles",
+        "permissions_title": "Mes permissions",
+        "no_roles": "Aucun rôle n'est associé à votre compte. Contactez un administrateur.",
+        "no_permissions": "Aucune permission n'est associée à votre compte. Contactez un administrateur."
+      },
+      "workflow": {
+        "title": "Cycle de vie d'un incident",
+        "items": {
+          "creation": {
+            "title": "1. Création",
+            "body": "Toute personne disposant de la permission de création peut déclarer un incident. Son statut initial dépend de la configuration du type et de la permission permettant l'ouverture directe ; il peut donc être « En attente de validation » ou « Ouvert »."
+          },
+          "validation": {
+            "title": "2. Validation",
+            "body": "Lorsqu'une validation est requise, l'incident est examiné par le valideur prévu par sa configuration : Chef d'agence ou responsable du service cible. Il peut être validé ou rejeté avec un motif."
+          },
+          "transfer": {
+            "title": "3. Transfert",
+            "body": "L'incident est dirigé vers le service cible configuré pour son type ou choisi par un utilisateur autorisé. L'affectation à une personne dépend ensuite des règles du workflow et des permissions disponibles."
+          },
+          "treatment": {
+            "title": "4. Traitement",
+            "body": "Le responsable prend l'incident en charge : il passe « En cours » pendant la recherche et l'application d'une solution."
+          },
+          "resolution": {
+            "title": "5. Résolution",
+            "body": "Une fois la solution appliquée, l'incident est marqué « Résolu » avec une note de résolution."
+          },
+          "closure": {
+            "title": "6. Clôture",
+            "body": "L'incident résolu est clôturé : il devient « Clôturé », terminé et archivé. Une description de résolution est obligatoire."
+          },
+          "reopen": {
+            "title": "7. Réouverture",
+            "body": "Un incident rejeté peut être rouvert pour correction. Un incident résolu reprend le traitement quand il est rouvert ; un incident clôturé doit être cloné."
+          }
+        }
+      },
+      "managing": {
+        "title": "Gérer les incidents",
+        "items": {
+          "viewAndFilter": {
+            "title": "Consulter et filtrer",
+            "body": "Basculez entre la vue Tableau et la vue Cartes selon votre préférence. Utilisez la barre de recherche et les filtres (type, statut, criticité, période) pour retrouver un incident précis, et les filtres rapides pour masquer les incidents clôturés/rejetés/annulés ou n'afficher que les incidents non assignés. Un administrateur peut aussi restreindre la liste à une agence ou un service donné."
+          },
+          "create": {
+            "title": "Créer un incident",
+            "body": "Page Incidents, bouton « Nouvel incident ». Renseignez au minimum le titre, la description, le type et la criticité. Votre compte doit être rattaché à une agence."
+          },
+          "edit": {
+            "title": "Modifier un incident",
+            "body": "Les incidents « Ouvert », « En attente de validation » ou « Rouverts » peuvent être modifiés lorsque votre permission et les règles du workflow l'autorisent."
+          },
+          "validate": {
+            "title": "Valider un incident",
+            "body": "Un utilisateur autorisé valide un incident dans le périmètre prévu par sa configuration. Le système vérifie la permission, l'agence et, si nécessaire, le service cible."
+          },
+          "reject": {
+            "title": "Rejeter un incident",
+            "body": "Un incident jugé non recevable est rejeté avec un motif obligatoire, consultable ensuite par le créateur."
+          },
+          "transfer": {
+            "title": "Transférer un incident",
+            "body": "Le transfert dirige l'incident vers le service responsable. Selon votre rôle, un motif de transfert peut être exigé."
+          },
+          "assign": {
+            "title": "Assigner un incident",
+            "body": "Un incident peut être affecté à un utilisateur précis chargé de son traitement."
+          },
+          "resolve": {
+            "title": "Résoudre un incident",
+            "body": "L'utilisateur en charge applique une solution et saisit une note de résolution."
+          },
+          "close": {
+            "title": "Clôturer un incident",
+            "body": "La clôture finalise l'incident. Une description de la résolution est obligatoire."
+          },
+          "reopen": {
+            "title": "Rouvrir un incident",
+            "body": "Les incidents rejetés peuvent être rouverts pour correction. Les incidents clôturés sont clonés au lieu d’être rouverts."
+          },
+          "delete": {
+            "title": "Supprimer un incident",
+            "body": "La suppression d'un incident est actuellement désactivée dans l'interface afin de préserver la traçabilité. Les incidents restent consultables selon vos permissions."
+          }
+        }
+      },
+      "incidentDetails": {
+        "title": "Fiche de l'incident",
+        "items": {
+          "overview": {
+            "title": "Vue d'ensemble",
+            "body": "La fiche rassemble le titre, la description, le type, la criticité, le statut, le périmètre, les responsables, les dates et les informations d'échéance visibles dans votre périmètre."
+          },
+          "attachments": {
+            "title": "Pièces jointes",
+            "body": "Les pièces jointes servent à documenter l'incident. Vérifiez leur contenu avant l'envoi et consultez-les depuis la fiche lorsque votre accès à l'incident l'autorise."
+          },
+          "comments": {
+            "title": "Commentaires et échanges",
+            "body": "Les utilisateurs autorisés peuvent ajouter des commentaires pour préciser l'analyse, demander une information ou suivre les décisions liées à l'incident."
+          },
+          "history": {
+            "title": "Historique",
+            "body": "L'historique conserve les changements de statut, validations, transferts, affectations et autres actions afin de rendre le traitement vérifiable."
+          },
+          "clone": {
+            "title": "Cloner un incident",
+            "body": "La clôture ne se modifie pas : pour traiter un nouveau cas similaire, un utilisateur disposant de la permission de création peut cloner l'incident et vérifier les données avant soumission."
+          }
+        }
+      },
+      "fields": {
+        "title": "Guide des champs (formulaire incident)",
+        "intro": "Explication de chaque champ du formulaire de création/modification d'incident.",
+        "required": "Obligatoire",
+        "optional": "Facultatif"
+      },
+      "types": {
+        "title": "Types d'incident",
+        "intro": "Les types d'incident définissent la catégorie du problème et déterminent généralement le service vers lequel il sera transféré. Voici les types actuellement configurés dans le système :",
+        "defaultService": "Service assigné par défaut",
+        "noDefaultService": "Aucun service imposé (choix à la création)",
+        "defaultUser": "Utilisateur cible par défaut",
+        "noDefaultUser": "Aucun utilisateur imposé",
+        "sla": "Délai de traitement",
+        "noSla": "Aucun délai configuré",
+        "validation": "Validation requise",
+        "validator": "Valideur",
+        "validatorScopes": {
+          "SOURCE_SERVICE_MANAGER": "Chef du service du déclarant (à défaut : Chef d'agence)",
+          "AGENCY_MANAGER": "Chef d'agence",
+          "TARGET_SERVICE_MANAGER": "Chef de service",
+          "ADMIN": "Administrateur"
+        },
+        "closer": "Peut clôturer",
+        "closerTypes": {
+          "CREATOR": "Créateur",
+          "ASSIGNEE": "Utilisateur assigné",
+          "BOTH": "Créateur ou utilisateur assigné"
+        },
+        "boolean": {
+          "yes": "Oui",
+          "no": "Non",
+          "enabled": "Activées",
+          "disabled": "Désactivées"
+        },
+        "causeAnalysis": "Analyse des causes requise",
+        "notifications": "Notifications email"
+      },
+      "causes": {
+        "title": "Causes d'incident",
+        "intro": "Lors de la résolution d'un incident, vous devez catégoriser sa cause fondamentale. Voici les définitions :"
+      },
+      "statuses": {
+        "title": "Statuts des incidents",
+        "intro": "Les statuts ci-dessous proviennent directement du système et reflètent l'étape de chaque incident."
+      },
+      "criticality": {
+        "title": "Niveaux de criticité",
+        "intro": "La criticité indique l'urgence et l'impact d'un incident."
+      },
+      "roles": {
+        "title": "Rôles & permissions",
+        "intro": "La liste des rôles est tirée du système : tout rôle ajouté par un administrateur apparaît ici automatiquement."
+      },
+      "dashboard": {
+        "title": "Tableau de bord",
+        "items": {
+          "overview": {
+            "title": "Vue d'ensemble",
+            "body": "Le tableau de bord offre une vue synthétique et à jour de l'activité des incidents : compteurs clés, répartition par type et par criticité, classements et tendances d'évolution. C'est votre point d'entrée pour piloter l'activité d'un coup d'œil."
+          },
+          "kpis": {
+            "title": "Indicateurs clés",
+            "body": "Les indicateurs (incidents ouverts, en attente, résolus, clôturés, total…) résument l'état courant. Chaque valeur est comparée à la période précédente, avec une variation qui signale immédiatement une amélioration ou une dégradation."
+          },
+          "period": {
+            "title": "Sélection de période",
+            "body": "Le sélecteur de période (aujourd'hui, 7 jours, 30 jours, ce mois, plage personnalisée…) recalcule l'ensemble des statistiques sur l'intervalle choisi, pour analyser une tendance ou un moment précis."
+          },
+          "scope": {
+            "title": "Périmètre",
+            "body": "Toutes les données sont limitées à votre périmètre d'autorisation : vos incidents, ceux de votre service, de votre agence ou de tout le système. Un administrateur peut en plus filtrer par agence, service ou utilisateur précis."
+          },
+          "stockFlow": {
+            "title": "Stock et flux",
+            "body": "Les indicateurs de stock décrivent la situation actuelle, tandis que les indicateurs de flux comptent les actions réalisées pendant la période sélectionnée. La période affichée doit toujours être lue avec le périmètre choisi."
+          },
+          "configPanel": {
+            "title": "Configuration",
+            "body": "Le panneau de configuration (icône de réglages) personnalise votre tableau de bord : afficher ou masquer des widgets et réordonner leur disposition. Vos préférences sont mémorisées pour vos prochaines visites."
+          }
+        }
+      },
+      "notifications": {
+        "title": "Notifications",
+        "items": {
+          "what": {
+            "title": "Ce que vous recevez",
+            "body": "Vous êtes notifié des incidents que vous avez créés, de ceux qui vous sont assignés et des changements de statut de votre périmètre."
+          },
+          "channels": {
+            "title": "Canaux",
+            "body": "Les notifications apparaissent dans l'application et peuvent être envoyées par email. Une notification système du navigateur est proposée si elle est autorisée."
+          },
+          "browser": {
+            "title": "Notifications navigateur",
+            "body": "Pour recevoir les alertes même lorsque FinTrack n'est pas au premier plan, utilisez Chrome de préférence et autorisez les notifications pour l'adresse de FinTrack dans les paramètres du navigateur."
+          },
+          "when": {
+            "title": "Quand",
+            "body": "Les destinataires dépendent de l'événement et des permissions : créateur, utilisateur assigné, valideur, responsables concernés et administrateurs peuvent être informés. Un clic sur la notification ouvre l'élément concerné lorsqu'il est encore accessible."
+          }
+        }
+      },
+      "reports": {
+        "title": "Rapports",
+        "items": {
+          "generate": {
+            "title": "Générer un rapport",
+            "body": "Produisez un rapport d'incidents sur une période et un périmètre donnés."
+          },
+          "schedule": {
+            "title": "Planifier un rapport",
+            "body": "Programmez la génération automatique et récurrente de rapports. L'heure d'envoi suit le fuseau horaire configuré par l'environnement du système."
+          },
+          "formats": {
+            "title": "Formats & export",
+            "body": "Les rapports peuvent être exportés et, si activé, envoyés par email aux destinataires."
+          },
+          "email": {
+            "title": "Envoi par email",
+            "body": "L'envoi par email est disponible uniquement avec la permission correspondante et une configuration email valide. Vérifiez les destinataires avant de lancer l'envoi."
+          },
+          "delete": {
+            "title": "Suppression d'un rapport",
+            "body": "Les rapports peuvent être supprimés uniquement si votre permission le permet. Cette action concerne le rapport généré, pas les incidents qui ont servi à le produire."
+          },
+          "scope": {
+            "title": "Périmètre",
+            "body": "Le contenu d'un rapport est limité à votre périmètre d'accès (vos incidents, service, agence ou tout le système)."
+          }
+        }
+      },
+      "profile": {
+        "title": "Mon profil",
+        "items": {
+          "info": {
+            "title": "Mes informations",
+            "body": "Consultez et mettez à jour vos informations personnelles : nom, email, téléphone."
+          },
+          "password": {
+            "title": "Mot de passe",
+            "body": "À la première connexion, le mot de passe temporaire doit être changé. Vous pouvez ensuite le modifier à tout moment."
+          },
+          "rolesPermissions": {
+            "title": "Rôles & permissions",
+            "body": "Votre profil affiche vos rôles et permissions. Les écrans et rubriques disponibles dans FinTrack dépendent des permissions effectives, et non du seul intitulé du rôle."
+          }
+        }
+      },
+      "settings": {
+        "title": "Paramètres (administration)",
+        "items": {
+          "incidentTypes": {
+            "title": "Types d'incident",
+            "body": "Définissez les types d'incident, leur délai de traitement et leur service ou responsable cible par défaut."
+          },
+          "agencies": {
+            "title": "Agences",
+            "body": "Gérez les agences de l'organisation et leur responsable."
+          },
+          "services": {
+            "title": "Services",
+            "body": "Gérez les services internes des agences et leur chef de service."
+          },
+          "rolesPerm": {
+            "title": "Rôles & permissions",
+            "body": "Créez des rôles et ajustez les permissions accordées à chacun."
+          },
+          "reportSchedules": {
+            "title": "Planifications de rapports",
+            "body": "Consultez, créez et modifiez les planifications selon votre permission. Le périmètre, la période, le format, les destinataires et le fuseau horaire doivent être vérifiés avant activation."
+          },
+          "system": {
+            "title": "Système",
+            "body": "Accédez aux paramètres généraux et aux règles de transfert du système."
+          }
+        }
+      },
+      "users": {
+        "title": "Utilisateurs",
+        "items": {
+          "view": {
+            "title": "Consulter les utilisateurs",
+            "body": "La liste et les détails affichés dépendent de votre périmètre de consultation : service, agence ou ensemble des utilisateurs."
+          },
+          "create": {
+            "title": "Créer un utilisateur",
+            "body": "Vous ne voyez que les types de comptes que vos permissions vous autorisent à créer. L'agence, le service, le rôle et le statut doivent être vérifiés avant validation."
+          },
+          "permissions": {
+            "title": "Rôles et permissions",
+            "body": "L'affectation d'un rôle ou de permissions n'est proposée qu'aux utilisateurs autorisés. Un rôle personnalisé doit recevoir explicitement les permissions nécessaires à son activité."
+          },
+          "status": {
+            "title": "Statut et profil",
+            "body": "La modification du statut et des informations d'un utilisateur dépend des permissions de gestion disponibles dans votre périmètre."
+          }
+        }
+      },
+      "audit": {
+        "title": "Audit",
+        "items": {
+          "view": {
+            "title": "Journal d'audit",
+            "body": "Le journal présente les actions visibles dans votre périmètre. L'export reprend les informations disponibles, notamment l'auteur, l'action, la ressource, l'identifiant, l'adresse IP et le résultat."
+          }
+        }
+      },
+      "faq": {
+        "title": "Questions fréquentes",
+        "items": {
+          "selfAssign": {
+            "q": "Comment m'attribuer directement un incident ?",
+            "a": "Cochez « M'attribuer cet incident » dans le formulaire de création. Cette option reste toujours disponible et prime sur toute autre configuration : l'incident vous est attribué directement, sans transfert vers le service imposé par le type."
+          },
+          "targetService": {
+            "q": "Pourquoi le champ « Service cible » est-il parfois désactivé ?",
+            "a": "Il est désactivé quand le type d'incident impose déjà un service, ou quand vous avez coché « M'attribuer cet incident » — dans ce cas l'incident vous revient directement."
+          },
+          "autoFill": {
+            "q": "Pourquoi les champs « Agence » et « Service » sont-ils grisés à la création d'un utilisateur ?",
+            "a": "En tant que chef d'agence ou de service, vous ne pouvez créer des utilisateurs que dans votre propre périmètre. Ces champs sont donc pré-remplis automatiquement pour vous."
+          },
+          "notifications": {
+            "q": "Quand est-ce que je reçois des notifications ?",
+            "a": "À la création et à l'assignation d'un incident, ainsi qu'aux changements de statut de votre périmètre — dans l'application et, si une adresse email est configurée, par email."
+          },
+          "editIncident": {
+            "q": "Pourquoi ne puis-je plus modifier un incident ?",
+            "a": "Seuls les incidents « Ouvert » ou « En attente de validation » sont modifiables. Dès qu'un incident est validé ou traité, son contenu est figé."
+          },
+          "deletedAudit": {
+            "q": "Que devient un élément supprimé ?",
+            "a": "La suppression d'un incident est désactivée afin de préserver la traçabilité. Les rapports et les utilisateurs restent soumis à leurs permissions de gestion respectives."
+          },
+          "firstLogin": {
+            "q": "Pourquoi dois-je changer mon mot de passe à la première connexion ?",
+            "a": "Votre compte est créé avec un mot de passe temporaire. Pour des raisons de sécurité, vous devez définir votre propre mot de passe lors de la première connexion."
+          }
+        }
+      }
+    },
+    "fields": {
+      "title": {
+        "label": "Titre",
+        "help": "Résumé court et clair de l'incident (3 à 200 caractères)."
+      },
+      "description": {
+        "label": "Description",
+        "help": "Description détaillée du problème : contexte, symptômes, impact (jusqu'à 5000 caractères)."
+      },
+      "type": {
+        "label": "Type d'incident",
+        "help": "Catégorie de l'incident. Le type peut imposer un service cible ou un responsable et définir un délai de traitement."
+      },
+      "criticality": {
+        "label": "Criticité",
+        "help": "Niveau d'urgence et d'impact. Un incident critique notifie tous les administrateurs."
+      },
+      "dueDate": {
+        "label": "Date d'échéance",
+        "help": "Date limite de traitement. Elle est calculée automatiquement à partir du délai défini pour le type d'incident."
+      },
+      "incidentDate": {
+        "label": "Date de l'incident",
+        "help": "Date de survenance réelle de l'événement ; elle peut être antérieure à la création."
+      },
+      "observationDate": {
+        "label": "Date de constatation",
+        "help": "Date à laquelle l'incident a été constaté ; par défaut la date du jour."
+      },
+      "targetService": {
+        "label": "Service cible",
+        "help": "Service vers lequel diriger l'incident. Désactivé si le type impose un service ou si l'auto-attribution est cochée."
+      },
+      "assignToSelf": {
+        "label": "M'attribuer cet incident",
+        "help": "Vous attribue directement l'incident. Toujours disponible, cette option prime sur le routage imposé par le type."
+      },
+      "cause": {
+        "label": "Cause",
+        "help": "Cause principale de l'incident (facultatif à la création) : humaine, technique, externe, etc."
+      },
+      "causeDetail": {
+        "label": "Détail de la cause",
+        "help": "Précision sur la cause : personne responsable ou description détaillée selon la cause choisie."
+      },
+      "attachments": {
+        "label": "Pièces jointes",
+        "help": "Documents ou captures complétant l'incident. Ajoutés au formulaire, ils sont envoyés après la création."
+      }
+    },
+    "statuses_catalog": {
+      "DRAFT": "Le responsable de traitement a soumis une solution d'intervention à la Direction. L'incident attend son approbation avant la poursuite du traitement ; le délai continue de courir pendant cette attente.",
+      "OPEN": "L'incident vient d'être déclaré et attend d'être pris en charge. Aucune action de traitement n'a encore eu lieu : c'est le point de départ du cycle de vie.",
+      "PENDING_VALIDATION": "Déclaré par un agent, l'incident attend l'approbation d'un valideur (chef d'agence ou du service cible) avant de pouvoir avancer. Le valideur peut l'approuver ou le rejeter avec un motif.",
+      "VALIDATED": "L'incident a été approuvé : il est reconnu comme recevable et prêt à être orienté vers le service responsable.",
+      "TRANSFERRED": "L'incident a été dirigé vers le service compétent et attend d'y être assigné à un responsable de traitement.",
+      "ASSIGNED": "Un responsable précis a été désigné pour traiter l'incident, mais le traitement n'a pas encore démarré.",
+      "IN_PROGRESS": "Un responsable a pris l'incident en charge et travaille activement à sa résolution. C'est la phase de traitement suivie par l'échéance.",
+      "BLOCKED": "Le traitement est momentanément suspendu (dépendance, information manquante…). Le délai continue toutefois de courir.",
+      "RESOLVED": "Une solution a été appliquée et documentée par une note de résolution. L'incident attend une clôture officielle pour être définitivement terminé.",
+      "CLOSED": "L'incident est définitivement terminé et archivé, avec une synthèse de clôture. C'est un état final, non modifiable (une copie peut être créée si le problème réapparaît).",
+      "REOPENED": "Un incident précédemment rejeté a été rouvert pour correction et repart dans le circuit de traitement.",
+      "REJECTED": "L'incident a été jugé non recevable et refusé, avec un motif obligatoire consultable par le créateur. Il peut être rouvert pour correction.",
+      "UNRESOLVED_PROLONGED_WAIT": "L'incident est resté bloqué au-delà de la durée maximale configurée et nécessite une intervention ou un suivi renforcé. Il demeure non résolu, mais les rappels d'échéance standards sont suspendus dans cet état."
+    },
+    "criticality_catalog": {
+      "LOW": "Impact mineur et localisé. Le traitement suit le cours normal, sans urgence particulière.",
+      "MEDIUM": "Impact modéré sur l'activité. À traiter rapidement pour éviter que la situation ne s'aggrave.",
+      "HIGH": "Impact important : une partie de l'activité est perturbée. Une prise en charge prompte et prioritaire est attendue.",
+      "CRITICAL": "Impact sévère ou bloquant pour l'activité. Urgence absolue : tous les administrateurs sont notifiés immédiatement."
+    },
+    "causes_catalog": {
+      "HUMAN": "Erreur humaine : mauvaise manipulation, oubli, saisie incorrecte ou manque de formation. À choisir quand l'origine est l'action (ou l'inaction) d'une personne.",
+      "TECHNICAL": "Défaillance technique : panne matérielle, bug logiciel, indisponibilité du réseau ou d'un applicatif métier (CBS…).",
+      "ORGANIZATIONAL": "Cause organisationnelle : processus inadapté, mauvaise communication entre équipes ou manque de ressources.",
+      "ENVIRONMENTAL": "Cause environnementale : coupure de courant, incident climatique, température extrême ou tout facteur matériel externe au système d'information.",
+      "EXTERNAL": "Cause externe : défaillance d'un prestataire ou d'un partenaire, ou action malveillante (cyberattaque, fraude).",
+      "STRUCTURAL": "Cause structurelle : limite d'architecture, défaut de conception du système ou infrastructure sous-dimensionnée.",
+      "OTHER": "Cause ne relevant d'aucune catégorie ci-dessus. Une précision écrite de la cause est alors obligatoire."
+    },
+    "roles_catalog": {
+      "AGENT": "Crée des incidents et consulte les siens.",
+      "CHEF_SERVICE": "Traite, résout et clôture les incidents de son service.",
+      "CHEF_AGENCE": "Valide et transfère les incidents, gère les agents de son agence.",
+      "ADMIN": "Gestion complète du système, sauf agir sur un compte Super Admin.",
+      "SUPER_ADMIN": "Accès total ; seul le Super Admin peut agir sur son propre compte."
+    },
+    "permission_groups": {
+      "incident": "Incidents",
+      "user": "Utilisateurs",
+      "role": "Rôles",
+      "report": "Rapports",
+      "dashboard": "Tableau de bord",
+      "notification": "Notifications",
+      "settings": "Paramètres",
+      "audit": "Audit"
+    },
+    "permissions": {
+      "INCIDENT_CREATE": "Créer de nouveaux incidents.",
+      "INCIDENT_UPDATE": "Modifier un incident encore ouvert ou en attente de validation.",
+      "INCIDENT_REOPEN": "Rouvrir un incident rejeté ou résolu.",
+      "INCIDENT_VIEW_OWN": "Consulter les incidents que vous avez créés.",
+      "INCIDENT_VIEW_SERVICE": "Consulter les incidents de votre service.",
+      "INCIDENT_VIEW_AGENCY": "Consulter les incidents de votre agence.",
+      "INCIDENT_VIEW_ALL": "Consulter tous les incidents du système.",
+      "INCIDENT_VALIDATE": "Valider les incidents en attente.",
+      "INCIDENT_TRANSFER": "Transférer un incident vers un service.",
+      "INCIDENT_AUTO_TRANSFER": "Bénéficier du transfert automatique selon le type d'incident.",
+      "INCIDENT_TRANSFER_WITH_REASON": "Transférer un incident en fournissant un motif.",
+      "INCIDENT_TREAT": "Prendre en charge et traiter les incidents.",
+      "INCIDENT_RESOLVE": "Marquer un incident comme résolu.",
+      "INCIDENT_CLOSE": "Clôturer définitivement un incident.",
+      "INCIDENT_CANCEL": "Annuler un incident tant qu'aucun traitant n'est affecté.",
+      "INCIDENT_REJECT": "Rejeter un incident avec un motif.",
+      "INCIDENT_DELETE": "Supprimer un incident non encore traité.",
+      "REPORT_VIEW_OWN": "Consulter vos propres rapports.",
+      "REPORT_VIEW_SERVICE": "Consulter les rapports de votre service.",
+      "REPORT_VIEW_AGENCY": "Consulter les rapports de votre agence.",
+      "REPORT_VIEW_ALL": "Consulter tous les rapports.",
+      "REPORT_EXPORT": "Exporter des rapports.",
+      "REPORT_GENERATE": "Générer de nouveaux rapports.",
+      "REPORT_GENERATE_ALL_SCOPES": "Générer des rapports sans restriction de périmètre.",
+      "REPORT_SEND_EMAIL": "Envoyer des rapports par email.",
+      "REPORT_DELETE": "Supprimer des rapports.",
+      "DASHBOARD_CONFIGURE": "Configurer les widgets du tableau de bord.",
+      "NOTIFICATION_VIEW_OWN": "Consulter vos propres notifications.",
+      "NOTIFICATION_VIEW_ALL": "Consulter toutes les notifications.",
+      "NOTIFICATION_MANAGE": "Traiter manuellement les notifications techniques.",
+      "USER_CREATE_ALL_AGENT": "Créer des comptes agent dans tout périmètre.",
+      "USER_CREATE_AGENT_AGENCY": "Créer des comptes agent dans son agence.",
+      "USER_CREATE_AGENT_SERVICE": "Créer des comptes agent dans son service.",
+      "USER_CREATE_CHEF_SERVICE": "Créer des comptes chef de service.",
+      "USER_CREATE_CHEF_AGENCE": "Créer des comptes chef d'agence.",
+      "USER_CREATE_ADMIN": "Créer des comptes administrateur.",
+      "USER_UPDATE": "Modifier les comptes utilisateurs.",
+      "USER_UPDATE_AGENT": "Modifier les comptes agent.",
+      "USER_DELETE": "Supprimer des comptes utilisateurs.",
+      "USER_VIEW_SERVICE": "Consulter les utilisateurs de votre service.",
+      "USER_VIEW_AGENCY": "Consulter les utilisateurs de votre agence.",
+      "USER_VIEW_ALL": "Consulter tous les utilisateurs.",
+      "USER_MANAGE_PROFILE": "Consulter et modifier votre propre profil.",
+      "ROLE_CREATE": "Créer de nouveaux rôles.",
+      "ROLE_UPDATE": "Modifier les rôles existants.",
+      "ROLE_DELETE": "Supprimer des rôles.",
+      "ROLE_ASSIGN": "Attribuer des rôles et permissions aux utilisateurs.",
+      "SETTINGS_INCIDENT_TYPES": "Gérer les types d'incident.",
+      "SETTINGS_SYSTEM": "Accéder aux paramètres généraux du système.",
+      "AUDIT_VIEW": "Consulter le journal d'audit."
+    },
+    "support": {
+      "button": "Contacter un administrateur",
+      "modal_title": "Créer un ticket de support"
+    }
+  }
+}

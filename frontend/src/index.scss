@@ -1,0 +1,374 @@
+/* Styles frontend : organise l'affichage de src. */
+
+@use "./styles/tokens.scss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Valeurs par defaut de l'application. */
+  font-family: var(--font-main);
+  background-color: var(--grey-50);
+  color: var(--grey-900);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.ant-card {
+  transition:
+    transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.2s ease !important;
+}
+
+.ant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15) !important;
+}
+
+[data-theme="dark"] .ant-card:hover {
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.5) !important;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--grey-50);
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Typography Hierarchy */
+h1 {
+  font-size: var(--font-4xl);
+  font-weight: 800;
+  color: var(--grey-900);
+  margin-bottom: var(--spacing-md);
+  letter-spacing: 0;
+}
+h2 {
+  font-size: var(--font-3xl);
+  font-weight: 700;
+  color: var(--grey-900);
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: 0;
+}
+h3 {
+  font-size: var(--font-2xl);
+  font-weight: 600;
+  color: var(--grey-900);
+  margin-bottom: var(--spacing-xs);
+}
+
+p {
+  font-size: var(--font-lg);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--grey-600);
+}
+.text-secondary {
+  font-size: var(--font-base);
+  color: var(--grey-400);
+}
+.text-help {
+  font-size: var(--font-sm);
+  color: var(--grey-400);
+}
+
+/* Global Button Standardizations (Overriding Ant Design) */
+.ant-btn {
+  font-family: var(--font-main) !important;
+  border-radius: var(--radius-md) !important;
+  height: var(--button-height) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 600 !important;
+  transition: all var(--transition-normal) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Primary / Add / Save Buttons */
+.ant-btn-primary,
+.btn-primary {
+  background: var(--gradient-primary) !important;
+  border: none !important;
+  color: var(--text-on-brand) !important;
+  box-shadow: 0 4px 12px rgba(229, 57, 53, 0.25) !important;
+
+  &:hover:not(:disabled) {
+    filter: brightness(1.1) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(229, 57, 53, 0.35) !important;
+  }
+
+  &:active {
+    transform: scale(0.96) !important;
+  }
+}
+
+/* Boutons par defaut / annulation / secondaires */
+.ant-btn-default,
+.btn-secondary {
+  background-color: var(--white) !important;
+  border: 1px solid var(--grey-200) !important;
+  color: var(--grey-900) !important;
+
+  &:hover:not(:disabled) {
+    background-color: var(--grey-50) !important;
+    border-color: var(--grey-400) !important;
+    transform: translateY(-2px) !important;
+  }
+}
+
+/* Danger Buttons */
+.ant-btn-dangerous,
+.btn-danger {
+  background: var(--gradient-danger) !important;
+  border: none !important;
+  color: var(--text-on-brand) !important;
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.25) !important;
+
+  &:hover:not(:disabled) {
+    filter: brightness(1.1) !important;
+    transform: translateY(-2px) !important;
+  }
+}
+
+/* Ant Design Table Filter Dropdown Overrides */
+.ant-table-filter-dropdown {
+  border-radius: var(--radius-sm) !important;
+  box-shadow: var(--shadow-lg) !important;
+  background-color: var(--white) !important;
+  border: 1px solid var(--grey-200) !important;
+  overflow: hidden !important;
+
+  .ant-dropdown-menu {
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 4px 0 !important;
+  }
+
+  .ant-dropdown-menu-item {
+    font-size: var(--font-xs) !important;
+    padding: 6px 12px !important;
+
+    &:hover {
+      background-color: var(--grey-50) !important;
+    }
+  }
+}
+
+.ant-table-filter-dropdown-btns {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  padding: 8px 12px !important;
+  border-top: 1px solid var(--grey-200) !important;
+  background-color: var(--grey-50) !important;
+
+  /* Target small buttons in filter dropdown to override global .ant-btn rules */
+  .ant-btn-sm {
+    height: 28px !important; /* Force a compact height, overriding the global 42px */
+    min-width: 68px !important;
+    padding: 0 10px !important;
+    font-size: var(--font-xs) !important;
+    font-weight: 700 !important;
+    border-radius: var(--radius-xs) !important;
+    box-shadow: none !important;
+    transform: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all var(--transition-fast) !important;
+
+    /* Ensure text inside the button span behaves correctly and is visible */
+    span {
+      display: inline !important;
+      color: inherit !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+    }
+  }
+
+  .ant-btn-link {
+    color: var(--grey-600) !important;
+    background: transparent !important;
+    border: none !important;
+
+    &:hover:not(:disabled) {
+      color: var(--grey-900) !important;
+      background-color: var(--grey-200) !important;
+    }
+  }
+
+  .ant-btn-primary {
+    color: var(--text-on-brand) !important;
+    background: var(--gradient-primary) !important;
+    border: none !important;
+
+    &:hover:not(:disabled) {
+      filter: brightness(1.1) !important;
+      box-shadow: none !important;
+      transform: none !important;
+    }
+  }
+}
+
+/* Modern Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  text-transform: capitalize;
+}
+
+.badge-low {
+  background-color: var(--surface-success-bg);
+  color: var(--surface-success-text);
+  border: 1px solid var(--surface-success-border);
+}
+.badge-medium {
+  background-color: var(--surface-warning-bg);
+  color: var(--surface-warning-text);
+  border: 1px solid var(--surface-warning-border);
+}
+.badge-high {
+  background-color: var(--surface-danger-bg);
+  color: var(--surface-danger-text);
+  border: 1px solid var(--surface-danger-border);
+}
+.badge-critical {
+  background: var(--gradient-danger);
+  color: var(--text-on-brand);
+  box-shadow: 0 2px 8px rgba(244, 63, 94, 0.2);
+}
+
+/* Animation Utilities */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-entry {
+  animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* Dark mode scrollbar */
+[data-theme="dark"] {
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* High-Contrast Switch Toggler Styles (Light & Dark Modes) */
+.ant-switch {
+  background-color: #cbd5e1 !important;
+  border: 1px solid #94a3b8 !important;
+  transition: all 0.25s ease-in-out !important;
+
+  .ant-switch-handle::before {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25) !important;
+  }
+
+  &.ant-switch-checked {
+    background-color: #10b981 !important;
+    border-color: #059669 !important;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4) !important;
+
+    .ant-switch-handle::before {
+      background-color: #ffffff !important;
+    }
+  }
+}
+
+[data-theme="dark"] .ant-switch {
+  background-color: #334155 !important;
+  border: 1px solid #475569 !important;
+
+  .ant-switch-handle::before {
+    background-color: #94a3b8 !important;
+  }
+
+  &.ant-switch-checked {
+    background-color: #10b981 !important;
+    border-color: #34d399 !important;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5) !important;
+
+    .ant-switch-handle::before {
+      background-color: #ffffff !important;
+    }
+  }
+}
+
+/* Ant Design Table Alignment & Vertical Centering Overrides */
+.ant-table-wrapper {
+  .ant-table-thead > tr > th {
+    text-align: center !important;
+    vertical-align: middle !important;
+  }
+
+  .ant-table-tbody > tr > td {
+    text-align: center !important;
+    vertical-align: middle !important;
+  }
+
+  .ant-table-cell {
+    text-align: center !important;
+    vertical-align: middle !important;
+  }
+}
+

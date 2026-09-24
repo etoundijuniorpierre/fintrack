@@ -1,0 +1,45 @@
+/* Styles frontend : organise l'affichage de main layout. */
+
+.page {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mainArea {
+  background: var(--grey-50) !important;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  padding: var(--spacing-lg);
+  flex: 1;
+  overflow: auto;
+  position: relative;
+}
+
+.innerContent {
+  background: transparent;
+  min-height: 100%;
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.mobileDrawer {
+  :global(.ant-drawer-body) {
+    padding: 0 !important;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

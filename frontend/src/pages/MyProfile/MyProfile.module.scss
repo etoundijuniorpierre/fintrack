@@ -1,0 +1,87 @@
+/* Styles frontend : organise l'affichage de my profil. */
+
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  animation: fadeIn 0.4s ease-out;
+}
+
+.loadingWrapper {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-xl);
+}
+
+.pageTitle {
+  margin-bottom: var(--spacing-lg);
+
+  h2 {
+    margin: 0 !important;
+    font-weight: 700;
+    color: var(--black-track);
+  }
+}
+
+.sectionCard {
+  margin-bottom: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border: var(--border-light);
+
+  :global(.ant-card-head) {
+    border-bottom: var(--border-light);
+    padding: 0 var(--spacing-lg);
+
+    :global(.ant-card-head-title) {
+      font-weight: 600;
+      color: var(--black-track);
+    }
+  }
+
+  :global(.ant-card-body) {
+    padding: var(--spacing-lg);
+  }
+}
+
+.lastCard {
+  margin-bottom: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border: var(--border-light);
+
+  :global(.ant-card-head) {
+    border-bottom: var(--border-light);
+    padding: 0 var(--spacing-lg);
+
+    :global(.ant-card-head-title) {
+      font-weight: 600;
+      color: var(--black-track);
+    }
+  }
+
+  :global(.ant-card-body) {
+    padding: var(--spacing-lg);
+  }
+}
+
+.changePasswordBtn {
+  color: var(--primary-red);
+  border-color: var(--primary-red);
+
+  &:hover {
+    color: var(--primary-red-hover) !important;
+    border-color: var(--primary-red-hover) !important;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

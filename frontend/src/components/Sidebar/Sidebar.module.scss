@@ -1,0 +1,102 @@
+/* Styles frontend : organise l'affichage de navigation. */
+
+.sidebar {
+  background: var(--gradient-sidebar) !important;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
+  z-index: var(--z-sidebar);
+  // `min-height` (et non `height: 100vh`) : en flex, une hauteur fixe empeche le
+  // Sider de s'etirer a la hauteur reelle de sa colonne. Sur les pages plus
+  // hautes que l'ecran (creation, detail...), le bas de la colonne perdait alors
+  // le degrade. min-height laisse le flex-stretch couvrir toute la hauteur tout
+  // en garantissant au moins un plein ecran sur les pages courtes.
+  height: 100vh;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+  left: 0;
+  align-self: stretch;
+  transition: var(--transition-normal);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+
+  /* Masquer la scrollbar pour un design plus clean (Chrome/Safari) */
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+}
+
+.logoContainer {
+  height: var(--header-height);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // Marge interne : le logo respire et n'est jamais colle aux bords.
+  padding: var(--spacing-sm) var(--spacing-lg);
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  // `object-fit: contain` : le logo entier reste visible, sans rognage
+  // (contrairement a `cover` qui coupait le haut/bas du logo large).
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  transition: var(--transition-normal);
+}
+
+/* Sidebar repliee : le logo devient la marque icone, plus compacte et centree. */
+:global(.ant-layout-sider-collapsed) .logoContainer {
+  padding: var(--spacing-sm);
+}
+
+.menu {
+  background: transparent !important;
+  border: none !important;
+  margin-top: var(--spacing-md);
+  padding: 0 var(--spacing-sm);
+}
+
+:global(.ant-menu-item) {
+  height: 44px !important;
+  line-height: 44px !important;
+  margin: var(--spacing-xs) 0 !important;
+  width: 100% !important;
+  border-radius: var(--radius-md) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-weight: 500 !important;
+  transition: all var(--transition-normal) !important;
+}
+
+:global(.ant-menu-item:hover) {
+  color: var(--text-on-brand) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  transform: translateX(var(--spacing-xs));
+}
+
+:global(.ant-menu-item-selected) {
+  background: var(--gradient-sidebar-active) !important;
+  color: var(--text-on-brand) !important;
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.45);
+  font-weight: 600 !important;
+}
+
+:global(.ant-menu-item .anticon) {
+  font-size: var(--icon-md) !important;
+  transition: transform var(--transition-normal) !important;
+}
+
+:global(.ant-menu-item:hover .anticon) {
+  transform: scale(1.2) rotate(-5deg);
+}
+
+:global(.ant-menu-inline-collapsed .ant-menu-item) {
+  margin: var(--spacing-xs) 0 !important;
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+}

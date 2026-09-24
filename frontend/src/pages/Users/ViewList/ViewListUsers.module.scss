@@ -1,0 +1,53 @@
+/* Styles frontend : organise l'affichage de view liste utilisateurs. */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-mlg);
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.pageTitle {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.formCard {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: none;
+}
+
+:global(.ant-card-body) {
+  padding: var(--card-padding) !important;
+}
+
+.searchWrapper {
+  margin-bottom: var(--spacing-lg);
+}
+
+.filtersWrapper {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+}
+
+.searchInput {
+  flex: 2;
+  min-width: 250px;
+}
+
+.filterSelect {
+  flex: 1;
+  min-width: 180px;
+}

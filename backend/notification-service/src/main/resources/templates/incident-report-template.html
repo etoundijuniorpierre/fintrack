@@ -1,0 +1,65 @@
+<div style="font-family: Arial, sans-serif; background-color: #f6f8fb; padding: 24px;">
+  <div style="max-width: 760px; margin: auto; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden;">
+    <div style="padding: 24px 28px 18px 28px; border-bottom: 3px solid #caa22e;">
+      <div style="text-align: center;">
+        <img src="https://res.cloudinary.com/dfzilcxk8/image/upload/directus/ff1d6c83-7c60-4499-b7b8-d2bf47481dda.png"
+             alt="FINSTAR"
+             style="height: 64px; display: block; margin: 0 auto 10px auto;" />
+        <h2 style="margin: 0; color: #1f2937; font-size: 20px;">FINSTAR - Suivi d'incident FinTrack</h2>
+        <p style="margin: 6px 0 0 0; color: #64748b; font-size: 13px;">Notification automatique de traçabilité</p>
+      </div>
+    </div>
+
+    <div style="padding: 26px 28px;">
+      <p style="margin: 0 0 14px 0; color: #111827;">Bonjour <strong>{{name}} {{firstName}}</strong>,</p>
+
+      <p style="margin: 0 0 18px 0; color: #374151; line-height: 1.6;">
+        {{message}}
+      </p>
+
+      <div style="display: {{display_incident_details}}; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px 18px; margin-bottom: 20px;">
+        <p style="margin: 0 0 10px 0; color: #111827;">
+          <strong>Sujet :</strong>
+          <span style="color: {{subject_color}};">{{subject}}</span>
+        </p>
+        <p style="margin: 0 0 8px 0; color: #111827;"><strong>Référence :</strong> {{incident_reference}}</p>
+        <p style="margin: 0 0 8px 0; color: #111827;"><strong>Titre :</strong> {{incident_title}}</p>
+        <p style="margin: 0 0 8px 0; color: #111827;"><strong>Statut :</strong> {{incident_status}}</p>
+        <p style="margin: 0 0 8px 0; color: #111827;"><strong>Criticité :</strong> {{incident_criticality}}</p>
+        <p style="margin: 0 0 8px 0; color: #111827;"><strong>Type :</strong> {{incident_type}}</p>
+        <p style="margin: 0 0 8px 0; color: #111827;"><strong>Service concerné :</strong> {{incident_service}}</p>
+        <p style="margin: 0; color: #111827;"><strong>Agence :</strong> {{incident_agency}}</p>
+      </div>
+
+      <div style="display: {{display_action_details}}; border-left: 4px solid #ef4444; background: #fff7ed; padding: 14px 16px; border-radius: 6px; margin-bottom: 20px;">
+        <p style="margin: 0 0 8px 0; color: #111827;"><strong>Action :</strong> {{action_label}}</p>
+        <p style="margin: 0 0 8px 0; color: #111827;"><strong>Effectuée par :</strong> {{actor_name}}</p>
+        <p style="margin: 0; color: #111827;"><strong>Échéance :</strong> {{incident_due_date}}</p>
+      </div>
+
+      <div style="text-align: center; margin: 26px 0 8px 0; display: {{display_incident_details}};">
+        <a href="{{incident_url}}"
+           target="_blank"
+           style="display: inline-block; background: #ef4444; color: #ffffff; text-decoration: none; padding: 11px 18px; border-radius: 6px; font-weight: 700;">
+          {{cta_label}}
+        </a>
+      </div>
+
+      <p style="margin: 22px 0 0 0; color: #374151; line-height: 1.6;">
+        Merci de traiter cette notification selon le workflow FinTrack afin de conserver une traçabilité complète.
+      </p>
+
+      <p style="margin: 22px 0 0 0; color: #111827;">
+        Cordialement,<br />
+        <strong>L'équipe FINSTAR</strong>
+      </p>
+    </div>
+
+    <div style="background: #f9fafb; padding: 14px 28px; border-top: 1px solid #e5e7eb; text-align: center;">
+      <p style="margin: 0; font-size: 12px; color: #6b7280;">
+        {{date}} - FinTrack, gestion et traçabilité des incidents -
+        <a href="https://finstar-cm.com" target="_blank" style="color: #ef4444; text-decoration: none;">FINSTAR-CM</a>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+/* Styles frontend : organise l'affichage de rapport schedule formulaire page. */
+
+@use "../../../../../styles/formMixins" as form;
+
+.form {
+  margin-top: var(--spacing-md);
+  @include form.app-form;
+}
+
+.formCard {
+  @include form.form-card;
+}
+
+.sideCard {
+  @include form.form-card;
+}
+
+.formActionFooter {
+  @include form.form-action-footer;
+}
+
+.fullWidth {
+  width: 100%;
+}

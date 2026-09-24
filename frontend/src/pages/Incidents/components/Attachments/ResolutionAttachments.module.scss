@@ -1,0 +1,31 @@
+/* Styles : pièces jointes de traitement / résolution / clôture dans la section « Résolution ». */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.label {
+  font-size: var(--font-sm);
+  font-weight: var(--weight-medium);
+}
+
+/* Cycles antérieurs : conservés mais repliés, pour ne pas concurrencer le cycle courant. */
+.previousCycles {
+  :global(.ant-collapse-header) {
+    padding-inline: 0 !important;
+    font-size: var(--font-sm);
+  }
+
+  :global(.ant-collapse-content-box) {
+    padding-inline: 0 !important;
+  }
+}

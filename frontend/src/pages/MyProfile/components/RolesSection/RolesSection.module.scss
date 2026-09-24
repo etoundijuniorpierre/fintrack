@@ -1,0 +1,27 @@
+/* Styles frontend : organise l'affichage de roles section. */
+
+.rolesList {
+  width: 100%;
+
+  :global(.ant-list-item) {
+    padding: var(--spacing-smd) 0;
+    border-bottom: var(--border-light);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  :global(.ant-list-item-meta-title) {
+    font-weight: 600;
+    font-size: var(--font-base);
+    color: var(--black-track);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  :global(.ant-list-item-meta-description) {
+    font-size: var(--font-md);
+    color: var(--grey-medium);
+    line-height: 1.5;
+  }
+}

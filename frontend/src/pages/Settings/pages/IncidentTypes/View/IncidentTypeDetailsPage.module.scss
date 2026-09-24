@@ -1,0 +1,178 @@
+/* Styles frontend : organise l'affichage de incident type details page. */
+
+@use "../../../../../styles/formMixins" as form;
+
+.content {
+  padding: 0;
+}
+
+.detailsStack {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+/* Mode édition. */
+.editForm {
+  margin-top: var(--spacing-md);
+  @include form.app-form;
+}
+
+.editCard {
+  @include form.form-card;
+}
+
+.editSideCard {
+  @include form.form-card;
+
+  :global(.ant-card-body) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--spacing-xl);
+    row-gap: var(--spacing-md);
+  }
+
+  :global(.ant-divider-horizontal) {
+    grid-column: 1 / -1;
+  }
+}
+
+.fullWidthInput {
+  width: 100%;
+}
+
+.switchItemCard {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  padding: 14px 18px;
+  background-color: var(--grey-50, #f8fafc);
+  border: 1px solid var(--grey-200, #e2e8f0);
+  border-radius: var(--radius-md, 8px);
+  margin-bottom: var(--spacing-sm);
+  transition: all var(--transition-fast, 150ms ease);
+
+  &:hover {
+    background-color: var(--surface-primary, #ffffff);
+    border-color: var(--color-primary-light, #93c5fd);
+    box-shadow: var(--shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.05));
+  }
+}
+
+.switchTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.switchTitle {
+  font-weight: var(--weight-semibold, 600);
+  font-size: var(--font-md, 14px);
+  color: var(--text-primary, #0f172a);
+  line-height: 1.3;
+}
+
+.switchLabel {
+  font-weight: var(--weight-regular, 400);
+  font-size: var(--font-sm, 13px);
+  color: var(--text-secondary, #64748b);
+  line-height: 1.4;
+}
+
+.switchControl {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.formActionFooter {
+  @include form.form-action-footer;
+}
+
+/* Mode consultation. */
+.mainCard {
+  @include form.display-card;
+}
+
+.typeHeader {
+  @include form.entity-header;
+}
+
+.typeIcon {
+  @include form.entity-icon(var(--surface-amber-bg), var(--accent-amber));
+}
+
+.typeTitleInfo {
+  flex: 1;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+}
+
+.typeTitle {
+  margin: 0 !important;
+  font-weight: var(--weight-extrabold) !important;
+  color: var(--text-primary) !important;
+}
+
+.typeDescription {
+  margin: 0 !important;
+  font-size: var(--font-lg);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.sideCard {
+  @include form.display-card;
+}
+
+.sideTitle {
+  margin-bottom: var(--spacing-lg) !important;
+  font-weight: var(--weight-bold) !important;
+  color: var(--text-primary) !important;
+  font-size: var(--font-xl) !important;
+}
+
+.infoGrid {
+  @include form.info-grid;
+}
+
+.infoItem {
+  @include form.info-item;
+}
+
+.infoIcon {
+  @include form.info-item-icon;
+}
+
+.infoContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoLabel {
+  @include form.info-label;
+}
+
+.infoValue {
+  @include form.info-value;
+}
+
+@media (max-width: 768px) {
+  .editSideCard :global(.ant-card-body) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .editSideCard :global(.ant-divider-horizontal) {
+    grid-column: 1;
+  }
+}

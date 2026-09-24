@@ -1,0 +1,221 @@
+{
+  "reports": {
+    "pageTitle": "Rapports",
+    "pageSubtitle": "Consultez les rapports existants et générez des exports filtrés",
+    "sections": {
+      "existing": "Rapports existants",
+      "generate": "Générer un nouveau rapport"
+    },
+    "table": {
+      "name": "Nom du rapport",
+      "type": "Type",
+      "contentType": "Contenu",
+      "generationType": "Génération",
+      "period": "Période",
+      "format": "Format",
+      "recipients": "Destinataires",
+      "status": "Statut",
+      "generatedAt": "Généré le",
+      "lastGeneratedAt": "Dernière génération",
+      "actions": "Actions"
+    },
+    "filters": {
+      "search": "Rechercher un rapport",
+      "type": "Filtrer par type",
+      "format": "Filtrer par format",
+      "status": "Filtrer par statut",
+      "scope": "Filtrer par périmètre"
+    },
+    "generationType": {
+      "MANUAL": "Manuel",
+      "AUTOMATIC": "Automatique"
+    },
+    "contentType": {
+      "OPERATIONAL": "Rapport opérationnel",
+      "INCIDENT_TYPE_ANALYSIS": "Analyse par type d'incident",
+      "INCIDENT_STATUS_OVERVIEW": "Situation par statut"
+    },
+    "form": {
+      "contentType": "Contenu du rapport",
+      "contentTypePlaceholder": "Sélectionnez le contenu",
+      "name": "Nom du rapport",
+      "namePlaceholder": "Entrez le nom du rapport",
+      "type": "Type de rapport",
+      "typePlaceholder": "Sélectionnez le type",
+      "format": "Format",
+      "formatPlaceholder": "Sélectionnez le format",
+      "period": "Période",
+      "scope": "Périmètre",
+      "scopePlaceholder": "Sélectionnez le périmètre",
+      "agency": "Agence",
+      "agencyPlaceholder": "Sélectionnez une agence",
+      "service": "Service",
+      "servicePlaceholder": "Sélectionnez un service",
+      "metrics": "Métriques à inclure",
+      "send_email": "Envoyer par email",
+      "recipients": "Destinataires",
+      "recipients_placeholder": "Ajouter des adresses email...",
+      "recipientEmails": "Adresses email",
+      "recipientEmailsPlaceholder": "Ajouter des adresses email...",
+      "subjectUser": "Utilisateur ciblé",
+      "subjectUserPlaceholder": "Filtrer éventuellement par utilisateur"
+    },
+    "validation": {
+      "contentTypeRequired": "Le contenu du rapport est requis",
+      "nameRequired": "Le nom est requis",
+      "nameMaxLength": "Le nom ne peut pas dépasser 100 caractères",
+      "typeRequired": "Le type est requis",
+      "formatRequired": "Le format est requis",
+      "periodRequired": "La période est requise",
+      "scopeRequired": "Le périmètre est requis"
+    },
+    "metrics": {
+      "synthesis": "Volume et Stock actuel",
+      "synthesis_help": "Inclut le volume total traité, le flux (créés/clôturés) et le stock actuel (incidents en cours, bloqués).",
+      "distributions": "Ventilation détaillée",
+      "distributions_help": "Affiche la répartition visuelle des incidents par type, par statut et par niveau de criticité.",
+      "performance": "Délais et respect des échéances",
+      "performance_help": "Analyse les temps de résolution, le respect des échéances et présente les classements des services, des agences d'origine et des résolveurs.",
+      "trends": "Tendances mensuelles",
+      "trends_help": "Affiche l'évolution du volume et des délais moyens de résolution au fil des mois.",
+      "openIncidents": "Incidents ouverts",
+      "pendingIncidents": "Incidents en attente",
+      "resolvedIncidents": "Incidents résolus",
+      "totalIncidents": "Total des incidents",
+      "activeIncidents": "Incidents actifs",
+      "closedIncidents": "Incidents clôturés",
+      "rejectedIncidents": "Incidents rejetés",
+      "cancelledIncidents": "Incidents annulés",
+      "avgClosureHours": "Délai moyen de clôture",
+      "medianClosureHours": "Délai médian de clôture",
+      "p90ClosureHours": "Délai p90 de clôture",
+      "closureSampleSize": "Clôtures mesurées",
+      "resolutionSampleSize": "Résolutions mesurées",
+      "avgNetClosureHours": "Délai moyen de clôture net (hors attente)",
+      "medianNetClosureHours": "Délai médian de clôture net (hors attente)",
+      "avgResolutionHours": "Délai moyen de résolution",
+      "medianResolutionHours": "Délai médian de résolution",
+      "p90ResolutionHours": "Délai p90 de résolution",
+      "slaComplianceRate": "Respect des délais",
+      "distributionByType": "Répartition par type",
+      "distributionByCriticality": "Répartition par criticité",
+      "assignedToMe": "Assignés à moi",
+      "transferredByMe": "Transférés par moi",
+      "closedByMe": "Clôturés par moi",
+      "recentActivities": "Dernières activités",
+      "monthlyResolutions": "Résolutions mensuelles",
+      "monthlyAvgClosureHours": "Délai moyen de clôture mensuel",
+      "closureHoursByType": "Délai moyen de clôture par type",
+      "closureHoursByCriticality": "Délai moyen de clôture par criticité",
+      "topServices": "Classement des services",
+      "topAgencies": "Classement des agences d'origine",
+      "topResolvers": "Classement des utilisateurs ayant résolu les incidents clôturés"
+    },
+    "buttons": {
+      "add": "Nouveau rapport",
+      "generate": "Générer un rapport",
+      "view": "Visualiser",
+      "download": "Télécharger",
+      "send_email": "Envoyer par email",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "edit": "Modifier",
+      "delete": "Supprimer",
+      "retry": "Relancer"
+    },
+    "modal": {
+      "createTitle": "Nouveau rapport",
+      "editTitle": "Modifier le rapport",
+      "generate_title": "Générer un nouveau rapport"
+    },
+    "detail": {
+      "title": "Détails du rapport",
+      "fileSize": "Taille du fichier",
+      "createdBy": "Initiateur",
+      "scope": "Périmètre",
+      "incidentsCount": "Incidents inclus",
+      "generalInfo": "Informations du rapport",
+      "metrics": "Synthèse",
+      "incidents": "Incidents du rapport"
+    },
+    "emailModal": {
+      "title": "Envoyer le rapport par email",
+      "confirm": "Envoyer",
+      "recipients": "Destinataires",
+      "recipientsPlaceholder": "Ajouter une ou plusieurs adresses email",
+      "recipientsRequired": "Ajoutez au moins une adresse email",
+      "recipientsInvalid": "Une ou plusieurs adresses email sont invalides",
+      "description": "Le rapport {{name}} sera envoyé aux destinataires indiqués."
+    },
+    "incidents": {
+      "columns": {
+        "incident": "Incident",
+        "creator": "Créateur",
+        "assignment": "Assignation",
+        "status": "Statut / criticité",
+        "dates": "Dates"
+      },
+      "fields": {
+        "type": "Type",
+        "agency": "Agence",
+        "cause": "Cause",
+        "description": "Description"
+      }
+    },
+    "empty": {
+      "title": "Aucun rapport trouvé",
+      "description": "Générez un rapport ou ajustez les filtres."
+    },
+    "messages": {
+      "generateStarted": "Génération du rapport lancée",
+      "deleteSuccess": "Rapport supprimé avec succès",
+      "deleteConfirm": "Supprimer le rapport",
+      "deleteAsk": "Êtes-vous sûr de vouloir supprimer ce rapport ? Cette action est irréversible.",
+      "email_sent": "Rapport envoyé par email",
+      "email_error": "Erreur lors de l'envoi du rapport par email",
+      "retryStarted": "Relance du rapport en cours…"
+    },
+    "errors": {
+      "loadFailed": "Impossible de charger les rapports",
+      "createFailed": "Impossible de créer le rapport",
+      "updateFailed": "Impossible de mettre à jour le rapport",
+      "deleteFailed": "Impossible de supprimer le rapport",
+      "downloadFailed": "Impossible de télécharger le rapport",
+      "generateFailed": "Impossible de lancer la génération du rapport",
+      "retryFailed": "La relance du rapport a échoué."
+    },
+    "scope": {
+      "own": "Mes rapports",
+      "agency": "Mon agence",
+      "service": "Mon service",
+      "byAgency": "Rapports par agence",
+      "byService": "Rapports par service",
+      "byUser": "Rapports par utilisateur",
+      "all": "Tous les rapports"
+    },
+    "reportType": {
+      "DAILY": "Quotidien",
+      "WEEKLY": "Hebdomadaire",
+      "MONTHLY": "Mensuel",
+      "CUSTOM": "Personnalisé"
+    },
+    "reportFormat": {
+      "PDF": "PDF",
+      "EXCEL": "Excel",
+      "JSON": "JSON"
+    },
+    "status": {
+      "PENDING": "En attente",
+      "GENERATING": "En cours",
+      "AVAILABLE": "Disponible",
+      "FAILED": "Échec",
+      "active": "Actif",
+      "inactive": "Inactif"
+    },
+    "email": {
+      "subject": "Rapport {{type}} généré",
+      "message": "Votre rapport est prêt à être consulté.",
+      "cta": "Voir le rapport"
+    }
+  }
+}

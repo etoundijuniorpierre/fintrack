@@ -1,0 +1,69 @@
+{
+  "myProfile": {
+    "title": "Mon Profil",
+    "sections": {
+      "personal": "Informations Personnelles",
+      "affectation": "Rattachement",
+      "roles": "Mes Rôles",
+      "permissions": "Mes Permissions",
+      "avatar": "Photo de profil"
+    },
+    "buttons": {
+      "edit": "Modifier",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "change_password": "Changer le mot de passe",
+      "change_avatar": "Changer la photo"
+    },
+    "labels": {
+      "username": "Nom d'utilisateur",
+      "email": "Email",
+      "phone": "Téléphone",
+      "agency": "Agence",
+      "service": "Service",
+      "head_of_service": "Chef du service",
+      "none": "Non renseigné"
+    },
+    "validation": {
+      "email_invalid": "Format d'email invalide",
+      "email_subdomain_invalid": "L'adresse email renseignée n'est pas une adresse finstar",
+      "phone_invalid": "Numéro de téléphone invalide",
+      "username_required": "Le nom d'utilisateur est requis",
+      "password_min_length": "Le mot de passe doit contenir au moins 8 caractères",
+      "password_complexity": "Le mot de passe doit contenir au moins 8 caractères",
+      "password_mismatch": "Les mots de passe ne correspondent pas",
+      "avatar_image": "Sélectionnez une image",
+      "avatar_size": "L'image doit faire 2 Mo maximum"
+    },
+    "messages": {
+      "update_success": "Profil mis à jour avec succès",
+      "update_error": "Erreur lors de la mise à jour du profil",
+      "password_change_success": "Mot de passe modifié avec succès",
+      "password_change_error": "Erreur lors du changement de mot de passe",
+      "inactive_tooltip": "Votre compte est inactif — impossible de changer le mot de passe",
+      "no_roles": "Aucun rôle attribué",
+      "no_permissions": "Aucune permission attribuée",
+      "avatar_update_success": "Photo de profil mise à jour",
+      "avatar_update_error": "Erreur lors de la mise à jour de la photo",
+      "avatar_upload_error": "Impossible de téléverser la photo de profil"
+    },
+    "reauth": {
+      "title": "Confirmer l'identité",
+      "message": "Veuillez saisir votre mot de passe actuel pour continuer"
+    },
+    "new_password": {
+      "title": "Définir un nouveau mot de passe",
+      "new_password_label": "Nouveau mot de passe",
+      "confirm_password_label": "Confirmer le nouveau mot de passe"
+    },
+    "change_password": {
+      "title": "Changer le mot de passe",
+      "current_label": "Mot de passe actuel",
+      "current_required": "Le mot de passe actuel est requis",
+      "new_label": "Nouveau mot de passe",
+      "new_required": "Le nouveau mot de passe est requis",
+      "confirm_label": "Confirmer le nouveau mot de passe",
+      "confirm_required": "Veuillez confirmer votre nouveau mot de passe"
+    }
+  }
+}

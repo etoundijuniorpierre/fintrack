@@ -1,0 +1,125 @@
+/* Styles frontend : organise l'affichage de permission checklist. */
+
+.collapse {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+
+  :global(.ant-collapse-item) {
+    border-bottom: 1px solid var(--grey-light);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  :global(.ant-collapse-header) {
+    font-weight: 600;
+    padding: var(--spacing-smd) var(--spacing-md) !important;
+  }
+
+  :global(.ant-collapse-content-box) {
+    padding: var(--spacing-xs) var(--spacing-sm) var(--spacing-sm) !important;
+  }
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.groupTitle {
+  font-weight: 600;
+}
+
+.groupBadge {
+  :global(.ant-badge-count) {
+    background-color: var(--info);
+    font-size: var(--font-xs);
+    min-width: 18px;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 5px;
+  }
+}
+
+.groupSelectAll {
+  margin-left: auto;
+  font-weight: 400;
+
+  :global(.ant-checkbox-checked .ant-checkbox-inner) {
+    background-color: var(--info) !important;
+    border-color: var(--info) !important;
+  }
+}
+
+// Permission rows (unchanged styles)
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 6px;
+  padding: var(--spacing-xs) 0;
+}
+
+.row {
+  display: flex;
+  padding: var(--spacing-sm) var(--spacing-smd);
+  border: 1px solid var(--grey-200);
+  border-radius: var(--radius-sm);
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--grey-100);
+  }
+}
+
+.rowChecked {
+  background-color: var(--info-light);
+  border-color: var(--info);
+
+  &:hover {
+    background-color: var(--info-hover);
+  }
+}
+
+.rowUnchecked {
+  background-color: transparent;
+}
+
+.rowFromRole {
+  border-left: 3px solid var(--info);
+}
+
+.row :global(.ant-checkbox-wrapper) {
+  width: 100%;
+  align-items: flex-start;
+}
+
+.roleTag {
+  font-size: var(--font-xs);
+  font-style: italic;
+  margin-left: var(--spacing-xs);
+}
+
+.label {
+  font-weight: 500;
+  display: block;
+}
+
+.desc {
+  display: block;
+  font-size: var(--font-sm);
+  margin-top: var(--spacing-xs);
+  line-height: 1.4;
+}
+
+.loadingWrapper {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-md);
+}

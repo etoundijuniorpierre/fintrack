@@ -1,0 +1,9 @@
+/* Styles frontend : organise l'affichage de page loader. */
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  width: 100%;
+}

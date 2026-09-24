@@ -1,0 +1,89 @@
+/* Styles frontend : organise l'affichage de notification page. */
+
+.toolbar {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+.listContainer {
+  padding: 0 var(--spacing-md);
+  background: var(--bg-color);
+  min-height: 72px;
+}
+
+.listItem {
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--border-color-light, #f0f0f0);
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: var(--bg-hover);
+  }
+}
+
+.date {
+  color: var(--text-color-secondary);
+  font-size: var(--font-md);
+  flex-shrink: 0;
+  margin-left: var(--spacing-md);
+  white-space: nowrap;
+}
+
+.itemWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.checkboxWrapper {
+  margin-right: var(--spacing-md);
+}
+
+.itemContent {
+  flex: 1;
+  cursor: pointer;
+}
+
+.itemTitle {
+  margin-bottom: var(--spacing-xs);
+}
+
+.itemDescription {
+  color: var(--text-color-secondary);
+  line-height: 1.5;
+}
+
+.subjectPending {
+  font-weight: bold;
+}
+
+.subjectNormal {
+  font-weight: normal;
+}
+
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-md);
+  background: var(--bg-color);
+  border-top: 1px solid var(--border-color-light, #f0f0f0);
+}
+
+@media (max-width: 768px) {
+  .itemWrapper {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    row-gap: var(--spacing-sm);
+  }
+
+  .date {
+    width: 100%;
+    margin-left: 0;
+    padding-left: calc(var(--spacing-md) + 24px);
+  }
+}

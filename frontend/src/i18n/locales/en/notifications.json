@@ -1,0 +1,97 @@
+{
+  "notifications": {
+    "pageTitle": "Notifications",
+    "pageSubtitle": "View and manage system notifications",
+    "table": {
+      "type": "Type",
+      "recipient": "Recipient",
+      "subject": "Subject",
+      "incident": "Incident",
+      "status": "Status",
+      "sentAt": "Sent At",
+      "retryCount": "Retries",
+      "actions": "Actions"
+    },
+    "filters": {
+      "status": "Filter by status",
+      "type": "Filter by type",
+      "all_statuses": "All statuses",
+      "all_types": "All types"
+    },
+    "status": {
+      "PENDING": "Pending",
+      "SENT": "Sent",
+      "FAILED": "Failed",
+      "READ": "Read"
+    },
+    "type": {
+      "EMAIL": "Email",
+      "INTERNAL": "Internal"
+    },
+    "actions": {
+      "markSent": "Mark as sent",
+      "markFailed": "Mark as failed"
+    },
+    "detail": {
+      "title": "Notification Details",
+      "type": "Type",
+      "recipient": "Recipient",
+      "subject": "Subject",
+      "content": "Content",
+      "message": "Message",
+      "incident": "Associated Incident",
+      "agency": "Related agency",
+      "viewIncident": "View associated incident",
+      "status": "Status",
+      "date": "Date",
+      "sentAt": "Sent At",
+      "retryCount": "Retry Count",
+      "retryAt": "Next Retry",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "modifiedBy": "Modified By",
+      "concernedUsers": "Concerned users",
+      "userRoles": {
+        "recipient": "Recipient",
+        "creator": "Creator",
+        "assignee": "Assignee",
+        "sender": "Sender",
+        "user": "User"
+      }
+    },
+    "success": {
+      "markSent": "Notification marked as sent",
+      "markFailed": "Notification marked as failed",
+      "deleted": "Notification deleted"
+    },
+    "messages": {
+      "email_sent": "Notification resent by email",
+      "email_error": "Error sending notification",
+      "markAllReadSuccess": "Notifications marked as read",
+      "create_success": "Notification created successfully",
+      "delete_success": "Notification deleted successfully",
+      "bulk_delete_success": "Notifications deleted successfully"
+    },
+    "errors": {
+      "loadFailed": "Failed to load notifications",
+      "markSentFailed": "Failed to mark notification as sent",
+      "markFailedError": "Failed to mark notification as failed"
+    },
+    "close": "Close",
+    "noValue": "-",
+    "noIncident": "-",
+    "email": {
+      "cta": "View incident"
+    },
+    "desktop": {
+      "title": "FinTrack - New alert",
+      "defaultBody": "You have a new notification."
+    },
+    "selectAll": "Select all",
+    "markAllRead": "Mark all as read",
+    "deleteSelected": "Delete selected",
+    "defaultSubject": "Notification",
+    "empty": "No notifications",
+    "viewAll": "View all"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "myProfile": {
+    "title": "My Profile",
+    "sections": {
+      "personal": "Personal Information",
+      "affectation": "Assignment",
+      "roles": "My Roles",
+      "permissions": "My Permissions",
+      "avatar": "Profile picture"
+    },
+    "buttons": {
+      "edit": "Edit",
+      "save": "Save",
+      "cancel": "Cancel",
+      "change_password": "Change Password",
+      "change_avatar": "Change picture"
+    },
+    "labels": {
+      "username": "Username",
+      "email": "Email",
+      "phone": "Phone Number",
+      "agency": "Agency",
+      "service": "Service",
+      "head_of_service": "Head of service",
+      "none": "Not set"
+    },
+    "validation": {
+      "email_invalid": "Invalid email format",
+      "email_subdomain_invalid": "The email address entered is not a Finstar email address",
+      "phone_invalid": "Invalid phone number",
+      "username_required": "Username is required",
+      "password_min_length": "Minimum 8 characters",
+      "password_complexity": "Password must contain at least 8 characters",
+      "password_mismatch": "Passwords do not match",
+      "avatar_image": "Select an image file",
+      "avatar_size": "The image must be 2 MB or less"
+    },
+    "messages": {
+      "update_success": "Profile updated successfully",
+      "update_error": "Error updating profile",
+      "password_change_success": "Password changed successfully",
+      "password_change_error": "Error changing password",
+      "inactive_tooltip": "Your account is inactive — cannot change password",
+      "no_roles": "No roles assigned",
+      "no_permissions": "No permissions assigned",
+      "avatar_update_success": "Profile picture updated",
+      "avatar_update_error": "Error updating profile picture",
+      "avatar_upload_error": "Unable to upload profile picture"
+    },
+    "reauth": {
+      "title": "Confirm Identity",
+      "message": "Please enter your current password to continue"
+    },
+    "new_password": {
+      "title": "Set New Password",
+      "new_password_label": "New Password",
+      "confirm_password_label": "Confirm New Password"
+    },
+    "change_password": {
+      "title": "Change Password",
+      "current_label": "Current Password",
+      "current_required": "Current password is required",
+      "new_label": "New Password",
+      "new_required": "New password is required",
+      "confirm_label": "Confirm New Password",
+      "confirm_required": "Please confirm your new password"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+/* Styles frontend : organise l'affichage de incident formulaire. */
+
+@use "../../../../styles/formMixins" as form;
+
+.incidentForm {
+  @include form.app-form;
+}
+
+.sectionDivider {
+  @include form.section-divider;
+}
+
+.inputPrefix {
+  @include form.input-prefix;
+}
+
+.datePicker {
+  @include form.full-width-control;
+}
+
+.dividerMargin {
+  @include form.divider-margin;
+}
+
+.submitRow {
+  @include form.submit-row;
+}
+
+.formActionFooter {
+  @include form.form-action-footer;
+}
+
+/* Fichiers en attente : liste utilisée pendant la création. */
+.pendingFilesList {
+  margin-bottom: var(--spacing-sm);
+}
+
+.pendingFileIcon {
+  color: var(--text-muted);
+}
+
+.pendingFileSize {
+  font-size: var(--font-sm);
+}
+
+/* ── Alerte d'auto-attribution ── */
+.selfAssignAlert {
+  margin-top: var(--spacing-sm);
+}

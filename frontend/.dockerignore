@@ -1,0 +1,37 @@
+# ===== Dépendances et artefacts de build (réinstallés/regénérés dans l'image) =====
+# node_modules est critique : sans cette exclusion, COPY . . écraserait les
+# binaires Linux installés par `npm ci` avec ceux (potentiellement) de l'hôte.
+node_modules/
+dist/
+dist-ssr/
+
+# ===== Tests et couverture =====
+coverage/
+playwright-report/
+test-results/
+.nyc_output/
+
+# ===== Fichiers IDE / OS =====
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# ===== Logs =====
+*.log
+logs/
+
+# ===== Docker (non nécessaire au build de l'image) =====
+Dockerfile*
+.dockerignore
+
+# ===== Environnement local (les valeurs prod passent par build args) =====
+.env
+.env.*
+!.env.example
+
+# ===== Divers =====
+.git/
+.gitignore
+README.md

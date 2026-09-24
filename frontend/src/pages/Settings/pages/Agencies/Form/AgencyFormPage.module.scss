@@ -1,0 +1,36 @@
+/* Styles frontend : organise l'affichage de agence formulaire page. */
+
+@use "../../../../../styles/formMixins" as form;
+
+.form {
+  margin-top: var(--spacing-md);
+  @include form.app-form;
+}
+
+.formCard {
+  @include form.form-card;
+}
+
+.sideCard {
+  @include form.form-card;
+}
+
+.switchItem {
+  margin-bottom: 0 !important;
+}
+
+.switchWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xs);
+}
+
+.switchLabel {
+  font-weight: var(--weight-medium);
+  font-size: var(--font-base);
+}
+
+.formActionFooter {
+  @include form.form-action-footer;
+}

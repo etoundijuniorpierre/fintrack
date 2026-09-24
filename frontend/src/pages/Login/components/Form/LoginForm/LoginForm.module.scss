@@ -1,0 +1,324 @@
+/* Styles frontend : organise l'affichage de connexion formulaire. */
+
+.formWrapper {
+  // Largeur de colonne partagee : logo, alerte, champs et pied de page
+  // s'alignent sur la meme largeur et s'adaptent au contenu.
+  --login-form-width: 420px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 4vw, 5rem) clamp(1.5rem, 6vw, 8rem);
+  background: var(--white);
+  position: relative;
+  animation: fadeIn 0.5s ease both;
+  animation-delay: 0.15s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.header {
+  margin-top: -5rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.logo {
+  height: clamp(100px, 15vw, 200px);
+  width: auto;
+  max-width: 100%;
+  margin-bottom: 2.5rem;
+  display: block;
+  margin-inline: auto;
+  mix-blend-mode: multiply;
+  margin-left: 2.5rem;
+
+  :global([data-theme="dark"]) & {
+    filter: invert(1) hue-rotate(180deg) brightness(1.2);
+    mix-blend-mode: screen;
+  }
+}
+
+.title {
+  font-size: var(--font-4xl) !important;
+  font-weight: var(--weight-bold) !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 0.25rem !important;
+  line-height: 1.2 !important;
+}
+
+.subtitle {
+  font-size: var(--font-base);
+  color: var(--text-secondary);
+}
+
+.errorAlert {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  background: var(--surface-danger-bg);
+  border: 1px solid var(--surface-danger-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  color: var(--primary-red-active);
+  font-size: 0.875rem;
+  animation: slideDown var(--transition-normal);
+  width: 100%;
+  max-width: var(--login-form-width);
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.errorIcon {
+  font-size: 1rem;
+  color: var(--primary-red);
+  flex-shrink: 0;
+}
+
+.failedAttemptsCounter {
+  display: block;
+  width: 100%;
+  font-size: var(--font-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--primary-red-active);
+  margin-top: 0.25rem;
+  padding-left: 1.6rem;
+}
+
+.contactAdminWrapper {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding-left: 1.1rem;
+}
+
+.contactAdminLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  text-decoration: underline;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+
+  &:hover {
+    color: var(--text-on-brand);
+    background: var(--color-primary-hover);
+    text-decoration: none;
+  }
+}
+
+.contactAdminIcon {
+  font-size: 1.1rem;
+}
+
+.form {
+  width: 100%;
+  max-width: var(--login-form-width);
+  margin: 0 auto;
+}
+
+.inputIcon {
+  color: var(--grey-medium);
+}
+
+.input,
+:global(.ant-input-affix-wrapper) {
+  border-radius: var(--radius-md) !important;
+  font-size: var(--font-base) !important;
+  transition:
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal) !important;
+}
+
+:global(.ant-input-affix-wrapper:hover),
+:global(.ant-input-affix-wrapper-focused) {
+  border-color: var(--color-primary) !important;
+  box-shadow: var(--focus-shadow-primary) !important;
+}
+
+.submitItem {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0 !important;
+}
+
+.submitButton {
+  background: var(--gradient-primary) !important;
+  border: none !important;
+  border-radius: var(--radius-md) !important;
+  font-weight: var(--weight-semibold) !important;
+  font-size: var(--font-lg) !important;
+  height: 46px !important;
+  transition:
+    filter var(--transition-normal),
+    box-shadow var(--transition-normal),
+    transform var(--transition-fast) !important;
+}
+
+.submitButton:hover:not(:disabled) {
+  filter: brightness(1.1) !important;
+  box-shadow: 0 4px 16px rgba(229, 57, 53, 0.35) !important;
+  transform: translateY(-1px) !important;
+}
+
+.submitButton:active {
+  transform: translateY(0) !important;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--login-form-width);
+  text-align: center;
+}
+
+.footerText {
+  font-size: var(--font-sm);
+  color: var(--grey-medium);
+}
+
+@media (max-width: 1024px) {
+  .formWrapper {
+    padding: 3rem 3.5rem;
+  }
+  .form {
+    width: 80%;
+  }
+  .errorAlert {
+    width: 80%;
+  }
+  .footer {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .formWrapper {
+    padding: 4rem 1.5rem 2rem 1.5rem;
+    justify-content: flex-start;
+  }
+  .header {
+    margin-top: 2rem;
+  }
+  .form {
+    width: 90%;
+  }
+  .errorAlert {
+    width: 90%;
+  }
+  .logo {
+    height: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .footer {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin: 3rem auto 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .formWrapper {
+    padding: 4rem 1rem 1rem 1rem;
+  }
+  .form {
+    width: 100%;
+  }
+  .errorAlert {
+    width: 100%;
+  }
+  .logo {
+    height: 85px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 1410px) {
+  .footer {
+    position: relative;
+    bottom: 2rem;
+    left: auto;
+    transform: none;
+    margin: 2rem auto 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .formWrapper {
+    padding: 3rem 2.5rem;
+  }
+
+  .header {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .logo {
+    height: 140px;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin: 2rem auto 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 960px) {
+  .formWrapper {
+    padding: 2.5rem 1.5rem;
+    justify-content: flex-start;
+  }
+
+  .header {
+    margin-top: 2rem;
+  }
+
+  .logo {
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .form {
+    width: 90%;
+  }
+
+  .errorAlert {
+    width: 90%;
+  }
+}

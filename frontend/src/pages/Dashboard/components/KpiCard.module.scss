@@ -1,0 +1,210 @@
+/* Carte KPI : met en avant le chiffre avec un accent de ton sobre. */
+.card {
+  --kpi-bg: var(--white);
+  --kpi-border: var(--surface-info-border);
+  --kpi-accent: var(--surface-info-text);
+
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+  border: 1px solid var(--color-border, #e5e7eb) !important;
+  background: var(--kpi-bg) !important;
+  overflow: hidden;
+  position: relative;
+  min-height: 124px;
+  height: 100%;
+
+  // Filet d'accent a gauche : rappelle le ton sans saturer toute la carte.
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--kpi-accent);
+    opacity: 0.9;
+  }
+
+  :global(.ant-card-body) {
+    height: 100%;
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-md)
+      var(--spacing-mlg) !important;
+  }
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.danger {
+  --kpi-bg: var(--white);
+  --kpi-border: var(--surface-danger-border);
+  --kpi-accent: var(--surface-danger-text);
+}
+
+.warning {
+  --kpi-bg: var(--white);
+  --kpi-border: var(--surface-warning-border);
+  --kpi-accent: var(--surface-warning-text);
+}
+
+.success {
+  --kpi-bg: var(--white);
+  --kpi-border: var(--surface-success-border);
+  --kpi-accent: var(--surface-success-text);
+}
+
+.info {
+  --kpi-bg: var(--white);
+  --kpi-border: var(--surface-info-border);
+  --kpi-accent: var(--surface-info-text);
+}
+
+.neutral {
+  --kpi-bg: var(--white);
+  --kpi-border: var(--surface-neutral-border);
+  --kpi-accent: var(--surface-neutral-text);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  height: 100%;
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  // Puce d'icone : ton accent en aplat leger, derive de la couleur de surface.
+  background: color-mix(in srgb, var(--kpi-accent) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--kpi-accent) 24%, transparent);
+}
+
+.icon {
+  font-size: var(--icon-lg);
+  color: var(--kpi-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  display: block;
+  font-size: var(--font-xs) !important;
+  font-weight: var(--weight-semibold) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary) !important;
+  margin-bottom: 4px;
+  line-height: 1.3 !important;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
+}
+
+.valueText {
+  background-color: transparent !important;
+  max-width: 100%;
+
+  :global(.ant-statistic-content-value) {
+    font-size: var(--font-4xl) !important;
+    font-weight: var(--weight-extrabold) !important;
+    color: var(--kpi-accent) !important;
+    letter-spacing: 0;
+    line-height: 1.1 !important;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+}
+
+.subtitle {
+  display: block;
+  font-size: var(--font-xs) !important;
+  color: var(--text-muted) !important;
+  margin-top: 2px;
+}
+
+.trend {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-top: 6px;
+  background: color-mix(in srgb, var(--kpi-accent) 12%, transparent);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  width: fit-content;
+}
+
+.trendValue {
+  font-size: var(--font-xs) !important;
+  font-weight: var(--weight-bold) !important;
+  color: var(--kpi-accent) !important;
+}
+
+.trendLabel {
+  font-size: var(--font-xxs) !important;
+  color: var(--text-muted) !important;
+}
+
+@media (max-width: 575px) {
+  .card {
+    min-height: 104px;
+
+    :global(.ant-card-body) {
+      padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm)
+        var(--spacing-md) !important;
+    }
+  }
+
+  .content {
+    gap: var(--spacing-sm);
+  }
+
+  .iconWrapper {
+    width: 42px;
+    height: 42px;
+  }
+
+  .icon {
+    font-size: var(--icon-md);
+  }
+
+  .valueText {
+    :global(.ant-statistic-content-value) {
+      font-size: var(--font-3xl) !important;
+    }
+  }
+}
+
+/* Icone d'aide (ⓘ) a cote du titre : explique la metrique au survol. */
+.helpIcon {
+  margin-left: 6px;
+  font-size: 0.8em;
+  color: var(--text-tertiary, var(--text-secondary));
+  cursor: help;
+  vertical-align: middle;
+}

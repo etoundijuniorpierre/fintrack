@@ -1,0 +1,447 @@
+{
+  "settings": {
+    "pageTitle": "Paramètres",
+    "pageSubtitle": "Gérez les configurations du système",
+    "tabs": {
+      "incidentTypes": "Types d'incidents",
+      "agencies": "Agences",
+      "services": "Services",
+      "rolesPermissions": "Rôles & Permissions",
+      "reportSchedules": "Rapports automatiques"
+    },
+    "status": {
+      "active": "Actif",
+      "inactive": "Inactif"
+    },
+    "buttons": {
+      "new": "Nouveau",
+      "edit": "Modifier",
+      "delete": "Supprimer",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "confirm": "Confirmer"
+    },
+    "incidentTypes": {
+      "addButton": "Nouveau type",
+      "table": {
+        "name": "Nom technique",
+        "displayName": "Libellé affiché",
+        "slaHours": "Délai de traitement (heures)",
+        "status": "Statut",
+        "closerType": "Cloture",
+        "defaultTargetService": "Service cible par défaut",
+        "defaultTargetUser": "Utilisateur cible par défaut",
+        "actions": "Actions"
+      },
+      "modal": {
+        "createTitle": "Nouveau type d'incident",
+        "editTitle": "Modifier le type d'incident"
+      },
+      "page": {
+        "createTitle": "Créer un type d'incident",
+        "editTitle": "Modifier un type d'incident",
+        "createSubtitle": "Définissez le routage, le délai de traitement et le libellé d'une nouvelle catégorie",
+        "editSubtitle": "Mettez à jour le routage et la présentation de cette catégorie",
+        "detailsSubtitle": "Code technique : {{name}}"
+      },
+      "details": {
+        "directionValidators": "Validateurs de la Direction",
+        "metadata": "Informations techniques",
+        "identifier": "Identifiant",
+        "createdAt": "Créé le",
+        "updatedAt": "Mis à jour le",
+        "modifiedBy": "Modifié par"
+      },
+      "sections": {
+        "basicAndSla": "Informations générales & SLA",
+        "assignment": "Affectation par défaut",
+        "validation": "Règles de validation & workflow",
+        "actors": "Acteurs autorisés du workflow",
+        "statusAndNotifications": "Statut & Notifications"
+      },
+      "form": {
+        "labels": {
+          "name": "Nom technique",
+          "displayName": "Libellé affiché",
+          "description": "Description",
+          "slaHours": "Délai de traitement (heures)",
+          "defaultCriticality": "Criticité par défaut",
+          "defaultTargetService": "Service cible par défaut (transfert)",
+          "defaultTargetUser": "Utilisateur cible par défaut (transfert)",
+          "isActive": "Actif",
+          "requiresValidation": "Validation requise",
+          "requiresCauseAnalysis": "Analyse des causes requise",
+          "requiresDirectionValidation": "Validation préalable avant traitement",
+          "directionValidator": "Valideur de la Direction",
+          "closerType": "Qui peut cloturer l'incident ?",
+          "treaterType": "Acteur du Traitement",
+          "resolverType": "Acteur de la Résolution",
+          "validatorScope": "Valideur",
+          "emailNotificationsEnabled": "Notifications par e-mail",
+          "reopenerType": "Acteur de la Réouverture"
+        },
+        "descriptions": {
+          "requiresValidation": "Si désactivé, les agents créant cet incident contourneront l'étape de validation.",
+          "requiresCauseAnalysis": "Si activé, la résolution nécessitera obligatoirement une cause et son détail.",
+          "requiresDirectionValidation": "Oblige le traitant à faire approuver sa solution par un membre de la Direction avant de démarrer le traitement.",
+          "directionValidator": "Utilisateur disposant de la permission de validation Direction.",
+          "closerType": "Regle appliquee a tous les incidents rattaches a ce type.",
+          "treaterType": "Définit qui est autorisé à effectuer le traitement de l'incident.",
+          "resolverType": "Définit qui est autorisé à valider la résolution ou à renvoyer l'incident en non résolu.",
+          "validatorScope": "Qui peut valider les incidents de ce type (s'applique uniquement si la validation est requise).",
+          "defaultCriticality": "Pré-remplie à la création d'un incident de ce type. L'agent peut toujours la modifier.",
+          "emailNotificationsEnabled": "Si activé, des e-mails automatiques seront envoyés aux acteurs de l'incident lors des événements clés.",
+          "isActive": "Rend ce type d'incident disponible et actif lors de la création de nouveaux incidents.",
+          "reopenerType": "Définit qui est autorisé à rouvrir un incident déjà résolu (un ou plusieurs)."
+        },
+        "rules": {
+          "directionValidatorRequired": "Veuillez sélectionner un membre de la Direction pour la validation préalable."
+        },
+        "options": {
+          "validator_source_service": "Validation hiérarchique selon le créateur (par défaut)",
+          "validator_agency": "Chef d'agence",
+          "validator_target_service": "Chef de service",
+          "validator_admin": "Administrateur",
+          "closer_creator": "Createur",
+          "closer_assignee": "Agent assigne",
+          "closer_both": "Createur ou agent assigne",
+          "closer_chef_service": "Chef de service traitant",
+          "treater_assignee": "Traitant (Assigné)",
+          "treater_source_agency_manager": "Chef d'agence source",
+          "treater_creator": "Créateur",
+          "treater_chef_service": "Chef du service traitant",
+          "resolver_source_agency_manager": "Chef d'agence source",
+          "resolver_creator": "Créateur",
+          "resolver_assignee": "Traitant (Assigné)",
+          "resolver_chef_service": "Chef du service traitant"
+        },
+        "placeholders": {
+          "name": "Ex: INCIDENT_RESEAU",
+          "displayName": "Ex: Incident réseau",
+          "description": "Décrivez ce type d'incident...",
+          "slaHours": "Ex: 24",
+          "defaultCriticality": "Aucune (optionnel)",
+          "defaultTargetService": "Sélectionner un service cible",
+          "defaultTargetUser": "Sélectionner un utilisateur cible",
+          "directionValidator": "Sélectionner un membre de la Direction..."
+        },
+        "validation": {
+          "name_required": "Le nom technique est requis",
+          "name_min": "Le nom doit contenir au moins 2 caractères",
+          "name_max": "Le nom ne peut pas dépasser 100 caractères",
+          "displayName_required": "Le libellé affiché est requis",
+          "displayName_min": "Le libellé doit contenir au moins 2 caractères",
+          "displayName_max": "Le libellé ne peut pas dépasser 100 caractères",
+          "description_max": "La description ne peut pas dépasser 500 caractères",
+          "slaHours_required": "Le délai de traitement est requis",
+          "slaHours_min": "Le délai de traitement doit être supérieur à 0"
+        },
+        "warnings": {
+          "noServiceHead": "Ce service n'a pas de chef assigné. Vous pouvez continuer, mais le routage automatique nécessitera l'intervention d'un administrateur."
+        },
+        "actorRoles": {
+          "SOURCE_AGENCY_MANAGER": "Chef d'agence source",
+          "CREATOR": "Créateur",
+          "ASSIGNEE": "Traitant (Assigné)",
+          "CHEF_SERVICE": "Chef du service traitant"
+        }
+      },
+      "messages": {
+        "create_success": "Type d'incident créé avec succès",
+        "create_error": "Erreur lors de la création du type d'incident",
+        "update_success": "Type d'incident mis à jour avec succès",
+        "update_error": "Erreur lors de la mise à jour du type d'incident",
+        "delete_success": "Type d'incident supprimé avec succès",
+        "delete_error": "Erreur lors de la suppression du type d'incident",
+        "delete_confirm": "Supprimer le type d'incident",
+        "delete_ask": "Êtes-vous sûr de vouloir supprimer ce type d'incident ?",
+        "not_found": "Type d'incident non trouvé"
+      }
+    },
+    "agencies": {
+      "addButton": "Nouvelle agence",
+      "table": {
+        "code": "Code",
+        "name": "Nom",
+        "address": "Adresse",
+        "status": "Statut",
+        "headOfAgency": "Chef d'agence",
+        "actions": "Actions"
+      },
+      "modal": {
+        "createTitle": "Nouvelle agence",
+        "editTitle": "Modifier l'agence"
+      },
+      "page": {
+        "createTitle": "Créer une agence",
+        "editTitle": "Modifier une agence",
+        "detailsSubtitle": "Code agence : {{code}}"
+      },
+      "form": {
+        "labels": {
+          "code": "Code",
+          "city": "Ville",
+          "name": "Nom",
+          "address": "Adresse",
+          "isActive": "Actif",
+          "headOfAgency": "Chef d'agence"
+        },
+        "placeholders": {
+          "code": "Généré automatiquement",
+          "city": "Ex: Yaoundé",
+          "name": "Ex: Agence centrale",
+          "address": "Ex: Mimboman Terminus, Yaoundé",
+          "headOfAgency": "Sélectionner un chef d'agence"
+        },
+        "hints": {
+          "code": "Le code est généré automatiquement après la création de l'agence."
+        },
+        "validation": {
+          "code_required": "Le code est requis",
+          "code_min": "Le code doit contenir au moins 2 caractères",
+          "code_max": "Le code ne peut pas dépasser 20 caractères",
+          "city_required": "La ville est requise",
+          "city_max": "La ville ne peut pas dépasser 100 caractères",
+          "name_required": "Le nom est requis",
+          "name_min": "Le nom doit contenir au moins 2 caractères",
+          "name_max": "Le nom ne peut pas dépasser 100 caractères",
+          "address_max": "L'adresse ne peut pas dépasser 255 caractères"
+        }
+      },
+      "messages": {
+        "create_success": "Agence créée avec succès",
+        "create_error": "Erreur lors de la création de l'agence",
+        "update_success": "Agence mise à jour avec succès",
+        "update_error": "Erreur lors de la mise à jour de l'agence",
+        "delete_success": "Agence supprimée avec succès",
+        "delete_error": "Erreur lors de la suppression de l'agence",
+        "assign_head_success": "Chef d'agence assigné avec succès",
+        "delete_confirm": "Supprimer l'agence",
+        "delete_ask": "Êtes-vous sûr de vouloir supprimer cette agence ?",
+        "not_found": "Agence non trouvée"
+      },
+      "totalMembers": "Total des membres",
+      "headOfAgency": "Chef d'agence",
+      "noMembers": "Aucun membre dans cette agence",
+      "members": "Liste des membres"
+    },
+    "services": {
+      "addButton": "Nouveau service",
+      "table": {
+        "name": "Nom",
+        "description": "Description",
+        "status": "Statut",
+        "headOfService": "Chef de service",
+        "actions": "Actions"
+      },
+      "modal": {
+        "createTitle": "Nouveau service",
+        "editTitle": "Modifier le service"
+      },
+      "page": {
+        "createTitle": "Créer un service",
+        "editTitle": "Modifier un service",
+        "detailsSubtitle": "Service : {{name}}"
+      },
+      "form": {
+        "labels": {
+          "name": "Nom",
+          "description": "Description",
+          "isActive": "Actif",
+          "headOfService": "Chef de service"
+        },
+        "placeholders": {
+          "name": "Ex: Service informatique",
+          "description": "Décrivez ce service...",
+          "headOfService": "Sélectionner un chef de service"
+        },
+        "validation": {
+          "name_required": "Le nom est requis",
+          "name_min": "Le nom doit contenir au moins 2 caractères",
+          "name_max": "Le nom ne peut pas dépasser 100 caractères",
+          "description_max": "La description ne peut pas dépasser 500 caractères"
+        }
+      },
+      "messages": {
+        "create_success": "Service créé avec succès",
+        "create_error": "Erreur lors de la création du service",
+        "update_success": "Service mis à jour avec succès",
+        "update_error": "Erreur lors de la mise à jour du service",
+        "delete_success": "Service supprimé avec succès",
+        "delete_error": "Erreur lors de la suppression du service",
+        "assign_head_success": "Chef de service assigné avec succès",
+        "delete_confirm": "Supprimer le service",
+        "delete_ask": "Êtes-vous sûr de vouloir supprimer ce service ?",
+        "not_found": "Service non trouvé"
+      },
+      "totalMembers": "Total des membres",
+      "headOfService": "Chef de service",
+      "noMembers": "Aucun membre dans ce service",
+      "members": "Liste des membres"
+    },
+    "roles": {
+      "addButton": "Nouveau rôle",
+      "table": {
+        "name": "Nom",
+        "description": "Description",
+        "isSystem": "Système",
+        "permissions": "Permissions",
+        "permissionsCount": "Permissions",
+        "actions": "Actions"
+      },
+      "modal": {
+        "createTitle": "Nouveau rôle",
+        "editTitle": "Modifier le rôle"
+      },
+      "page": {
+        "createTitle": "Créer un rôle",
+        "editTitle": "Modifier un rôle"
+      },
+      "form": {
+        "labels": {
+          "name": "Nom technique",
+          "display_name": "Libellé affiché",
+          "description": "Description",
+          "permissions": "Permissions"
+        },
+        "placeholders": {
+          "name": "Ex: ROLE_MANAGER",
+          "display_name": "Ex: Chef d'agence",
+          "description": "Décrivez ce rôle...",
+          "permissions": "Sélectionner les permissions"
+        },
+        "validation": {
+          "name_required": "Le nom est requis",
+          "name_min": "Le nom doit contenir au moins 2 caractères",
+          "name_max": "Le nom ne peut pas dépasser 100 caractères",
+          "display_name_max": "Le libellé affiché ne peut pas dépasser 100 caractères",
+          "description_max": "La description ne peut pas dépasser 500 caractères",
+          "permissions_required": "Au moins une permission est requise"
+        }
+      },
+      "messages": {
+        "create_success": "Rôle créé avec succès",
+        "create_error": "Erreur lors de la création du rôle",
+        "update_success": "Rôle mis à jour avec succès",
+        "update_error": "Erreur lors de la mise à jour du rôle",
+        "delete_success": "Rôle supprimé avec succès",
+        "delete_error": "Erreur lors de la suppression du rôle",
+        "delete_confirm": "Supprimer le rôle",
+        "delete_ask": "Êtes-vous sûr de vouloir supprimer ce rôle ?",
+        "not_found": "Rôle non trouvé",
+        "system_role_edit_notice": "L'identité d'un rôle système est protégée. Vous pouvez uniquement mettre à jour ses permissions assignables.",
+        "system_role_tooltip": "Les rôles système ne peuvent pas être supprimés"
+      },
+      "sections": {
+        "identity": "Identité"
+      },
+      "assigned_users": "Utilisateurs assignés",
+      "permissions_info": "Permissions regroupées par domaine.",
+      "custom_role_label": "Rôle personnalisé",
+      "system": {
+        "yes": "Oui",
+        "no": "Non",
+        "role_label": "Rôle système"
+      }
+    },
+    "reportSchedules": {
+      "addButton": "Nouveau rapport",
+      "table": {
+        "name": "Nom",
+        "type": "Type",
+        "format": "Format",
+        "recipients": "Destinataires",
+        "sendTime": "Heure d'envoi programmé",
+        "scope": "Portée",
+        "status": "Statut",
+        "lastGeneratedAt": "Dernière génération",
+        "actions": "Actions"
+      },
+      "modal": {
+        "createTitle": "Nouveau rapport automatique",
+        "editTitle": "Modifier le rapport automatique"
+      },
+      "page": {
+        "createTitle": "Créer un rapport automatique",
+        "editTitle": "Modifier un rapport automatique",
+        "createSubtitle": "Planifiez un export récurrent et définissez ses destinataires",
+        "editSubtitle": "Mettez à jour la périodicité, le format et les destinataires",
+        "detailsSubtitle": "Planification de rapport {{type}}"
+      },
+      "form": {
+        "labels": {
+          "name": "Nom",
+          "type": "Type",
+          "format": "Format",
+          "recipientEmails": "Destinataires",
+          "sendTime": "Heure d'envoi",
+          "weekDay": "Jour de la semaine",
+          "scope": "Portée"
+        },
+        "placeholders": {
+          "name": "Ex: Rapport hebdomadaire des incidents",
+          "type": "Sélectionner un type de rapport",
+          "format": "Sélectionner un format",
+          "recipientEmails": "Ex: admin@example.com, manager@example.com",
+          "sendTime": "Sélectionner l'heure",
+          "weekDay": "Sélectionner le jour",
+          "scope": "Sélectionner la portée"
+        },
+        "validation": {
+          "name_required": "Le nom est requis",
+          "name_min": "Le nom doit contenir au moins 2 caractères",
+          "name_max": "Le nom ne peut pas dépasser 100 caractères",
+          "type_required": "Le type de rapport est requis",
+          "format_required": "Le format est requis",
+          "recipientEmails_required": "Au moins un destinataire est requis",
+          "recipientEmails_invalid": "Veuillez saisir des adresses e-mail valides",
+          "sendTime_required": "L'heure d'envoi est requise",
+          "weekDay_required": "Le jour de la semaine est requis",
+          "scope_required": "La portée est requise"
+        }
+      },
+      "messages": {
+        "create_success": "Rapport automatique créé avec succès",
+        "create_error": "Erreur lors de la création du rapport automatique",
+        "update_success": "Rapport automatique mis à jour avec succès",
+        "update_error": "Erreur lors de la mise à jour du rapport automatique",
+        "delete_success": "Rapport automatique supprimé avec succès",
+        "delete_error": "Erreur lors de la suppression du rapport automatique",
+        "delete_confirm": "Supprimer le rapport automatique",
+        "delete_ask": "Êtes-vous sûr de vouloir supprimer ce rapport automatique ?",
+        "not_found": "Rapport automatique non trouvé",
+        "toggle_success": "Statut du rapport mis à jour avec succès",
+        "toggle_error": "Erreur lors de la mise à jour du statut du rapport"
+      },
+      "sections": {
+        "recipients": "Destinataires",
+        "noRecipients": "Aucun destinataire configuré"
+      },
+      "details": {
+        "metadata": "Planification et informations techniques",
+        "createdBy": "Créé par",
+        "identifier": "Identifiant",
+        "createdAt": "Créé le",
+        "updatedAt": "Mis à jour le"
+      },
+      "reportType": {
+        "DAILY": "Quotidien",
+        "WEEKLY": "Hebdomadaire",
+        "MONTHLY": "Mensuel",
+        "CUSTOM": "Personnalisé"
+      },
+      "reportFormat": {
+        "PDF": "PDF",
+        "EXCEL": "Excel",
+        "JSON": "JSON"
+      }
+    },
+    "common": {
+      "yes": "Oui",
+      "no": "Non",
+      "noData": "Aucune donnée",
+      "loading": "Chargement...",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer cet élément ?"
+    }
+  }
+}

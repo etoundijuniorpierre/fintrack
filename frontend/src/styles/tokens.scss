@@ -1,0 +1,271 @@
+/* Jetons de design FinTrack : centralise les variables CSS globales et privilégie la couche sémantique. */
+
+:root {
+  /* Palette brute : couleurs de base conservées pour compatibilité. */
+
+  /* Marque : rouge FinTrack et or Finstar. */
+  --primary-red: #e53935;
+  --primary-red-hover: #ff3b3b;
+  --primary-red-active: #c62828;
+  --primary-red-delete-icon: #e538355e;
+
+  --secondary-gold: #c9a227;
+  --secondary-gold-hover: #e0b94a;
+
+  --accent-pink: #e83e8c;
+
+  --black-track: #2b2b2b;
+  --black-track-light: #3d3d3d;
+
+  /* Accent : indigo utilisé pour information et mise en valeur. */
+  --primary-indigo: #6366f1;
+  --primary-indigo-hover: #4f46e5;
+  --primary-indigo-active: #4338ca;
+  --primary-light: #eef2ff;
+
+  --secondary-rose: #f43f5e;
+  --secondary-rose-hover: #e11d48;
+
+  --accent-amber: #f59e0b;
+  --accent-amber-hover: #d97706;
+
+  --success-emerald: #10b981;
+  --success-emerald-hover: #059669;
+
+  --black-slate: #1e293b;
+  --black-slate-light: #334155;
+
+  /* Neutres : gris, fond et blanc de base. */
+  --grey-900: #0f172a;
+  --grey-600: #475569;
+  --grey-400: #94a3b8;
+  --grey-200: #e2e8f0;
+  --grey-100: #f1f5f9;
+  --grey-50: #f8fafc;
+  --grey-medium: #555555;
+  --grey-light: #e8e8e8;
+  --grey-bg: #f5f7fa;
+  --white: #ffffff;
+
+  /* Couche sémantique : variables à privilégier dans les composants. */
+
+  /* Action primaire : navy/ardoise (le rouge reste danger + signature « Fin »). */
+  --color-primary: #1e293b;
+  --color-primary-hover: #334155;
+  --color-primary-active: #0f172a;
+  --color-primary-light: #f1f5f9; /* slate-100 */
+  --color-primary-border: rgba(30, 41, 59, 0.16);
+  --color-primary-soft: rgba(30, 41, 59, 0.05);
+
+  /* Accent sémantique : aligné sur le navy (marque navy + rouge), suit le primaire en dark. */
+  --color-accent: var(--color-primary);
+  --color-accent-hover: var(--color-primary-hover);
+  --color-accent-light: var(--color-primary-light);
+  --color-accent-border: var(--color-primary-border);
+  --color-accent-soft: var(--color-primary-soft);
+
+  /* États fonctionnels : succès, alerte, danger et information. */
+  --primary: var(--color-primary);
+  --success: var(--success-emerald);
+  --warning: var(--accent-amber);
+  --danger: var(--secondary-rose);
+  --info: var(--primary-indigo);
+
+  /* Surfaces d'état : triplets fond, bordure et texte. */
+  --surface-success-bg: #ecfdf5;
+  --surface-success-border: #a7f3d0;
+  --surface-success-text: #065f46;
+
+  --surface-warning-bg: #fffbeb;
+  --surface-warning-border: #fde68a;
+  --surface-warning-text: #92400e;
+
+  --surface-danger-bg: #fff1f2;
+  --surface-danger-border: #fecdd3;
+  --surface-danger-text: #9f1239;
+
+  --surface-info-bg: #eff6ff;
+  --surface-info-border: #bfdbfe;
+  --surface-info-text: #1e40af;
+
+  --surface-neutral-bg: var(--grey-100);
+  --surface-neutral-border: var(--grey-200);
+  --surface-neutral-text: var(--grey-600);
+
+  --surface-amber-bg: #fffbeb;
+  --surface-amber-border: rgba(245, 158, 11, 0.2);
+
+  /* Texte : couleurs selon la hiérarchie de lecture.
+     --text-muted vise un contraste AA (>= 4.5:1 sur fond clair) : grey-400 (#94A3B8)
+     échouait (~2.7:1), slate-500 (#64748B) passe (~4.6:1). */
+  --text-primary: var(--grey-900);
+  --text-secondary: var(--grey-600);
+  --text-muted: #64748b;
+  /* Encre sur fond de marque (boutons, badges, sidebar, avatars) : blanc fixe dans les deux thèmes
+     — ne pas aliaser sur --white, qui bascule en sombre en dark mode. */
+  --text-on-brand: #ffffff;
+
+  /* Alias historiques : conservés pour compatibilité. */
+  --info-light: rgba(24, 144, 255, 0.1);
+  --info-lighter: rgba(24, 144, 255, 0.05);
+  --info-hover: rgba(24, 143, 255, 0.45);
+  --hint-bg: var(--surface-info-bg);
+  --hint-border: var(--surface-info-border);
+
+  /* Dégradés : variantes partagées par les surfaces et états visuels. */
+  --gradient-primary: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  --gradient-secondary: linear-gradient(135deg, #c9a227 0%, #e83e8c 100%);
+  --gradient-critical: linear-gradient(135deg, #e53935 0%, #e83e8c 100%);
+  --gradient-danger: linear-gradient(135deg, #f43f5e 0%, #fb7185 100%);
+  --gradient-success: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  --gradient-accent: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  --gradient-soft: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%);
+  --gradient-sidebar: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  /* Item de menu actif : slate éclairci pour ressortir sur le fond navy de la barre. */
+  --gradient-sidebar-active: linear-gradient(135deg, #334155 0%, #475569 100%);
+  /* Alias historique : désormais navy (plus d'indigo/violet dans le chrome). */
+  --gradient-vibrant: var(--gradient-primary);
+
+  /* Typographie : familles, tailles et graisses globales. */
+  --font-main:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+
+  /* Tailles de police. */
+  --font-xxxs: 10px;
+  --font-xxs: 11px;
+  --font-xs: 12px;
+  --font-sm: 13px;
+  --font-md: 14px;
+  --font-base: 15px;
+  --font-lg: 16px;
+  --font-xl: 18px;
+  --font-2xl: 20px;
+  --font-3xl: 24px;
+  --font-4xl: 28px;
+  --font-5xl: 32px;
+
+  /* Graisses de police. */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* Espacements : échelle basée sur une grille de 4 px. */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-smd: 12px; /* Intermédiaire : badges et espacements compacts. */
+  --spacing-md: 16px;
+  --spacing-mlg: 20px; /* Intermédiaire : espacements internes des cartes. */
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 64px;
+
+  --spacing-section: 32px; /* Espacement entre sections principales. */
+
+  /* Élévation : ombres partagées par les surfaces. */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-premium: 0 20px 40px -20px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+  /* Bordures et rayons : primitives de contour. */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --border-light: 1px solid var(--grey-200);
+  --border-accent: 1px solid var(--color-accent-border);
+  /* Alias historique. */
+  --border-vibrant: var(--border-accent);
+  --border-gradient-shadow: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.04)
+  );
+
+  /* Transitions : durées et courbes d'animation globales. */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Dimensions de layout : tailles fixes des zones principales. */
+  --header-height: 64px;
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 80px;
+  --content-padding: var(--spacing-lg);
+
+  /* Hauteurs de composants. */
+  --input-height: 42px;
+  --button-height: 42px;
+  --card-padding: var(--spacing-lg);
+  --card-head-height: 48px;
+
+  /* États focus et hover : effets interactifs globaux. */
+  --focus-ring: 0 0 0 3px rgba(30, 41, 59, 0.2);
+  --focus-shadow-primary: 0 0 0 3px rgba(30, 41, 59, 0.14);
+  --focus-ring-accent: 0 0 0 3px rgba(30, 41, 59, 0.18);
+
+  --hover-bg-light: var(--color-primary-soft);
+  --hover-bg-lighter: rgba(0, 0, 0, 0.02);
+
+  /* Z-index : ordre d'empilement des éléments globaux. */
+  --z-header: 50;
+  --z-sidebar: 100;
+  --z-dropdown: 1000;
+  --z-tooltip: 1010;
+  --z-modal: 1050;
+
+  /* Icônes : tailles partagées dans l'interface. */
+  --icon-sm: 16px;
+  --icon-md: 20px;
+  --icon-lg: 24px;
+  --icon-xl: 48px;
+}
+
+[data-theme="dark"] {
+  --grey-50: #0b0f19;
+  --grey-100: #111827;
+  --grey-200: #1f2937;
+  --grey-400: #6b7280;
+  --grey-600: #9ca3af;
+  --grey-900: #f3f4f6;
+  --grey-bg: #1f2937;
+  --white: #111827;
+  --text-primary: #f3f4f6;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --color-primary: #cbd5e1; /* slate-300 : primaire éclairci, lisible sur fond sombre */
+  --color-primary-hover: #e2e8f0;
+  --color-primary-active: #f8fafc;
+  --color-primary-light: #1f2937;
+  --color-primary-border: rgba(203, 213, 225, 0.28);
+  --color-primary-soft: rgba(203, 213, 225, 0.08);
+  /* Dégradé primaire (boutons, avatar, accents) éclairci en slate pour rester visible sur surface sombre. */
+  --gradient-primary: linear-gradient(135deg, #475569 0%, #64748b 100%);
+  --surface-success-bg: rgba(16, 185, 129, 0.1);
+  --surface-success-text: #34d399;
+  --surface-success-border: rgba(16, 185, 129, 0.2);
+  --surface-warning-bg: rgba(245, 158, 11, 0.1);
+  --surface-warning-text: #fbbf24;
+  --surface-warning-border: rgba(245, 158, 11, 0.2);
+  --surface-danger-bg: rgba(244, 63, 94, 0.1);
+  --surface-danger-text: #fb7185;
+  --surface-danger-border: rgba(244, 63, 94, 0.2);
+  --surface-info-bg: rgba(99, 102, 241, 0.12);
+  --surface-info-text: #a5b4fc;
+  --surface-info-border: rgba(99, 102, 241, 0.25);
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,623 @@
+{
+  "incidents": {
+    "title": "Incident Management",
+    "subtitle": "View and manage incidents across your organization",
+    "add_button": "New Incident",
+    "search_placeholder": "Search by code, title, description, resolution...",
+    "tags": {
+      "myResponsibility": "My responsibility"
+    },
+    "filters": {
+      "status": "Filter by status",
+      "type": "Filter by type",
+      "criticality": "Filter by criticality",
+      "all_statuses": "All statuses",
+      "all_types": "All types",
+      "all_criticalities": "All criticalities"
+    },
+    "views": {
+      "assigned": "Assigned to me",
+      "own": "Created by me",
+      "agency": "My agency",
+      "service": "My service",
+      "byAgency": "By agency",
+      "byService": "By service",
+      "all": "All incidents"
+    },
+    "controls": {
+      "view": "Incident view",
+      "table": "Table",
+      "cards": "Cards",
+      "type": "Type",
+      "typePlaceholder": "All types",
+      "statusPlaceholder": "All statuses",
+      "status": "Status",
+      "criticality": "Criticality",
+      "unassignedOnly": "hide Unassigned",
+      "hide": {
+        "CLOSED": "Hide closed",
+        "REJECTED": "Hide rejected",
+        "CANCELLED": "Hide cancelled"
+      },
+      "userFilter": "User",
+      "userFilterPlaceholder": "Filter by user",
+      "createdByLabel": "Created by",
+      "assignedToLabel": "Assigned to",
+      "selectAgency": "Select an agency",
+      "agencyFilter": "Agency",
+      "agencyFilterPlaceholder": "All agencies",
+      "periodDeclared": "Reported between",
+      "periodActivity": "Activity between",
+      "selectService": "Select a service"
+    },
+    "report": {
+      "download": "Download report",
+      "download_error": "Unable to download the incident report."
+    },
+    "no_data": "No incidents found",
+    "empty_title": "No incidents found",
+    "empty_description": "Try adjusting your filters or create a new incident.",
+    "status": {
+      "DRAFT": "Pending Executive Approval",
+      "OPEN": "Open",
+      "PENDING_VALIDATION": "Pending Validation",
+      "VALIDATED": "Validated",
+      "TRANSFERRED": "Transferred",
+      "ASSIGNED": "Assigned",
+      "IN_PROGRESS": "In Progress",
+      "TREATED": "Treated",
+      "BLOCKED": "Blocked",
+      "RESOLVED": "Resolved",
+      "CLOSED": "Closed",
+      "REOPENED": "Reopened",
+      "REJECTED": "Rejected",
+      "CANCELLED": "Cancelled",
+      "UNRESOLVED_PROLONGED_WAIT": "Unresolved (Prolonged wait)"
+    },
+    "criticality": {
+      "LOW": "Low",
+      "MEDIUM": "Medium",
+      "HIGH": "High",
+      "CRITICAL": "Critical"
+    },
+    "action_type": {
+      "CREATION": "Creation",
+      "VALIDATION": "Validation",
+      "TRANSFER": "Transfer",
+      "STATUS_CHANGE": "Status Change",
+      "COMMENT": "Comment",
+      "UPDATE": "Update",
+      "ASSIGNMENT": "Assignment",
+      "ROUTING": "Routing",
+      "TYPE_CHANGE": "Type Change",
+      "CRITICALITY_CHANGE": "Criticality change",
+      "REOPENING": "Reopening",
+      "RESOLUTION_REJECTED": "Resolution Rejected"
+    },
+    "table": {
+      "reference": "Code",
+      "title": "Title",
+      "type": "Type",
+      "criticality": "Criticality",
+      "status": "Status",
+      "sla": "Deadline",
+      "assigned_to": "Assigned To",
+      "due_date": "Due Date",
+      "created_at": "Created At",
+      "age": "Age",
+      "created_by": "Created By",
+      "agency": "Agency",
+      "actions": "Actions"
+    },
+    "cards": {
+      "details": "Details",
+      "age": "Age",
+      "sla": "Deadline"
+    },
+    "age": {
+      "minutes": "{{count}} min",
+      "hours": "{{count}} h",
+      "days": "{{count}} d"
+    },
+    "sla": {
+      "closed": "Closed",
+      "stopped": "Stopped",
+      "overdue": "Overdue",
+      "dueToday": "D-0",
+      "dueSoon": "D-{{count}}",
+      "due_in_days_one": "D-{{count}}",
+      "due_in_days_other": "D-{{count}}",
+      "onTrack": "On track"
+    },
+    "form": {
+      "titles": {
+        "create": "New Incident",
+        "edit": "Edit Incident",
+        "view": "Incident Details"
+      },
+      "subtitles": {
+        "create": "Report the incident, qualify its criticality, and route it to the right service."
+      },
+      "sections": {
+        "information": "Incident Information",
+        "classification": "Classification",
+        "planning": "Planning",
+        "cause": "Cause Analysis"
+      },
+      "labels": {
+        "title": "Title",
+        "description": "Description",
+        "type": "Incident Type",
+        "criticality": "Criticality",
+        "due_date": "Due Date",
+        "estimated_resolution_hours": "Estimated resolution time",
+        "incident_date": "Incident Date",
+        "observation_date": "Observation Date",
+        "target_service": "Target Service",
+        "default_target": "Default Assignment",
+        "validator_required": "Validation required by",
+        "assign_to_self": "Assign this incident to me",
+        "status": "Status",
+        "created_by": "Created By",
+        "agency": "Agency",
+        "assigned_to": "Assigned To",
+        "transferred_to_service": "Transferred to Service",
+        "transferred_to_agency": "Transferred to Agency",
+        "transfer_reason": "Transfer Reason",
+        "reject_reason": "Rejection Reason",
+        "reopen_reason": "Reopen Reason",
+        "blocked_reason": "Block Reason",
+        "validated_by": "Validated By",
+        "validated_at": "Validated At",
+        "transferred_at": "Transferred At",
+        "resolved_at": "Resolved At",
+        "closed_at": "Closed At",
+        "blocked_at": "Blocked At",
+        "reopened_at": "Reopened At",
+        "created_at": "Created At",
+        "updated_at": "Updated At",
+        "cause": "Incident Cause",
+        "cause_detail_human": "Person responsible",
+        "cause_detail_external": "External Person / Entity",
+        "cause_detail_other": "Cause Details"
+      },
+      "placeholders": {
+        "title": "Ex: System connection issue",
+        "description": "Describe the incident in detail...",
+        "type": "Select an incident type",
+        "criticality": "Select criticality",
+        "due_date": "Calculated automatically",
+        "incident_date": "When did the event occur?",
+        "observation_date": "When was it observed?",
+        "target_service": "Select a target service",
+        "cause": "Select the incident cause",
+        "cause_detail_human": "Name of the person involved, and what is attributed to them...",
+        "cause_detail_external": "Name of the external person or entity...",
+        "cause_detail_other": "Describe the cause in more detail...",
+        "agency": "Select the target agency"
+      },
+      "info": {
+        "auto_service": "Automatic service: {{name}}",
+        "auto_user": "Automatically assigned to: {{name}}",
+        "self_assign_disabled": "This incident type imposes a service or a responsible user; self-assignment is not available.",
+        "self_assign_overrides": "Self-assignment takes precedence: the incident will be assigned directly to you and the service or responsible user imposed by the type will be ignored.",
+        "no_target_service": "No service imposed by this type"
+      },
+      "validation": {
+        "title_required": "Title is required",
+        "title_min": "Title must be at least 3 characters",
+        "title_max": "Title cannot exceed 200 characters",
+        "description_required": "Description is required",
+        "description_max": "Description cannot exceed 5000 characters",
+        "type_required": "Incident type is required",
+        "criticality_required": "Criticality is required",
+        "due_date_past": "Due date cannot be in the past",
+        "date_not_future": "The date cannot be later than today",
+        "date_order": "The incident date must be before or equal to the observation date",
+        "cause_detail_max": "Cause detail cannot exceed 2000 characters",
+        "agency_required": "Please select the target agency"
+      },
+      "buttons": {
+        "submit_create": "Create Incident",
+        "submit_edit": "Update",
+        "uploading": "Uploading attachments…",
+        "cancel": "Cancel"
+      }
+    },
+    "cause_values": {
+      "HUMAN": "Human",
+      "TECHNICAL": "Technical",
+      "ORGANIZATIONAL": "Organizational",
+      "ENVIRONMENTAL": "Environmental",
+      "EXTERNAL": "External",
+      "STRUCTURAL": "Structural",
+      "OTHER": "Other"
+    },
+    "validator_roles": {
+      "SERVICE_MANAGER": "Service manager",
+      "SERVICE_MANAGER_named": "Manager of the {{name}} service",
+      "AGENCY_MANAGER": "Agency manager",
+      "AGENCY_MANAGER_named": "Manager of the {{name}} agency",
+      "ADMIN": "Administrator"
+    },
+    "detail": {
+      "breadcrumb_list": "Incidents",
+      "no_assigned": "Not assigned",
+      "no_service": "No service",
+      "no_due_date": "No due date",
+      "estimated_hours_value": "{{count}} h",
+      "estimated_in_proposal": "Estimated resolution in {{count}} h",
+      "treatment_report": "Treatment report",
+      "resolution_report": "Resolution report",
+      "closure_note": "Closure note",
+      "sections": {
+        "details": "Details",
+        "workflow": "Actions",
+        "comments": "Comments",
+        "history": "History",
+        "key_dates": "Key Dates",
+        "cause": "Cause Analysis",
+        "resolution": "Resolution"
+      }
+    },
+    "workflow": {
+      "validate": "Validate",
+      "reject": "Reject",
+      "transfer": "Transfer",
+      "assign": "Assign",
+      "self_assign": "Assign to me",
+      "start": "Start progress",
+      "block": "Block",
+      "resume": "Resume progress",
+      "request_confirmation": "Resume handling",
+      "confirm_relevance": "Still relevant",
+      "treat": "Treated",
+      "resolve": "Resolve",
+      "mark_unresolved": "Not resolved",
+      "close": "Close",
+      "reopen": "Reopen",
+      "cancel": "Cancel",
+      "no_longer_relevant": "No longer relevant",
+      "clone": "Clone",
+      "resubmit": "Resubmit",
+      "submit_solution": "Submit solution",
+      "request_new_validation": "New validation",
+      "direction_validate": "Approve solution",
+      "direction_reject": "Reject solution",
+      "common": {
+        "comment_label": "Comment (optional)",
+        "comment_placeholder": "Add a comment...",
+        "attachments_label": "Attachments (optional)",
+        "attachments_add": "Add an attachment",
+        "estimated_hours_label": "Estimated resolution time (hours)",
+        "estimated_hours_help": "Enter the estimated time required to resolve the incident (in hours, e.g., 48 hours for 2 days).",
+        "estimated_hours_placeholder": "e.g. 8"
+      },
+      "modals": {
+        "validate": {
+          "title": "Validate Incident",
+          "comment_placeholder": "Add a validation comment...",
+          "confirm": "Validate",
+          "routing_required": "Select a target service or target user"
+        },
+        "reject": {
+          "title": "Reject Incident",
+          "reason_label": "Rejection Reason",
+          "reason_placeholder": "State the reason for rejection...",
+          "reason_required": "Rejection reason is required",
+          "confirm": "Reject"
+        },
+        "transfer": {
+          "title": "Transfer Incident",
+          "service_label": "Target Service",
+          "service_placeholder": "Select a service",
+          "service_required": "Target service is required",
+          "destination_label": "Destination",
+          "destination_placeholder": "Select a service or the creator's agency",
+          "destination_required": "Destination is required",
+          "services_group": "Services",
+          "agency_group": "Creator's agency",
+          "reclassify_toggle": "Change the incident type during transfer",
+          "new_type": "New incident type (or confirm the type)",
+          "new_type_help": "Select the incident type specific to the target service to apply the correct processing deadline and keep accurate metrics.",
+          "new_type_placeholder": "Select a type from the target service",
+          "reason_label": "Transfer Reason",
+          "reason_placeholder": "State the reason for transferring to this service...",
+          "reason_required": "Transfer reason is required",
+          "confirm": "Transfer"
+        },
+        "assign": {
+          "title": "Assign Incident",
+          "user_label": "User",
+          "user_placeholder": "Select a user",
+          "user_required": "User is required",
+          "confirm": "Assign"
+        },
+        "self_assign": {
+          "title": "Assign incident to me",
+          "comment_placeholder": "Add a note (optional)...",
+          "confirm": "Assign to me"
+        },
+        "start": {
+          "title": "Start Incident",
+          "comment_placeholder": "Add a handling note...",
+          "confirm": "Start"
+        },
+        "block": {
+          "title": "Block Incident",
+          "reason_label": "Block reason",
+          "reason_placeholder": "Explain what prevents resolution...",
+          "reason_required": "Block reason is required",
+          "confirm": "Block"
+        },
+        "resume": {
+          "title": "Resume Incident",
+          "comment_placeholder": "Add a resume note...",
+          "confirm": "Resume"
+        },
+        "treat": {
+          "title": "Mark as treated",
+          "description_label": "Treatment Description",
+          "description_placeholder": "Describe the steps taken to treat the incident...",
+          "description_required": "Treatment description is required",
+          "cause_required": "Cause is required for this incident type",
+          "cause_detail_required": "Cause details are required for this incident type",
+          "confirm": "Mark treated"
+        },
+        "resolve": {
+          "title": "Validate resolution",
+          "note_label": "Validation note",
+          "note_placeholder": "Confirm that the incident is actually resolved...",
+          "note_required": "The validation note is required",
+          "confirm": "Resolved"
+        },
+        "mark_unresolved": {
+          "title": "Return for treatment (not resolved)",
+          "reason_label": "Return reason",
+          "reason_placeholder": "Explain why the treatment does not resolve the incident...",
+          "reason_required": "The return reason is required",
+          "confirm": "Return"
+        },
+        "close": {
+          "title": "Close Incident",
+          "closure_label": "Closure Description",
+          "closure_placeholder": "Write the official closure summary for this incident...",
+          "closure_required": "Closure description is required to close an incident",
+          "comment_placeholder": "Add a closing comment...",
+          "confirm": "Close"
+        },
+        "reopen": {
+          "title": "Reopen Incident",
+          "reason_label": "Reason for reopening",
+          "reason_placeholder": "Why are you reopening this incident? (required)",
+          "reason_required": "A reason for reopening is required",
+          "comment_placeholder": "Add an optional comment...",
+          "confirm": "Reopen"
+        },
+        "cancel": {
+          "title": "Cancel Incident",
+          "reason_label": "Cancellation Reason",
+          "reason_placeholder": "Why must this incident be cancelled?",
+          "reason_required": "Please provide a cancellation reason",
+          "confirm": "Confirm"
+        },
+        "clone": {
+          "title": "Clone Incident",
+          "message": "Do you want to clone this incident? Business attributes will be copied.",
+          "confirm": "Clone"
+        },
+        "resubmit": {
+          "title": "Resubmit incident",
+          "comment_placeholder": "Comment (optional)",
+          "confirm": "Resubmit"
+        },
+        "submit_solution": {
+          "title": "Submit Solution (Executive Validation)",
+          "incident_title_label": "Incident title",
+          "incident_description_label": "Incident description",
+          "previous_rejection_title": "Previous rejection reason",
+          "proposedSolutionTitle": "Proposed treatment solutions",
+          "proposedSolutionDescriptionLabel": "Proposed solution description",
+          "proposedSolutionDescriptionPlaceholder": "Describe the proposed solution for handling this incident...",
+          "proposedSolutionDescriptionRequired": "Solution description is required",
+          "existing_attachments_title": "Existing attachments",
+          "treatmentSolutionTitle": "Treatment solution",
+          "confirm": "Submit to Executive"
+        },
+        "direction_validate": {
+          "title": "Approve Proposed Solution",
+          "confirm_message": "Do you confirm the validation of this solution? The incident will automatically move to in-progress.",
+          "comment_placeholder": "Add an approval comment (optional)...",
+          "confirm": "Approve"
+        },
+        "direction_reject": {
+          "title": "Reject Proposed Solution",
+          "confirm_message": "Do you confirm the rejection of this solution? The handler will have to submit a new one.",
+          "reason_label": "Rejection reason",
+          "proposedSolutionTitle": "Solutions proposal",
+          "reason_placeholder": "Explain why the solution is rejected...",
+          "directionRejectionReasonTitle": "Rejection reason",
+          "reason_required": "Rejection reason is required",
+          "confirm": "Reject Solution"
+        },
+        "request_confirmation": {
+          "title": "Resume handling",
+          "hint": "The incident went unattended for a long time. Your resumption is not immediate: {{responder}} must first confirm it is still relevant. If they say otherwise, the incident will be cancelled.",
+          "comment_placeholder": "Add a note for the source entity...",
+          "confirm": "Ask and resume",
+          "responder_fallback": "the head of the entity that reported the incident"
+        },
+        "confirm_relevance": {
+          "title": "Confirm the incident is still relevant",
+          "hint": "Handling resumes right away, with everything already captured. Only the deadline restarts.",
+          "comment_placeholder": "Add a note for the handler...",
+          "confirm": "Confirm relevance"
+        },
+        "no_longer_relevant": {
+          "title": "The incident is no longer relevant",
+          "reason_label": "Why is it no longer relevant?",
+          "reason_placeholder": "Explain what makes the problem moot..."
+        }
+      },
+      "messages": {
+        "submit_solution_success": "Solution successfully submitted for executive validation.",
+        "direction_validate_success": "Validation approved. Incident is now in progress.",
+        "direction_reject_success": "Solution rejected.",
+        "validate_success": "Incident validated successfully",
+        "validate_error": "Error validating incident",
+        "reject_success": "Incident rejected successfully",
+        "reject_error": "Error rejecting incident",
+        "transfer_success": "Incident transferred successfully",
+        "transfer_error": "Error transferring incident",
+        "assign_success": "Incident assigned successfully",
+        "assign_error": "Error assigning incident",
+        "start_success": "Incident started successfully",
+        "start_error": "Error starting incident",
+        "block_success": "Incident blocked successfully",
+        "block_error": "Error blocking incident",
+        "resume_success": "Incident resumed successfully",
+        "resume_error": "Error resuming incident",
+        "treat_success": "Incident marked as treated",
+        "resolve_success": "Incident resolved successfully",
+        "mark_unresolved_success": "Incident returned for treatment",
+        "resolve_error": "Error resolving incident",
+        "close_success": "Incident closed successfully",
+        "close_error": "Error closing incident",
+        "reopen_success": "Incident reopened successfully",
+        "reopen_error": "Error reopening incident",
+        "cancel_success": "Incident cancelled successfully",
+        "cancel_error": "Error cancelling incident",
+        "clone_success": "Incident cloned successfully",
+        "clone_error": "Error cloning incident",
+        "resubmit_success": "Incident resubmitted successfully",
+        "resubmit_error": "Error resubmitting incident",
+        "request_confirmation_success": "Confirmation request sent to the source entity",
+        "confirm_relevance_success": "Relevance confirmed: handling resumes"
+      },
+      "pending_confirmation": {
+        "title": "Relevance confirmation pending",
+        "description": "Requested on {{date}}: {{responder}} must confirm this incident is still relevant, or cancel it."
+      }
+    },
+    "comments": {
+      "title": "Comments",
+      "no_comments": "No comments yet",
+      "locked_closed": "Comments are frozen: the incident is closed.",
+      "locked_rejected": "Comments are frozen: the incident is rejected.",
+      "reply": "Reply",
+      "replying_to": "Replying to {{name}}",
+      "form": {
+        "label": "Add a comment",
+        "placeholder": "Write your comment...",
+        "attach": "Attach a file",
+        "submit": "Post",
+        "validation": {
+          "required": "Comment cannot be empty",
+          "max": "Comment cannot exceed 2000 characters"
+        }
+      },
+      "messages": {
+        "add_success": "Comment added successfully",
+        "add_error": "Error adding comment",
+        "update_success": "Comment updated.",
+        "delete_success": "Comment deleted."
+      },
+      "delete_confirm": "Delete this comment?"
+    },
+    "history": {
+      "title": "History",
+      "no_history": "No history available",
+      "reason_label": "Reason",
+      "note_label": "Note",
+      "system_actor": "The system",
+      "sentence": {
+        "CREATION_to": "reported the incident — initial status <to>{{to}}</to>",
+        "VALIDATION": "validated the incident — from <from>{{from}}</from> to <to>{{to}}</to>",
+        "TRANSFER": "transferred the incident — from <from>{{from}}</from> to <to>{{to}}</to>",
+        "ROUTING": "routed the incident — from <from>{{from}}</from> to <to>{{to}}</to>",
+        "ROUTING_to": "routed the incident to <to>{{to}}</to>",
+        "ASSIGNMENT": "reassigned the incident — from <from>{{from}}</from> to <to>{{to}}</to>",
+        "ASSIGNMENT_to": "assigned the incident to <to>{{to}}</to>",
+        "STATUS_CHANGE": "changed the status — from <from>{{from}}</from> to <to>{{to}}</to>",
+        "STATUS_CHANGE_to": "set the status to <to>{{to}}</to>",
+        "TYPE_CHANGE": "changed the type — from <from>{{from}}</from> to <to>{{to}}</to>",
+        "TYPE_CHANGE_to": "set the type to <to>{{to}}</to>",
+        "CRITICALITY_CHANGE": "changed the criticality — from <from>{{from}}</from> to <to>{{to}}</to>",
+        "CRITICALITY_CHANGE_to": "set the criticality to <to>{{to}}</to>",
+        "REOPENING": "reopened the incident — from <from>{{from}}</from> to <to>{{to}}</to>",
+        "REOPENING_to": "reopened the incident — <to>{{to}}</to>",
+        "RESOLUTION_REJECTED": "rejected the resolution — from <from>{{from}}</from> to <to>{{to}}</to>",
+        "UPDATE": "updated the incident — from <from>{{from}}</from> to <to>{{to}}</to>",
+        "UPDATE_plain": "updated the incident",
+        "COMMENT_plain": "added a comment",
+        "fallback": "— <from>{{from}}</from> → <to>{{to}}</to>",
+        "fallback_to": "— <to>{{to}}</to>"
+      }
+    },
+    "attachments": {
+      "title": "Declaration attachments",
+      "solution_title": "Treatment solutions attachments",
+      "proposedSolutionTitle": "Proposed solutions attachments",
+      "treatmentSolutionTitle": "Treatment solutions attachments",
+      "treatment_title": "Treatment attachments",
+      "resolution_title": "Resolution attachments",
+      "unresolved_title": "Resolution refusal attachments",
+      "closure_title": "Closure attachments",
+      "cancellation_title": "Cancellation attachments",
+      "previous_cycle": "Cycle {{cycle}} — before reopening",
+      "no_attachments": "No attachments yet",
+      "add_button": "Add Attachment",
+      "download": "Download",
+      "preview": "Preview attachment",
+      "preview_error": "Unable to preview the attachment.",
+      "delete": "Delete",
+      "file_size": "Size",
+      "uploaded_by": "Uploaded by",
+      "uploaded_at": "Uploaded at",
+      "delete_confirm": "Delete attachment",
+      "delete_ask": "Are you sure you want to delete this attachment?",
+      "locked_status": "Attachments can no longer be modified once the incident is being handled.",
+      "locked_role": "Only the incident creator can add or remove attachments.",
+      "messages": {
+        "upload_success": "Attachment uploaded successfully",
+        "uploading": "Uploading your attachments, please wait…",
+        "upload_error": "Error uploading attachment",
+        "upload_partial_error": "{{count}} attachment(s) could not be uploaded.",
+        "delete_success": "Attachment deleted successfully",
+        "delete_error": "Error deleting attachment"
+      },
+      "invalid_type": "Unsupported format. Documents, images and office archives are allowed.",
+      "empty_file": "The file “{{name}}” is empty. Select a file containing data.",
+      "missing_files": "No attachment is available for this message.",
+      "retry_files": "Some files could not be sent. Retry sending the remaining files.",
+      "too_large": "The attachment “{{name}}” exceeds the {{limit}} MB limit.",
+      "download_error": "Unable to download attachment.",
+      "accepted_hint": "Documents (PDF, Word, Excel, CSV), images (JPG, PNG, GIF, WebP, SVG…) or ZIP archives — 150 MB max.",
+      "viewer": {
+        "docx_content": "Word document content",
+        "docx_error": "The Word document cannot be displayed. You can still download it.",
+        "xlsx_error": "The Excel workbook cannot be displayed. You can still download it.",
+        "xlsx_truncated": "The preview is limited to the first {{rows}} rows and {{columns}} columns to preserve performance.",
+        "empty_sheet": "This sheet is empty.",
+        "unsupported": "This format cannot be displayed in FinTrack."
+      }
+    },
+    "messages": {
+      "create_success": "Incident created successfully",
+      "create_error": "Error creating incident",
+      "update_success": "Incident updated successfully",
+      "update_error": "Error updating incident",
+      "delete_success": "Incident deleted successfully",
+      "delete_error": "Error deleting incident",
+      "delete_confirm": "Delete incident",
+      "delete_ask": "Are you sure you want to delete this incident?",
+      "not_found": "Incident not found",
+      "access_denied": "Access denied"
+    },
+    "sort": {
+      "label": "Choose incident order",
+      "alphabetical": "Alphabetical",
+      "seniority": "Age"
+    }
+  }
+}

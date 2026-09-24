@@ -1,0 +1,38 @@
+/* Styles frontend : organise l'affichage de empty state. */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  text-align: center;
+  gap: var(--spacing-md);
+}
+
+.icon {
+  font-size: var(--icon-xl);
+  color: var(--primary-red);
+  line-height: 1;
+  width: var(--spacing-3xl);
+  height: var(--spacing-3xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background: var(--surface-danger-bg);
+}
+
+.title {
+  font-size: var(--font-xl);
+  font-weight: 600;
+  color: var(--black-track);
+  margin: 0;
+}
+
+.description {
+  font-size: var(--font-base);
+  color: var(--grey-medium);
+  margin: 0;
+  max-width: 400px;
+}

@@ -1,0 +1,11 @@
+/* Styles frontend : organise l'affichage de generate rapport modale. */
+
+.rangePicker {
+  width: 100%;
+}
+
+.metricGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px 12px;
+}

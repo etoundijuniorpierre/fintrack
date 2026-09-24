@@ -1,0 +1,23 @@
+/* Styles frontend : organise l'affichage de help. */
+
+.sectionIntro {
+  margin-bottom: var(--spacing-md);
+}
+
+.typeDescriptions {
+  margin-top: var(--spacing-sm);
+}
+
+.fieldTag {
+  margin-inline-end: 0;
+}
+
+// Titre d'un bloc titre/corps : couleur principale, distincte du corps
+// (secondaire) pour rester lisible en theme sombre comme en clair.
+.topicTitle {
+  color: var(--text-primary);
+}
+
+.topicDivider {
+  margin: var(--spacing-sm) 0 var(--spacing-md) 0;
+}

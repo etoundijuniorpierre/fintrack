@@ -1,0 +1,41 @@
+{
+  "layout": {
+    "sidebar": {
+      "dashboard": "Tableau de bord",
+      "superAdmin": "Super Admin",
+      "incidents": "Incidents",
+      "users": "Utilisateurs",
+      "reports": "Rapports",
+      "audit": "Journal d'audit",
+      "settings": "Paramètres",
+      "expand": "Déplier le menu",
+      "collapse": "Replier le menu"
+    },
+    "header": {
+      "profile": "Mon profil",
+      "logout": "Déconnexion",
+      "notifications": "Notifications",
+      "help": "Aide",
+      "change_language": "Changer la langue",
+      "default_role": "UTILISATEUR",
+      "user_menu": "Menu utilisateur",
+      "presence": {
+        "title": "Utilisateurs connectés",
+        "connected": "Connectés",
+        "disconnected": "Non connectés",
+        "empty": "Aucun utilisateur",
+        "status": {
+          "online_since": "En ligne depuis {{time}}",
+          "online_default": "En ligne",
+          "offline_unknown": "Dernière présence inconnue",
+          "offline_ago_minutes_one": "Déconnecté depuis {{count}} minute",
+          "offline_ago_minutes_other": "Déconnecté depuis {{count}} minutes",
+          "offline_ago_hours_one": "Déconnecté depuis {{count}} heure",
+          "offline_ago_hours_other": "Déconnecté depuis {{count}} heures",
+          "offline_date": "Déconnecté depuis le {{date}}"
+        },
+        "no_agency": "Sans agence"
+      }
+    }
+  }
+}

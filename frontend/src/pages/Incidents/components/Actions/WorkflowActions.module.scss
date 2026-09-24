@@ -1,0 +1,140 @@
+/* Styles frontend : organise l'affichage de workflow actions. */
+
+.workflowActions {
+  margin: 18px 0 8px;
+  padding: 10px;
+  background-color: var(--white);
+  border: 1px solid var(--grey-200);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.actionList {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.actionButton {
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--grey-200);
+  border-radius: var(--radius-sm);
+  background: var(--grey-50);
+  color: var(--text-primary);
+  font-weight: 700;
+
+  :global(.anticon) {
+    font-size: var(--font-xl);
+  }
+
+  &:hover:not(:disabled) {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+  }
+
+  &[data-tone="primary"] {
+    border-color: var(--color-primary-border);
+    background: var(--gradient-primary);
+    color: var(--text-on-brand);
+    box-shadow: 0 10px 22px rgba(245, 158, 11, 0.22);
+
+    &:hover:not(:disabled) {
+      color: var(--text-on-brand);
+      border-color: var(--color-primary-hover);
+      background: var(--gradient-primary);
+    }
+  }
+
+  &[data-tone="success"] {
+    border-color: var(--surface-success-border);
+    background: var(--surface-success-bg);
+    color: var(--success);
+  }
+
+  &[data-tone="danger"] {
+    border-color: var(--surface-danger-border);
+    background: var(--surface-danger-bg);
+    color: var(--danger);
+  }
+
+  &[data-tone="routing"] {
+    border-color: var(--surface-info-border);
+    background: var(--surface-info-bg);
+    color: var(--surface-info-text);
+  }
+
+  &[data-tone="neutral"] {
+    border-color: var(--grey-200);
+    background: var(--white);
+  }
+}
+
+.alertBox {
+  margin-bottom: 16px;
+}
+
+.solutionSummary {
+  .summaryLabel {
+    font-weight: 600;
+  }
+  .summaryValue {
+    margin-bottom: 8px;
+  }
+  .descriptionValue {
+    white-space: pre-line;
+  }
+}
+
+.existingAttachmentsSection {
+  margin-bottom: 16px;
+
+  .existingAttachmentsTitle {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .existingAttachmentsList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .existingAttachmentItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 6px;
+    background: var(--grey-50, rgba(0, 0, 0, 0.02));
+    border-radius: var(--radius-sm, 6px);
+    border: 1px solid var(--grey-200, #f0f0f0);
+    transition: all 0.2s ease;
+
+    &.markedForDeletion {
+      background: var(--surface-danger-bg, rgba(239, 68, 68, 0.08));
+      border-color: var(--surface-danger-border, #fca5a5);
+
+      .attachmentFilename {
+        text-decoration: line-through;
+        color: var(--danger, #dc2626);
+      }
+    }
+  }
+
+  .attachmentInfo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+  }
+
+  .attachmentFilename {
+    max-width: 260px;
+  }
+
+  .attachmentSize {
+    font-size: 12px;
+  }
+}

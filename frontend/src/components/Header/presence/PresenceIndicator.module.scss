@@ -1,0 +1,94 @@
+// Styles de la liste de presence du header.
+
+.list {
+  max-height: 320px;
+  min-width: 260px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 4px var(--spacing-xs);
+  border-radius: var(--radius-sm);
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.username {
+  font-size: var(--font-xs);
+  font-family: monospace;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 9px;
+  border-radius: 50%;
+}
+
+.dotOnline {
+  background: var(--success);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--success) 25%, transparent);
+  animation: dotBreath 2s ease-in-out infinite;
+}
+
+.dotOffline {
+  background: var(--text-muted);
+  opacity: 0.5;
+}
+
+// ── Animations sur l'indicateur du header ──
+
+// Pulse sur le badge (le chiffre) quand des utilisateurs sont connectes.
+.badgePulse :global(.ant-badge-count) {
+  animation: badgePop 2.5s ease-in-out infinite;
+}
+
+// Lueur vivante sur le bouton icone quand des utilisateurs sont connectes.
+.iconAlive {
+  color: var(--success) !important;
+  animation: iconGlow 3s ease-in-out infinite;
+}
+
+.iconAlive:hover {
+  animation: none;
+}
+
+@keyframes badgePop {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes iconGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  50% {
+    filter: drop-shadow(0 0 6px color-mix(in srgb, var(--success) 50%, transparent));
+  }
+}
+
+@keyframes dotBreath {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--success) 25%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--success) 12%, transparent);
+  }
+}

@@ -1,0 +1,623 @@
+{
+  "incidents": {
+    "title": "Gestion des Incidents",
+    "subtitle": "Consultez et gérez les incidents de votre organisation",
+    "add_button": "Nouvel Incident",
+    "search_placeholder": "Rechercher (code, titre, description, résolution)...",
+    "tags": {
+      "myResponsibility": "Ma responsabilité"
+    },
+    "filters": {
+      "status": "Filtrer par statut",
+      "type": "Filtrer par type",
+      "criticality": "Filtrer par criticité",
+      "all_statuses": "Tous les statuts",
+      "all_types": "Tous les types",
+      "all_criticalities": "Toutes les criticités"
+    },
+    "views": {
+      "assigned": "Assignés à moi",
+      "own": "Créés par moi",
+      "agency": "Mon Agence",
+      "service": "Mon Service",
+      "byAgency": "Par agence",
+      "byService": "Par service",
+      "all": "Tous les incidents"
+    },
+    "controls": {
+      "view": "Vue incidents",
+      "table": "Tableau",
+      "cards": "Cartes",
+      "type": "Type",
+      "typePlaceholder": "Tous les types",
+      "statusPlaceholder": "Tous les statuts",
+      "status": "Statut",
+      "criticality": "Criticité",
+      "unassignedOnly": "Masquer Non assignés",
+      "hide": {
+        "CLOSED": "Masquer les clôturés",
+        "REJECTED": "Masquer les rejetés",
+        "CANCELLED": "Masquer les annulés"
+      },
+      "userFilter": "Utilisateur",
+      "userFilterPlaceholder": "Filtrer par utilisateur",
+      "createdByLabel": "Créés par",
+      "assignedToLabel": "Assignés à",
+      "selectAgency": "Sélectionner une agence",
+      "agencyFilter": "Agence",
+      "agencyFilterPlaceholder": "Toutes les agences",
+      "periodDeclared": "Déclarés entre",
+      "periodActivity": "Activité entre",
+      "selectService": "Sélectionner un service"
+    },
+    "report": {
+      "download": "Télécharger la fiche",
+      "download_error": "Impossible de télécharger la fiche de l'incident."
+    },
+    "no_data": "Aucun incident trouvé",
+    "empty_title": "Aucun incident trouvé",
+    "empty_description": "Essayez d'ajuster vos filtres ou créez un nouvel incident.",
+    "status": {
+      "DRAFT": "Attente validation Direction",
+      "OPEN": "Ouvert",
+      "PENDING_VALIDATION": "En attente de validation",
+      "VALIDATED": "Validé",
+      "TRANSFERRED": "Transféré",
+      "ASSIGNED": "Assigné",
+      "IN_PROGRESS": "En cours de traitement",
+      "TREATED": "Traité",
+      "BLOCKED": "Bloqué",
+      "RESOLVED": "Résolu",
+      "CLOSED": "Fermé",
+      "REOPENED": "Réouvert",
+      "REJECTED": "Rejeté",
+      "CANCELLED": "Annulé",
+      "UNRESOLVED_PROLONGED_WAIT": "Non résolu (Attente prolongée)"
+    },
+    "criticality": {
+      "LOW": "Faible",
+      "MEDIUM": "Moyenne",
+      "HIGH": "Élevée",
+      "CRITICAL": "Critique"
+    },
+    "action_type": {
+      "CREATION": "Création",
+      "VALIDATION": "Validation",
+      "TRANSFER": "Transfert",
+      "STATUS_CHANGE": "Changement de statut",
+      "COMMENT": "Commentaire",
+      "UPDATE": "Modification",
+      "ASSIGNMENT": "Assignation",
+      "ROUTING": "Routage",
+      "TYPE_CHANGE": "Changement de type",
+      "CRITICALITY_CHANGE": "Changement de criticité",
+      "REOPENING": "Réouverture",
+      "RESOLUTION_REJECTED": "Résolution refusée"
+    },
+    "table": {
+      "reference": "Code",
+      "title": "Titre",
+      "type": "Type",
+      "criticality": "Criticité",
+      "status": "Statut",
+      "sla": "Échéance",
+      "assigned_to": "Assigné à",
+      "due_date": "Échéance",
+      "created_at": "Créé le",
+      "age": "Âge",
+      "created_by": "Créé par",
+      "agency": "Agence",
+      "actions": "Actions"
+    },
+    "cards": {
+      "details": "Détails",
+      "age": "Âge",
+      "sla": "Échéance"
+    },
+    "age": {
+      "minutes": "{{count}} min",
+      "hours": "{{count}} h",
+      "days": "{{count}} j"
+    },
+    "sla": {
+      "closed": "Clôturé",
+      "stopped": "Arrêté",
+      "overdue": "En retard",
+      "dueToday": "J-0",
+      "dueSoon": "J-{{count}}",
+      "due_in_days_one": "J-{{count}}",
+      "due_in_days_other": "J-{{count}}",
+      "onTrack": "Dans les temps"
+    },
+    "form": {
+      "titles": {
+        "create": "Nouvel Incident",
+        "edit": "Modifier l'incident",
+        "view": "Détails de l'incident"
+      },
+      "subtitles": {
+        "create": "Déclarez l'incident, qualifiez sa criticité et orientez-le vers le bon service."
+      },
+      "sections": {
+        "information": "Informations de l'incident",
+        "classification": "Classification",
+        "planning": "Planification",
+        "cause": "Analyse des causes"
+      },
+      "labels": {
+        "title": "Titre",
+        "description": "Description",
+        "type": "Type d'incident",
+        "criticality": "Criticité",
+        "due_date": "Date d'échéance",
+        "estimated_resolution_hours": "Temps de résolution estimé",
+        "incident_date": "Date de l'incident",
+        "observation_date": "Date de constatation",
+        "target_service": "Service cible",
+        "default_target": "Assignation par défaut",
+        "validator_required": "Validation requise par",
+        "assign_to_self": "M'attribuer cet incident",
+        "status": "Statut",
+        "created_by": "Créé par",
+        "agency": "Agence",
+        "assigned_to": "Assigné à",
+        "transferred_to_service": "Transféré au service",
+        "transferred_to_agency": "Transféré à l'agence",
+        "transfer_reason": "Motif du transfert",
+        "reject_reason": "Motif du rejet",
+        "reopen_reason": "Motif de la réouverture",
+        "blocked_reason": "Motif du blocage",
+        "validated_by": "Validé par",
+        "validated_at": "Validé le",
+        "transferred_at": "Transféré le",
+        "resolved_at": "Résolu le",
+        "closed_at": "Fermé le",
+        "blocked_at": "Bloqué le",
+        "reopened_at": "Rouverte le",
+        "created_at": "Créé le",
+        "updated_at": "Mis à jour le",
+        "cause": "Cause de l'incident",
+        "cause_detail_human": "Personne responsable",
+        "cause_detail_external": "Personne / Entité externe",
+        "cause_detail_other": "Précision de la cause"
+      },
+      "placeholders": {
+        "title": "Ex: Problème de connexion au système",
+        "description": "Décrivez l'incident en détail...",
+        "type": "Sélectionner un type d'incident",
+        "criticality": "Sélectionner la criticité",
+        "due_date": "Calculée automatiquement",
+        "incident_date": "Quand l'événement s'est-il produit ?",
+        "observation_date": "Quand a-t-il été constaté ?",
+        "target_service": "Sélectionner un service cible",
+        "cause": "Sélectionner la cause de l'incident",
+        "cause_detail_human": "Nom de la personne concernée, et ce qui lui est imputé...",
+        "cause_detail_external": "Nom de la personne ou entité externe...",
+        "cause_detail_other": "Précisez la cause en détail...",
+        "agency": "Sélectionner l'agence cible"
+      },
+      "info": {
+        "auto_service": "Service automatique : {{name}}",
+        "auto_user": "Affecté automatiquement à : {{name}}",
+        "self_assign_disabled": "Ce type d'incident impose un service ou un responsable ; l'auto-attribution n'est pas disponible.",
+        "self_assign_overrides": "L'auto-attribution prime : l'incident vous sera attribué directement et le service ou responsable imposé par le type sera ignoré.",
+        "no_target_service": "Aucun service imposé par ce type"
+      },
+      "validation": {
+        "title_required": "Le titre est requis",
+        "title_min": "Le titre doit contenir au moins 3 caractères",
+        "title_max": "Le titre ne peut pas dépasser 200 caractères",
+        "description_required": "La description est requise",
+        "description_max": "La description ne peut pas dépasser 5000 caractères",
+        "type_required": "Le type d'incident est requis",
+        "criticality_required": "La criticité est requise",
+        "due_date_past": "La date d'échéance ne peut pas être dans le passé",
+        "date_not_future": "La date ne peut pas être postérieure à aujourd'hui",
+        "date_order": "La date de survenance doit être antérieure ou égale à la date de constatation",
+        "cause_detail_max": "La précision de la cause ne peut pas dépasser 2000 caractères",
+        "agency_required": "Veuillez sélectionner l'agence cible"
+      },
+      "buttons": {
+        "submit_create": "Créer l'incident",
+        "submit_edit": "Mettre à jour",
+        "uploading": "Envoi des pièces jointes…",
+        "cancel": "Annuler"
+      }
+    },
+    "cause_values": {
+      "HUMAN": "Humaine",
+      "TECHNICAL": "Technique",
+      "ORGANIZATIONAL": "Organisationnelle",
+      "ENVIRONMENTAL": "Environnementale",
+      "EXTERNAL": "Externe",
+      "STRUCTURAL": "Structurelle",
+      "OTHER": "Autre"
+    },
+    "validator_roles": {
+      "SERVICE_MANAGER": "Chef de service",
+      "SERVICE_MANAGER_named": "Chef du service {{name}}",
+      "AGENCY_MANAGER": "Chef d'agence",
+      "AGENCY_MANAGER_named": "Chef de l'agence {{name}}",
+      "ADMIN": "Administrateur"
+    },
+    "detail": {
+      "breadcrumb_list": "Incidents",
+      "no_assigned": "Non assigné",
+      "no_service": "Aucun service",
+      "no_due_date": "Aucune échéance",
+      "estimated_hours_value": "{{count}} h",
+      "estimated_in_proposal": "Résolution estimée en {{count}} h",
+      "treatment_report": "Compte-rendu du traitement",
+      "resolution_report": "Compte-rendu de résolution",
+      "closure_note": "Note de clôture",
+      "sections": {
+        "details": "Détails",
+        "workflow": "Actions",
+        "comments": "Commentaires",
+        "history": "Historique",
+        "key_dates": "Dates clés",
+        "cause": "Analyse des causes",
+        "resolution": "Résolution"
+      }
+    },
+    "workflow": {
+      "validate": "Valider",
+      "reject": "Rejeter",
+      "transfer": "Transférer",
+      "assign": "Assigner",
+      "self_assign": "M'attribuer",
+      "start": "Démarrer le traitement",
+      "block": "Bloquer",
+      "resume": "Reprendre le traitement",
+      "request_confirmation": "Reprendre le traitement",
+      "confirm_relevance": "Toujours d'actualité",
+      "treat": "Traité",
+      "resolve": "Résolu",
+      "mark_unresolved": "Non résolu",
+      "close": "Fermer",
+      "reopen": "Réouvrir",
+      "cancel": "Annuler",
+      "no_longer_relevant": "Plus d'actualité",
+      "clone": "Cloner",
+      "resubmit": "Resoumettre",
+      "submit_solution": "Soumettre la solution",
+      "request_new_validation": "Nouvelle validation",
+      "direction_validate": "Approuver la solution",
+      "direction_reject": "Rejeter la solution",
+      "common": {
+        "comment_label": "Commentaire (optionnel)",
+        "comment_placeholder": "Ajouter un commentaire...",
+        "attachments_label": "Pièces jointes (facultatif)",
+        "attachments_add": "Ajouter une pièce jointe",
+        "estimated_hours_label": "Temps de résolution estimé (heures)",
+        "estimated_hours_help": "Renseignez le temps nécessaire à la résolution de l’incident (en heures, ex. : 48 h pour 2 jours).",
+        "estimated_hours_placeholder": "Ex. : 8"
+      },
+      "modals": {
+        "validate": {
+          "title": "Valider l'incident",
+          "comment_placeholder": "Ajouter un commentaire de validation...",
+          "confirm": "Valider",
+          "routing_required": "Sélectionnez un service ou un utilisateur cible"
+        },
+        "reject": {
+          "title": "Rejeter l'incident",
+          "reason_label": "Motif du rejet",
+          "reason_placeholder": "Indiquez le motif du rejet...",
+          "reason_required": "Le motif du rejet est requis",
+          "confirm": "Rejeter"
+        },
+        "transfer": {
+          "title": "Transférer l'incident",
+          "service_label": "Service cible",
+          "service_placeholder": "Sélectionner un service",
+          "service_required": "Le service cible est requis",
+          "destination_label": "Destination",
+          "destination_placeholder": "Sélectionner un service ou l'agence du déclarant",
+          "destination_required": "La destination est requise",
+          "services_group": "Services",
+          "agency_group": "Agence du déclarant",
+          "reclassify_toggle": "Modifier le type d'incident lors du transfert",
+          "new_type": "Nouveau type d'incident (ou confirmer le type)",
+          "new_type_help": "Sélectionnez le type d'incident propre au service destinataire pour appliquer le bon délai de traitement et conserver des métriques précises.",
+          "new_type_placeholder": "Sélectionner un type du service destinataire",
+          "reason_label": "Motif du transfert",
+          "reason_placeholder": "Indiquez le motif du transfert vers ce service...",
+          "reason_required": "Le motif du transfert est requis",
+          "confirm": "Transférer"
+        },
+        "assign": {
+          "title": "Assigner l'incident",
+          "user_label": "Utilisateur",
+          "user_placeholder": "Sélectionner un utilisateur",
+          "user_required": "L'utilisateur est requis",
+          "confirm": "Assigner"
+        },
+        "self_assign": {
+          "title": "M'attribuer l'incident",
+          "comment_placeholder": "Ajouter une note (optionnel)...",
+          "confirm": "M'attribuer"
+        },
+        "start": {
+          "title": "Démarrer le traitement",
+          "comment_placeholder": "Ajouter une note de démarrage...",
+          "confirm": "Démarrer"
+        },
+        "block": {
+          "title": "Bloquer l'incident",
+          "reason_label": "Raison du blocage",
+          "reason_placeholder": "Expliquez ce qui bloque la résolution...",
+          "reason_required": "La raison du blocage est requise",
+          "confirm": "Bloquer"
+        },
+        "resume": {
+          "title": "Reprendre le traitement",
+          "comment_placeholder": "Ajouter une note de reprise...",
+          "confirm": "Reprendre"
+        },
+        "treat": {
+          "title": "Marquer comme traité",
+          "description_label": "Description du traitement",
+          "description_placeholder": "Décrivez les actions menées pour traiter l'incident...",
+          "description_required": "La description du traitement est requise",
+          "cause_required": "La cause est obligatoire pour ce type d'incident",
+          "cause_detail_required": "La précision de la cause est obligatoire pour ce type d'incident",
+          "confirm": "Marquer traité"
+        },
+        "resolve": {
+          "title": "Valider la résolution",
+          "note_label": "Note de validation",
+          "note_placeholder": "Confirmez que l'incident est réellement résolu...",
+          "note_required": "La note de validation est requise",
+          "confirm": "Résolu"
+        },
+        "mark_unresolved": {
+          "title": "Renvoyer en traitement (non résolu)",
+          "reason_label": "Motif du renvoi",
+          "reason_placeholder": "Expliquez pourquoi le traitement ne résout pas l'incident...",
+          "reason_required": "Le motif du renvoi est requis",
+          "confirm": "Renvoyer"
+        },
+        "close": {
+          "title": "Fermer l'incident",
+          "closure_label": "Description de clôture",
+          "closure_placeholder": "Rédigez la synthèse officielle de clôture de l'incident...",
+          "closure_required": "La description de clôture est obligatoire pour fermer un incident",
+          "comment_placeholder": "Ajouter un commentaire de fermeture...",
+          "confirm": "Fermer"
+        },
+        "reopen": {
+          "title": "Réouvrir l'incident",
+          "reason_label": "Motif de la réouverture",
+          "reason_placeholder": "Pourquoi rouvrir cet incident ? (obligatoire)",
+          "reason_required": "Le motif de la réouverture est obligatoire",
+          "comment_placeholder": "Ajouter un commentaire (optionnel)...",
+          "confirm": "Réouvrir"
+        },
+        "cancel": {
+          "title": "Annuler l'incident",
+          "reason_label": "Motif de l'annulation",
+          "reason_placeholder": "Pourquoi cet incident doit-il être annulé ?",
+          "reason_required": "Veuillez fournir un motif d'annulation",
+          "confirm": "Valider"
+        },
+        "clone": {
+          "title": "Cloner l'incident",
+          "message": "Voulez-vous cloner cet incident ? Les attributs métier seront copiés.",
+          "confirm": "Cloner"
+        },
+        "resubmit": {
+          "title": "Resoumettre l'incident",
+          "comment_placeholder": "Commentaire (optionnel)",
+          "confirm": "Resoumettre"
+        },
+        "submit_solution": {
+          "title": "Soumission de solution (Validation Direction)",
+          "incident_title_label": "Titre de l'incident",
+          "incident_description_label": "Description de l'incident",
+          "previous_rejection_title": "Motif du rejet précédent",
+          "proposedSolutionTitle": "Proposition des solutions pour le traitement",
+          "proposedSolutionDescriptionLabel": "Description de la solution proposée",
+          "proposedSolutionDescriptionPlaceholder": "Décrivez la solution proposée pour traiter cet incident...",
+          "proposedSolutionDescriptionRequired": "La description de la solution est obligatoire",
+          "existing_attachments_title": "Pièces jointes existantes",
+          "treatmentSolutionTitle": "Solutions de traitement",
+          "confirm": "Soumettre à la Direction"
+        },
+        "direction_validate": {
+          "title": "Approuver la solution proposée",
+          "confirm_message": "Confirmez-vous la validation de la solution ? L'incident passera automatiquement en cours de traitement.",
+          "comment_placeholder": "Ajouter un commentaire d'approbation (optionnel)...",
+          "confirm": "Approuver"
+        },
+        "direction_reject": {
+          "title": "Rejeter la solution proposée",
+          "confirm_message": "Confirmez-vous le rejet de la solution ? Le traitant devra soumettre une nouvelle solution.",
+          "reason_label": "Motif du rejet",
+          "proposedSolutionTitle": "Proposition de solutions",
+          "directionRejectionReasonTitle": "Motif de rejet",
+          "reason_placeholder": "Expliquez pourquoi la solution est rejetée...",
+          "reason_required": "Le motif du rejet est obligatoire",
+          "confirm": "Rejeter la solution"
+        },
+        "request_confirmation": {
+          "title": "Reprendre le traitement",
+          "hint": "L'incident est resté longtemps sans suite. Votre reprise n'est pas immédiate : {{responder}} doit d'abord confirmer qu'il est encore d'actualité. S'il l'infirme, l'incident sera annulé.",
+          "comment_placeholder": "Ajouter une précision à l'attention de l'entité source...",
+          "confirm": "Demander et reprendre",
+          "responder_fallback": "le responsable de l'entité qui a déclaré l'incident"
+        },
+        "confirm_relevance": {
+          "title": "Confirmer que l'incident est toujours d'actualité",
+          "hint": "Le traitement reprend immédiatement, avec toutes les données déjà saisies. Seule l'échéance repart à neuf.",
+          "comment_placeholder": "Ajouter une note à l'attention du traitant...",
+          "confirm": "Confirmer l'actualité"
+        },
+        "no_longer_relevant": {
+          "title": "L'incident n'est plus d'actualité",
+          "reason_label": "Pourquoi n'est-il plus d'actualité ?",
+          "reason_placeholder": "Expliquez ce qui fait que le problème ne se pose plus..."
+        }
+      },
+      "messages": {
+        "submit_solution_success": "Solution soumise avec succès pour validation par la Direction.",
+        "direction_validate_success": "Validation accordée avec succès. Incident en cours de traitement.",
+        "direction_reject_success": "Solution rejetée.",
+        "validate_success": "Incident validé avec succès",
+        "validate_error": "Erreur lors de la validation de l'incident",
+        "reject_success": "Incident rejeté avec succès",
+        "reject_error": "Erreur lors du rejet de l'incident",
+        "transfer_success": "Incident transféré avec succès",
+        "transfer_error": "Erreur lors du transfert de l'incident",
+        "assign_success": "Incident assigné avec succès",
+        "assign_error": "Erreur lors de l'assignation de l'incident",
+        "start_success": "Incident pris en charge avec succès",
+        "start_error": "Erreur lors de la prise en charge de l'incident",
+        "block_success": "Incident bloqué avec succès",
+        "block_error": "Erreur lors du blocage de l'incident",
+        "resume_success": "Traitement repris avec succès",
+        "resume_error": "Erreur lors de la reprise du traitement",
+        "treat_success": "Incident marqué comme traité",
+        "resolve_success": "Incident résolu avec succès",
+        "mark_unresolved_success": "Incident renvoyé en traitement",
+        "resolve_error": "Erreur lors de la résolution de l'incident",
+        "close_success": "Incident fermé avec succès",
+        "close_error": "Erreur lors de la fermeture de l'incident",
+        "reopen_success": "Incident réouvert avec succès",
+        "reopen_error": "Erreur lors de la réouverture de l'incident",
+        "cancel_success": "Incident annulé avec succès",
+        "cancel_error": "Erreur lors de l'annulation de l'incident",
+        "clone_success": "Incident cloné avec succès",
+        "clone_error": "Erreur lors du clonage de l'incident",
+        "resubmit_success": "Incident resoumis avec succès",
+        "resubmit_error": "Erreur lors de la resoumission de l'incident",
+        "request_confirmation_success": "Demande de confirmation envoyée à l'entité source",
+        "confirm_relevance_success": "Actualité confirmée : le traitement reprend"
+      },
+      "pending_confirmation": {
+        "title": "Confirmation d'actualité en attente",
+        "description": "Demande envoyée le {{date}} : {{responder}} doit confirmer que cet incident est encore d'actualité, ou l'annuler."
+      }
+    },
+    "comments": {
+      "title": "Commentaires",
+      "no_comments": "Aucun commentaire pour le moment",
+      "locked_closed": "Les commentaires sont figés : l'incident est clôturé.",
+      "locked_rejected": "Les commentaires sont figés : l'incident est rejeté.",
+      "reply": "Répondre",
+      "replying_to": "Réponse à {{name}}",
+      "form": {
+        "label": "Ajouter un commentaire",
+        "placeholder": "Rédigez votre commentaire...",
+        "attach": "Joindre un fichier",
+        "submit": "Publier",
+        "validation": {
+          "required": "Le commentaire ne peut pas être vide",
+          "max": "Le commentaire ne peut pas dépasser 2000 caractères"
+        }
+      },
+      "messages": {
+        "add_success": "Commentaire ajouté avec succès",
+        "add_error": "Erreur lors de l'ajout du commentaire",
+        "update_success": "Commentaire mis à jour.",
+        "delete_success": "Commentaire supprimé."
+      },
+      "delete_confirm": "Supprimer ce commentaire ?"
+    },
+    "history": {
+      "title": "Historique",
+      "no_history": "Aucun historique disponible",
+      "reason_label": "Motif",
+      "note_label": "Note",
+      "system_actor": "Le système",
+      "sentence": {
+        "CREATION_to": "a déclaré l'incident — statut initial <to>{{to}}</to>",
+        "VALIDATION": "a validé l'incident — de <from>{{from}}</from> à <to>{{to}}</to>",
+        "TRANSFER": "a transféré l'incident — de <from>{{from}}</from> à <to>{{to}}</to>",
+        "ROUTING": "a orienté l'incident — de <from>{{from}}</from> à <to>{{to}}</to>",
+        "ROUTING_to": "a orienté l'incident vers <to>{{to}}</to>",
+        "ASSIGNMENT": "a réassigné l'incident — de <from>{{from}}</from> à <to>{{to}}</to>",
+        "ASSIGNMENT_to": "a assigné l'incident à <to>{{to}}</to>",
+        "STATUS_CHANGE": "a changé le statut — de <from>{{from}}</from> à <to>{{to}}</to>",
+        "STATUS_CHANGE_to": "a défini le statut sur <to>{{to}}</to>",
+        "TYPE_CHANGE": "a changé le type — de <from>{{from}}</from> à <to>{{to}}</to>",
+        "TYPE_CHANGE_to": "a défini le type sur <to>{{to}}</to>",
+        "CRITICALITY_CHANGE": "a changé la criticité — de <from>{{from}}</from> à <to>{{to}}</to>",
+        "CRITICALITY_CHANGE_to": "a défini la criticité sur <to>{{to}}</to>",
+        "REOPENING": "a rouvert l'incident — de <from>{{from}}</from> à <to>{{to}}</to>",
+        "REOPENING_to": "a rouvert l'incident — <to>{{to}}</to>",
+        "RESOLUTION_REJECTED": "a refusé la résolution — de <from>{{from}}</from> à <to>{{to}}</to>",
+        "UPDATE": "a modifié l'incident — de <from>{{from}}</from> à <to>{{to}}</to>",
+        "UPDATE_plain": "a mis à jour l'incident",
+        "COMMENT_plain": "a ajouté un commentaire",
+        "fallback": "— <from>{{from}}</from> → <to>{{to}}</to>",
+        "fallback_to": "— <to>{{to}}</to>"
+      }
+    },
+    "attachments": {
+      "title": "Pièces jointes de la déclaration",
+      "solution_title": "Pièces jointes solutions de traitement",
+      "proposedSolutionTitle": "Pièces jointes solutions proposées",
+      "treatmentSolutionTitle": "Pièces jointes solutions de traitement",
+      "treatment_title": "Pièces jointes du traitement",
+      "resolution_title": "Pièces jointes de résolution",
+      "unresolved_title": "Pièces jointes du refus de résolution",
+      "closure_title": "Pièces jointes de clôture",
+      "cancellation_title": "Pièces jointes d'annulation",
+      "previous_cycle": "Cycle {{cycle}} — avant réouverture",
+      "no_attachments": "Aucune pièce jointe pour le moment",
+      "add_button": "Ajouter une pièce jointe",
+      "download": "Télécharger",
+      "preview": "Afficher la pièce jointe",
+      "preview_error": "Impossible d'afficher la pièce jointe.",
+      "delete": "Supprimer",
+      "file_size": "Taille",
+      "uploaded_by": "Ajouté par",
+      "uploaded_at": "Ajouté le",
+      "delete_confirm": "Supprimer la pièce jointe",
+      "delete_ask": "Êtes-vous sûr de vouloir supprimer cette pièce jointe ?",
+      "locked_status": "Les pièces jointes ne peuvent plus être modifiées une fois l'incident pris en charge.",
+      "locked_role": "Seul le créateur de l'incident peut ajouter ou supprimer des pièces jointes.",
+      "messages": {
+        "upload_success": "Pièce jointe ajoutée avec succès",
+        "uploading": "Envoi de vos pièces jointes en cours, veuillez patienter…",
+        "upload_error": "Erreur lors de l'ajout de la pièce jointe",
+        "upload_partial_error": "{{count}} pièce(s) jointe(s) n'ont pas pu être ajoutée(s).",
+        "delete_success": "Pièce jointe supprimée avec succès",
+        "delete_error": "Erreur lors de la suppression de la pièce jointe"
+      },
+      "invalid_type": "Format non supporté. Documents, images et archives bureautiques autorisés.",
+      "empty_file": "Le fichier « {{name}} » est vide. Sélectionnez un fichier contenant des données.",
+      "missing_files": "Aucune pièce jointe disponible pour ce message.",
+      "retry_files": "Certains fichiers n’ont pas été envoyés. Réessayez l’envoi des fichiers restants.",
+      "too_large": "La pièce jointe « {{name}} » dépasse la limite de {{limit}} Mo.",
+      "download_error": "Échec du téléchargement de la pièce jointe.",
+      "accepted_hint": "Documents (PDF, Word, Excel, CSV), images (JPG, PNG, GIF, WebP, SVG…) ou archives ZIP — 150 Mo max.",
+      "viewer": {
+        "docx_content": "Contenu du document Word",
+        "docx_error": "Le document Word ne peut pas être affiché. Vous pouvez toujours le télécharger.",
+        "xlsx_error": "Le classeur Excel ne peut pas être affiché. Vous pouvez toujours le télécharger.",
+        "xlsx_truncated": "L’aperçu est limité aux {{rows}} premières lignes et {{columns}} premières colonnes pour préserver les performances.",
+        "empty_sheet": "Cette feuille est vide.",
+        "unsupported": "Ce format ne peut pas être affiché dans FinTrack."
+      }
+    },
+    "messages": {
+      "create_success": "Incident créé avec succès",
+      "create_error": "Erreur lors de la création de l'incident",
+      "update_success": "Incident mis à jour avec succès",
+      "update_error": "Erreur lors de la mise à jour de l'incident",
+      "delete_success": "Incident supprimé avec succès",
+      "delete_error": "Erreur lors de la suppression de l'incident",
+      "delete_confirm": "Supprimer l'incident",
+      "delete_ask": "Êtes-vous sûr de vouloir supprimer cet incident ?",
+      "not_found": "Incident introuvable",
+      "access_denied": "Accès refusé"
+    },
+    "sort": {
+      "label": "Choisir l'ordre des incidents",
+      "alphabetical": "Alphabétique",
+      "seniority": "Ancienneté (plus récents par défaut)"
+    }
+  }
+}

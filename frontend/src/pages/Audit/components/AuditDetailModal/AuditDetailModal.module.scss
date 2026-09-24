@@ -1,0 +1,127 @@
+// JSON pre block
+
+.jsonBlock {
+  margin: 0;
+  padding: var(--spacing-sm) var(--spacing-smd);
+  background-color: var(--grey-bg);
+  border: 1px solid var(--grey-200);
+  border-radius: var(--radius-xs);
+  font-family: "Fira Code", "Cascadia Code", "Consolas", "Monaco", monospace;
+  font-size: var(--font-sm);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+// JSON syntax highlighting
+// Distinct syntax colors intentionally kept outside the token palette.
+
+.jsonKey {
+  color: var(--primary-red-active); // object keys
+  font-weight: var(--weight-semibold);
+}
+
+.jsonString {
+  color: #2e7d32; // green — string values
+}
+
+.jsonNumber {
+  color: #1565c0; // blue — numeric values
+}
+
+.jsonBoolean {
+  color: var(--secondary-gold); // true / false
+  font-weight: var(--weight-semibold);
+}
+
+.jsonNull {
+  color: #757575; // grey — null
+  font-style: italic;
+}
+
+// Diff highlighting
+.diffContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-smd);
+  background-color: var(--grey-bg);
+  border: 1px solid var(--grey-200);
+  border-radius: var(--radius-xs);
+  font-family: "Fira Code", "Cascadia Code", "Consolas", "Monaco", monospace;
+  font-size: var(--font-sm);
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.diffRow {
+  line-height: 1.5;
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px dashed var(--grey-300);
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.diffField {
+  color: var(--text-primary);
+}
+
+.diffFrom {
+  color: var(--primary-red);
+  background-color: var(--color-primary-light);
+  padding: 0 4px;
+  border-radius: var(--radius-xs);
+  text-decoration: line-through;
+}
+
+.diffTo {
+  color: var(--surface-success-text);
+  background-color: var(--surface-success-bg);
+  padding: 0 4px;
+  border-radius: var(--radius-xs);
+  text-decoration: none;
+}
+
+// Details List
+.detailsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-smd);
+  background-color: var(--grey-bg);
+  border: 1px solid var(--grey-200);
+  border-radius: var(--radius-xs);
+  font-family: "Fira Code", "Cascadia Code", "Consolas", "Monaco", monospace;
+  font-size: var(--font-sm);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.detailRow {
+  line-height: 1.6;
+  border-bottom: 1px dashed var(--grey-200);
+  padding-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+.detailKey {
+  color: var(--primary-red-active);
+  font-weight: var(--weight-semibold);
+}
+
+.detailValue {
+  color: var(--text-primary);
+  word-break: break-word;
+  white-space: pre-wrap;
+}

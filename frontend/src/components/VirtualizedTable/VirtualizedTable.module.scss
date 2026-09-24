@@ -1,0 +1,10 @@
+/* Styles frontend : organise l'affichage de virtualized tableau. */
+
+.container {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}

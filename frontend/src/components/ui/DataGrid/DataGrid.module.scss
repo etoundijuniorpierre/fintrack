@@ -1,0 +1,102 @@
+// DataGrid Source de verite pour le style de toutes les tables
+
+.table {
+  width: 100%;
+  padding: 8px;
+
+  // En-tetes
+  :global(.ant-table-thead > tr > th) {
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    font-size: var(--font-xs) !important;
+    letter-spacing: 0.07em;
+    padding: 12px 16px !important;
+    border-bottom: 2px solid var(--grey-200) !important;
+    text-align: center !important;
+  }
+
+  // Taille de police globale
+  :global(.ant-table) {
+    font-size: var(--font-md) !important;
+  }
+
+  // Cellules padding uniforme + centrage
+  :global(.ant-table-cell) {
+    padding: 12px 14px !important;
+    font-size: var(--font-md) !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+  }
+
+  // Separation entre les lignes du body
+  :global(.ant-table-tbody > tr > td) {
+    border-bottom: 1px solid var(--grey-200) !important;
+  }
+
+  // Hover ligne simple changement de fond, sans animation complexe
+  :global(.ant-table-tbody > tr:hover > td) {
+    background-color: var(--color-accent-soft) !important;
+    transition: background-color 120ms ease !important;
+  }
+
+  // Colonne fixe a droite (actions)
+  :global(.ant-table-cell-fix-right) {
+    border-left: 1px solid var(--grey-200) !important;
+  }
+
+  // Icone de filtre dans les headers
+  :global(.ant-table-filter-trigger) {
+    color: var(--grey-400) !important;
+
+    &:hover,
+    &.active {
+      color: var(--color-accent) !important;
+    }
+  }
+
+  // Pagination
+  :global(.ant-table-pagination) {
+    padding: 12px 16px !important;
+    margin: 0 !important;
+    border-top: 1px solid var(--grey-200);
+  }
+}
+
+// Ligne cliquable
+.clickableRow {
+  cursor: pointer;
+}
+
+.emptyTable {
+  :global(.ant-table-content) {
+    overflow-x: hidden !important;
+  }
+
+  :global(.ant-table-sticky-scroll) {
+    display: none !important;
+  }
+}
+
+// Colonne Actions styles partages
+.actionsSpace {
+  gap: 4px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.editIcon {
+  color: var(--secondary-gold) !important;
+
+  &:hover {
+    color: var(--secondary-gold-hover) !important;
+  }
+}
+
+.deleteIcon {
+  color: var(--primary-red-delete-icon) !important;
+
+  &:hover {
+    color: var(--primary-red-hover) !important;
+  }
+}

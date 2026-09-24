@@ -1,0 +1,13 @@
+// Barre d'actions confirmer/annuler.
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.start {
+  justify-content: flex-start;
+}

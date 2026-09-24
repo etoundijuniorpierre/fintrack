@@ -1,0 +1,18 @@
+# ===== Artefacts de build local (Maven) =====
+**/target/
+
+# ===== Fichiers IDE =====
+**/.idea/
+**/.vscode/
+**/*.iml
+
+# ===== Fichiers non nécessaires au build Docker =====
+**/.gitignore
+**/.gitattributes
+**/README.md
+**/.mvn/
+**/mvnw
+**/mvnw.cmd
+
+# ===== Scripts utilitaires =====
+scripts/

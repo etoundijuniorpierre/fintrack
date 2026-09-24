@@ -1,0 +1,37 @@
+/* Styles frontend : organise l'affichage de tableau de bord graphiques. */
+
+.graphRow {
+  width: 100%;
+  margin-bottom: var(--spacing-xl);
+}
+
+.chartCardToolbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.chartToolbarSlot {
+  min-width: 96px;
+}
+
+.chartFrame {
+  width: 100%;
+  min-width: 0;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color-primary, #1f2937);
+  margin-bottom: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--border-color, #e5e7eb);
+}

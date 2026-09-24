@@ -1,0 +1,101 @@
+/* Styles frontend : organise l'affichage de incident type formulaire page. */
+
+@use "../../../../../styles/formMixins" as form;
+
+.form {
+  margin-top: var(--spacing-md);
+  @include form.app-form;
+
+  :global(.ant-row) {
+    align-items: stretch;
+  }
+}
+
+.formCard {
+  @include form.form-card;
+  height: 100%;
+  border-top: 3px solid var(--color-primary);
+}
+
+.sideCard {
+  @include form.form-card;
+  border-top: 3px solid var(--color-accent);
+}
+
+.fullWidthInput {
+  width: 100%;
+}
+
+.switchItemCard {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  padding: 14px 18px;
+  background-color: var(--grey-50, #f8fafc);
+  border: 1px solid var(--grey-200, #e2e8f0);
+  border-radius: var(--radius-md, 8px);
+  margin-bottom: var(--spacing-sm);
+  transition: all var(--transition-fast, 150ms ease);
+
+  &:hover {
+    background-color: var(--surface-primary, #ffffff);
+    border-color: var(--color-primary-light, #93c5fd);
+    box-shadow: var(--shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.05));
+  }
+}
+
+.switchTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.switchTitle {
+  font-weight: var(--weight-semibold, 600);
+  font-size: var(--font-md, 14px);
+  color: var(--text-primary, #0f172a);
+  line-height: 1.3;
+}
+
+.switchLabel {
+  font-weight: var(--weight-regular, 400);
+  font-size: var(--font-sm, 13px);
+  color: var(--text-secondary, #64748b);
+  line-height: 1.4;
+}
+
+.switchControl {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.fullRowAlert {
+  grid-column: 1 / -1;
+  margin-bottom: var(--spacing-sm);
+}
+
+.form :global(.ant-divider-horizontal.ant-divider-with-text) {
+  margin: var(--spacing-lg) 0 var(--spacing-md);
+  color: var(--text-primary);
+  font-weight: var(--weight-semibold);
+}
+
+.formActionFooter {
+  @include form.form-action-footer;
+}
+
+@media (max-width: 768px) {
+  .sideCard :global(.ant-card-body) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .fullRowAlert,
+  .sideCard :global(.ant-divider-horizontal) {
+    grid-column: 1;
+  }
+}

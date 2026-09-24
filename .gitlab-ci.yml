@@ -1,0 +1,272 @@
+# ============================================
+# PIPELINE CI - FINTRACK
+# ============================================
+# Pipeline d'intégration continue.
+# Se déclenche EXCLUSIVEMENT sur les push vers la branche 'prod'.
+# ============================================
+
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
+
+stages:
+  - test-backend
+  - test-frontend
+  - lint
+  - security-scan
+
+# ============================================
+# VARIABLES GLOBALES
+# ============================================
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+  MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end"
+  NODE_OPTIONS: "--max-old-space-size=4096"
+  # --- Activation des analyses de sécurité ---
+  ENABLE_SECURITY_SCAN: "false"
+  # --- Configuration des analyses de sécurité ---
+  DOCKER_REGISTRY: "registry.finstar.local/fintrack"
+  SONAR_HOST_URL: "https://sonarqube.finstar.local"
+
+# ============================================
+# CACHES
+# ============================================
+
+# Cache Maven partagé entre tous les jobs backend
+.cache-maven: &cache-maven
+  cache:
+    key: maven-${CI_COMMIT_REF_SLUG}
+    paths:
+      - .m2/repository/
+    policy: pull-push
+
+# Cache npm pour le frontend
+.cache-npm: &cache-npm
+  cache:
+    key: npm-${CI_COMMIT_REF_SLUG}
+    paths:
+      - frontend/node_modules/
+    policy: pull-push
+
+# ============================================
+# TEMPLATES RÉUTILISABLES
+# ============================================
+
+# Template commun pour les jobs backend Maven.
+# Les modules partagés sont installés dans le repo m2 avant de compiler un service.
+.backend-maven-job:
+  image: maven:3.9-eclipse-temurin-21
+  <<: *cache-maven
+  before_script:
+    - mvn $MAVEN_CLI_OPTS -f backend/common-security/pom.xml install -DskipTests
+    - mvn $MAVEN_CLI_OPTS -f backend/common-contracts/pom.xml install -DskipTests
+    - cd backend/${SERVICE_NAME}
+
+# Template pour les jobs backend qui exécutent les tests Testcontainers
+# (Mongo / Postgres / WireMock). Active un service Docker-in-Docker accessible
+# via TCP afin que Testcontainers puisse démarrer ses conteneurs depuis le
+# pod Maven, et indique à Testcontainers le nom de host à exposer aux conteneurs.
+.backend-maven-job-with-docker:
+  image: maven:3.9-eclipse-temurin-21
+  <<: *cache-maven
+  services:
+    - name: docker:24-dind
+      alias: docker
+      command: ["--tls=false"]
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ""
+    TESTCONTAINERS_HOST_OVERRIDE: docker
+    TESTCONTAINERS_RYUK_DISABLED: "true"
+  before_script:
+    - mvn $MAVEN_CLI_OPTS -f backend/common-security/pom.xml install -DskipTests
+    - mvn $MAVEN_CLI_OPTS -f backend/common-contracts/pom.xml install -DskipTests
+    - cd backend/${SERVICE_NAME}
+
+# Template commun pour les jobs frontend
+.frontend-job:
+  image: node:22-alpine
+  <<: *cache-npm
+  before_script:
+    - cd frontend
+    - npm ci --prefer-offline
+
+# ============================================
+# STAGE 1: TEST BACKEND
+# ============================================
+
+# ----- BACKEND - Tests unitaires par microservice -----
+
+test:user-service:
+  extends: .backend-maven-job-with-docker
+  stage: test-backend
+  variables:
+    SERVICE_NAME: user-service
+  script:
+    - mvn $MAVEN_CLI_OPTS test
+  artifacts:
+    when: always
+    reports:
+      junit: backend/user-service/target/surefire-reports/TEST-*.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: backend/user-service/target/site/jacoco/jacoco.xml
+  coverage: '/Total.*?([0-9]{1,3})%/'
+
+test:audit-service:
+  extends: .backend-maven-job-with-docker
+  stage: test-backend
+  variables:
+    SERVICE_NAME: audit-service
+  script:
+    - mvn $MAVEN_CLI_OPTS test
+  artifacts:
+    when: always
+    reports:
+      junit: backend/audit-service/target/surefire-reports/TEST-*.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: backend/audit-service/target/site/jacoco/jacoco.xml
+  coverage: '/Total.*?([0-9]{1,3})%/'
+
+test:document-service:
+  extends: .backend-maven-job-with-docker
+  stage: test-backend
+  variables:
+    SERVICE_NAME: document-service
+  script:
+    - mvn $MAVEN_CLI_OPTS test
+  artifacts:
+    when: always
+    reports:
+      junit: backend/document-service/target/surefire-reports/TEST-*.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: backend/document-service/target/site/jacoco/jacoco.xml
+  coverage: '/Total.*?([0-9]{1,3})%/'
+
+test:incident-service:
+  extends: .backend-maven-job-with-docker
+  stage: test-backend
+  variables:
+    SERVICE_NAME: incident-service
+  script:
+    - mvn $MAVEN_CLI_OPTS test
+  artifacts:
+    when: always
+    reports:
+      junit: backend/incident-service/target/surefire-reports/TEST-*.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: backend/incident-service/target/site/jacoco/jacoco.xml
+  coverage: '/Total.*?([0-9]{1,3})%/'
+
+test:notification-service:
+  extends: .backend-maven-job-with-docker
+  stage: test-backend
+  variables:
+    SERVICE_NAME: notification-service
+  script:
+    - mvn $MAVEN_CLI_OPTS test
+  artifacts:
+    when: always
+    reports:
+      junit: backend/notification-service/target/surefire-reports/TEST-*.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: backend/notification-service/target/site/jacoco/jacoco.xml
+  coverage: '/Total.*?([0-9]{1,3})%/'
+
+test:reporting-service:
+  extends: .backend-maven-job-with-docker
+  stage: test-backend
+  variables:
+    SERVICE_NAME: reporting-service
+  script:
+    - mvn $MAVEN_CLI_OPTS test
+  artifacts:
+    when: always
+    reports:
+      junit: backend/reporting-service/target/surefire-reports/TEST-*.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: backend/reporting-service/target/site/jacoco/jacoco.xml
+  coverage: '/Total.*?([0-9]{1,3})%/'
+
+# ============================================
+# STAGE 2: TEST FRONTEND
+# ============================================
+
+# ----- FRONTEND - Tests unitaires -----
+
+test:frontend:
+  extends: .frontend-job
+  stage: test-frontend
+  script:
+    - npx vitest run --coverage --reporter=junit --outputFile=junit.xml
+  artifacts:
+    when: always
+    reports:
+      junit: frontend/junit.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: frontend/coverage/cobertura-coverage.xml
+
+# ============================================
+# STAGE 3: LINT / QUALITÉ DE CODE
+# ============================================
+
+lint:frontend:
+  extends: .frontend-job
+  stage: lint
+  script:
+    - npm run lint
+  allow_failure: true
+
+# Dans lint et non security-scan : ce stage-là ne tourne que sur variable, donc jamais.
+audit:frontend:
+  extends: .frontend-job
+  stage: lint
+  script:
+    - npm audit --audit-level=high
+  allow_failure: true
+# ============================================
+# STAGE 4: SECURITY SCAN (INACTIF par défaut)
+# ============================================
+# Pour activer : ENABLE_SECURITY_SCAN = "true"
+# Prérequis :
+#   - Serveur SonarQube accessible + variable SONAR_TOKEN
+#   - Registry Docker avec images buildées
+# ============================================
+
+# ----- Analyse SonarQube -----
+security:sonarqube:
+  stage: security-scan
+  image: sonarsource/sonar-scanner-cli:latest
+  rules:
+    - if: $ENABLE_SECURITY_SCAN == "true"
+  script:
+    - sonar-scanner
+      -Dsonar.projectKey=fintrack
+      -Dsonar.host.url=${SONAR_HOST_URL}
+      -Dsonar.login=${SONAR_TOKEN}
+      -Dsonar.branch.name=${CI_COMMIT_BRANCH}
+      -Dsonar.java.binaries=backend/*/target/classes
+      -Dsonar.sources=backend/,frontend/src/
+      -Dsonar.exclusions=**/node_modules/**,**/target/**,**/dist/**
+  allow_failure: true
+
+# ----- Scan d'images Docker (Trivy) -----
+security:container-scan:
+  stage: security-scan
+  image: aquasec/trivy:latest
+  rules:
+    - if: $ENABLE_SECURITY_SCAN == "true" && $CI_COMMIT_BRANCH == "main"
+  script:
+    - |
+      for service in user-service audit-service document-service incident-service notification-service reporting-service frontend; do
+        echo "===== Trivy scan $service ====="
+        trivy image --severity CRITICAL,HIGH --exit-code 0 --ignore-unfixed \
+          ${DOCKER_REGISTRY}/$service:${CI_COMMIT_SHA} || true
+      done
+  allow_failure: true

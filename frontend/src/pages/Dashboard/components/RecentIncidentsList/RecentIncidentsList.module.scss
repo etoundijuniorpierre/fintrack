@@ -1,0 +1,162 @@
+/* Styles frontend : organise l'affichage de recent incidents liste. */
+
+.skeletonList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-smd);
+  padding: var(--spacing-xs) 0;
+}
+
+.skeletonItem {
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--ant-color-border-secondary, #f0f0f0);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.errorAlert {
+  margin: var(--spacing-sm) 0;
+}
+
+.empty {
+  margin: var(--spacing-lg) 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.listItem {
+  width: 100%;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--ant-color-border-secondary, #f0f0f0);
+  animation: slideInUp var(--transition-normal) both;
+  border-radius: 6px;
+  transition: background-color var(--transition-fast, 0.15s) ease;
+  // Layout horizontal : contenu textuel a gauche (flex 1, ellipsis) et
+  // chevron a droite. min-width: 0 sur .itemBody est indispensable pour
+  // qu'un titre long soit tronque au lieu d'ecraser les autres items.
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+// Style applique quand l'element est cliquable (item du widget Activite
+// recente) : cursor pointer, hover/focus accessible au clavier.
+.listItemInteractive {
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--ant-color-fill-tertiary, #f5f5f5);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--ant-color-primary, #5a3aff);
+    outline-offset: 2px;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Anciennement utilise pour la mise en page verticale ; le nouveau layout
+// utilise .itemBody (flex 1 avec min-width 0 pour gerer l'ellipsis correctement).
+.itemContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.itemBody {
+  flex: 1 1 auto;
+  // Critique pour que l'ellipsis fonctionne dans un flex item : sans cela,
+  // le navigateur garde la largeur intrinseque du texte et fait deborder le
+  // parent au lieu de tronquer.
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title {
+  font-weight: var(--weight-medium);
+  font-size: var(--font-base);
+  // Ellipsis gere aussi via la prop Ant Design `ellipsis` mais on garde
+  // les fallbacks CSS au cas ou le rendu serveur amene un titre nu.
+  max-width: 100%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.35;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.metaTag {
+  margin: 0 !important;
+  font-weight: 500;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+// Date et auteur forment deux colonnes alignees a droite et de largeur stable :
+// la date est poussee a droite (margin-left:auto) et l'auteur occupe une largeur
+// fixe, si bien que les dates s'alignent verticalement d'une ligne a l'autre.
+.date {
+  font-size: var(--font-sm);
+  margin-left: auto;
+  white-space: nowrap;
+  text-align: right;
+  flex: 0 0 auto;
+}
+
+.author {
+  font-size: var(--font-sm);
+  flex: 0 0 132px;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Chevron discret en bout de ligne pour suggerer l'affordance de clic.
+.chevron {
+  flex-shrink: 0;
+  font-size: var(--font-3xl);
+  line-height: 1;
+  color: var(--ant-color-text-tertiary, #bfbfbf);
+  transition:
+    transform var(--transition-fast, 0.15s) ease,
+    color var(--transition-fast, 0.15s) ease;
+}
+
+.listItemInteractive:hover .chevron {
+  transform: translateX(2px);
+  color: var(--ant-color-primary, #5a3aff);
+}
